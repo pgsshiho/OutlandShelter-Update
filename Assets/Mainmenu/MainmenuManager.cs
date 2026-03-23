@@ -68,7 +68,7 @@ public class MainmenuManager : MonoBehaviour
     {
         OnAnyButtonClicked?.Invoke();
 
-        Notion.Log("업데이트 예정입니다");
+        Notion.Log("Update yet".Localize());
     }
 
     public void Solo()
@@ -172,5 +172,9 @@ public class MainmenuManager : MonoBehaviour
     {
         page7.SetActive(true);
         page6.SetActive(false);
+    }
+    public void ChangeLagua()
+    {
+
     }
 }

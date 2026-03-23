@@ -43,7 +43,7 @@ public class PlayerBag : Backpack
         }
         else
         {
-            Notion.Warning("해당 자원은 가득 찼습니다!!!");
+            Notion.Warning("resourcefull".Localize());
         }
 
         return count;

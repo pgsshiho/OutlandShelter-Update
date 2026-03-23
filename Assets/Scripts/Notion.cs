@@ -1,6 +1,7 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 public class Notion : MonoBehaviour
@@ -49,17 +50,17 @@ public class Notion : MonoBehaviour
         SequenceInit(ref warningSequence, warningPanel, warningText, warningDuration);
     }
 
-    public static void Log(string text)
+    public static void Log(string translatedText)
     {
-        instance.notionText.text = text;
+        instance.notionText.text = translatedText;
         instance.notionPanel.gameObject.SetActive(true);
 
         instance.notionSequence.Restart();
     }
 
-    public static void Warning(string text)
+    public static void Warning(string translatedText)
     {
-        instance.warningText.text = text;
+        instance.warningText.text = translatedText;
         instance.warningPanel.gameObject.SetActive(true);
 
         instance.warningSequence.Restart();
@@ -82,4 +83,6 @@ public class Notion : MonoBehaviour
         instance.toolTipPanel.transform.position = pos + new Vector2(0, instance.toolTipPanel.rectTransform.sizeDelta.y * panelOffset)
             * (pos.y > centerY ? -1 : 1);
     }
+    // 기존 string 기반 ToolTip은 그대로 두고, 인터페이스 버전 추가
+
 }

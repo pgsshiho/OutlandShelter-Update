@@ -40,7 +40,7 @@ public class Backpack : MonoBehaviour
         }
         else
         {
-            Notion.Warning("해당 자원은 가득 찼습니다!!!");
+            Notion.Warning("resourcefull".Localize());
         }
 
         return count;
@@ -63,7 +63,7 @@ public class Backpack : MonoBehaviour
     {
         for (int i = 0; i < resourceCounts.Length; i++)
         {
-            resourceCounts[i].text = resources[i] + "/" + Mathf.FloorToInt(capacity * TechTreeUnlock.capacity) + "개";
+            resourceCounts[i].text = resources[i] + "/" + Mathf.FloorToInt(capacity * TechTreeUnlock.capacity) + "pieces";
         }
     }
 }

@@ -59,7 +59,7 @@ public class PartsChoice : MonoBehaviour
         }
         else
         {
-            Notion.Warning("해당 파츠를 보유하고 있지 않습니다!!");
+            Notion.Warning("nothavepart".Localize());
         }
     }
 
@@ -79,7 +79,7 @@ public class PartsChoice : MonoBehaviour
         }
         else
         {
-            Notion.Warning("파츠가 장착되어 있지 않습니다!!");
+            Notion.Warning("partinstall".Localize());
         }
     }
 

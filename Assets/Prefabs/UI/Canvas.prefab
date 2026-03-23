@@ -2159,9 +2159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S06
-  skillName: "\uC9E7\uC740 \uBB34\uC801 I"
-  skillDescription: "\uD68C\uD53C \uC2A4\uD0AC \uC9C0\uC18D\uC2DC\uAC04 0.1\uCD08
-    \uCD94\uAC00"
+  skillName: S06_NAME
+  skillDescription: S06_DESC
   isUnlocked: 0
   myText: {fileID: 7281693437808177651}
   blocker: {fileID: 5813040232420852261}
@@ -3783,9 +3782,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S13
-  skillName: "\uC774\uB3D9 \uBCF4\uC815"
-  skillDescription: "\uC774\uB3D9 \uC911 \uBA85\uC911\uB960\uC774 \uBCC0\uD558\uC9C0
-    \uC54A\uC74C"
+  skillName: S13_NAME
+  skillDescription: S13_DESC
   isUnlocked: 0
   myText: {fileID: 5745142108078569618}
   blocker: {fileID: 8195410483763819654}
@@ -4092,8 +4090,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S02
-  skillName: "\uD53C\uD574\uAC10\uC18C I"
-  skillDescription: "\uBC1B\uB294 \uD53C\uD574 -5%"
+  skillName: S02_NAME
+  skillDescription: S02_DESC
   isUnlocked: 0
   myText: {fileID: 1200076708043938382}
   blocker: {fileID: 7533378438034898771}
@@ -4763,8 +4761,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S08
-  skillName: "\uACBD\uC9C1 \uC800\uD56D"
-  skillDescription: "\uD53C\uACA9 \uD6C4 \uACBD\uC9C1 \uC2DC\uAC04 30%\uAC10\uC18C"
+  skillName: S08_NAME
+  skillDescription: S08_DESC
   isUnlocked: 0
   myText: {fileID: 7912754909157426652}
   blocker: {fileID: 7037303013545202823}
@@ -8502,8 +8500,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S07
-  skillName: "\uBE60\uB978 \uCDA9\uC804"
-  skillDescription: "\uD68C\uD53C \uC2A4\uD0AC \uC7AC\uC0AC\uC6A9 \uC2DC\uAC04 \uAC10\uC18C"
+  skillName: S07_NAME
+  skillDescription: S07_DESC
   isUnlocked: 0
   myText: {fileID: 2269894971721809065}
   blocker: {fileID: 5360030190252636331}
@@ -10001,8 +9999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S15
-  skillName: "\uD6C4\uBC29 \uBCF4\uD638"
-  skillDescription: "\uD6C4\uBC29\uC5D0\uC11C \uD53C\uACA9 \uC2DC \uD53C\uD574 -20%"
+  skillName: S15_NAME
+  skillDescription: S15_DESC
   isUnlocked: 0
   myText: {fileID: 7010971812219137287}
   blocker: {fileID: 5141562059024823147}
@@ -10311,7 +10309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillCode: C14
   skillName: "\uC218\uB9AC \uD6A8\uC728 II"
-  skillDescription: "\uC218\uB9AC \uD6A8\uC728 +10%"
+  skillDescription: "\uC218\uB9AC \uD6A8\uC728 +10%2"
   isUnlocked: 0
   myText: {fileID: 4897696731790251700}
   blocker: {fileID: 6463017678859933912}
@@ -12188,8 +12186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S16
-  skillName: "\uC774\uB3D9 \uC18D\uB3C4 \uC99D\uAC00"
-  skillDescription: "\uC774\uB3D9 \uC18D\uB3C4 +20%"
+  skillName: S16_NAME
+  skillDescription: S16_DESC
   isUnlocked: 0
   myText: {fileID: 1863838241654757009}
   blocker: {fileID: 2175375349283762149}
@@ -15125,9 +15123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S20
-  skillName: "\uBC18\uC0AC \uD0C0\uC774\uBC0D"
-  skillDescription: "\uD68C\uD53C \uD6C4 \uACF5\uACA9\uB825 +10%, \uC9C0\uC18D\uC2DC\uAC04
-    3\uCD08"
+  skillName: S20_NAME
+  skillDescription: S20_DESC
   isUnlocked: 0
   myText: {fileID: 7901197826278086162}
   blocker: {fileID: 5694407538844636611}
@@ -17458,7 +17455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillCode: C25
   skillName: "\uD68C\uBCF5 \uC18D\uB3C4 III"
-  skillDescription: "\uD68C\uBCF5 \uC2DC\uC124 \uD68C\uBCF5 \uC18D\uB3C4 +10%"
+  skillDescription: "\uD68C\uBCF5 \uC2DC\uC124 \uD68C\uBCF5 \uC18D\uB3C4 +10%3"
   isUnlocked: 0
   myText: {fileID: 6380774537234905755}
   blocker: {fileID: 5028966205074669138}
@@ -23690,8 +23687,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S03
-  skillName: "\uD53C\uD574\uAC10\uC18C II"
-  skillDescription: "\uBC1B\uB294 \uD53C\uD574 -10%"
+  skillName: S03_NAME
+  skillDescription: S03_DESC
   isUnlocked: 0
   myText: {fileID: 5870359402185080875}
   blocker: {fileID: 9152720973545385030}
@@ -24877,9 +24874,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S18
-  skillName: "\uC0DD\uC874 \uC804\uD22C\uB825"
-  skillDescription: "\uCCB4\uB825 20%\uC774\uD558\uC77C \uB54C \uACF5\uACA9 \uC18D\uB3C4
-    +10%"
+  skillName: S18_NAME
+  skillDescription: S18_DESC
   isUnlocked: 0
   myText: {fileID: 3823925738848665694}
   blocker: {fileID: 4807484848749998421}
@@ -30577,7 +30573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillCode: C10
   skillName: "\uC804\uAE30 \uD6A8\uC728 II"
-  skillDescription: "\uAC74\uBB3C\uC774 \uC0AC\uC6A9\uD558\uB294 \uC804\uAE30 -10%"
+  skillDescription: "\uAC74\uBB3C\uC774 \uC0AC\uC6A9\uD558\uB294 \uC804\uAE30 -10%2"
   isUnlocked: 0
   myText: {fileID: 3250446367374451924}
   blocker: {fileID: 5556134950181956841}
@@ -31328,9 +31324,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S11
-  skillName: "\uC5F0\uC18D \uD53C\uACA9 \uC644\uD654"
-  skillDescription: "3\uCD08 \uC774\uB0B4 2\uD68C \uD53C\uACA9 \uC2DC 2\uBC88\uC9F8
-    \uD53C\uD574 \uAC10\uC18C"
+  skillName: S11_NAME
+  skillDescription: S11_DESC
   isUnlocked: 0
   myText: {fileID: 8903621448154827834}
   blocker: {fileID: 894335705232110128}
@@ -34153,7 +34148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillCode: C26
   skillName: "\uC804\uAE30 \uD6A8\uC728 III"
-  skillDescription: "\uAC74\uBB3C\uC774 \uC0AC\uC6A9\uD558\uB294 \uC804\uAE30 -10%"
+  skillDescription: "\uAC74\uBB3C\uC774 \uC0AC\uC6A9\uD558\uB294 \uC804\uAE30 -10%3"
   isUnlocked: 0
   myText: {fileID: 1980743903478569798}
   blocker: {fileID: 744970244062551149}
@@ -36672,8 +36667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S09
-  skillName: "\uACF5\uACA9 = \uBC29\uC5B4"
-  skillDescription: "\uACF5\uACA9 \uC911 \uD53C\uACA9 \uB370\uBBF8\uC9C0 \uAC10\uC18C"
+  skillName: S09_NAME
+  skillDescription: S09_DESC
   isUnlocked: 0
   myText: {fileID: 7244844272509399949}
   blocker: {fileID: 3537510443935778044}
@@ -42559,7 +42554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillCode: C16
   skillName: "\uD3EC\uD0D1 \uC0AC\uAC70\uB9AC II"
-  skillDescription: "\uD3EC\uD0D1 \uC0AC\uAC70\uB9AC +10%"
+  skillDescription: "\uD3EC\uD0D1 \uC0AC\uAC70\uB9AC +10%2"
   isUnlocked: 0
   myText: {fileID: 745790491328154268}
   blocker: {fileID: 6228134666243771256}
@@ -44526,9 +44521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S19
-  skillName: "\uC9E7\uC740 \uBB34\uC801 II"
-  skillDescription: "\uD68C\uD53C \uC2A4\uD0AC \uC9C0\uC18D\uC2DC\uAC04 0.15\uCD08
-    \uCD94\uAC00"
+  skillName: S19_NAME
+  skillDescription: S19_DESC
   isUnlocked: 0
   myText: {fileID: 3302341959626978626}
   blocker: {fileID: 3121433937455890414}
@@ -47544,8 +47538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S10
-  skillName: "\uC704\uAE30 \uD0C8\uCD9C"
-  skillDescription: "\uCCB4\uB825 10%\uC774\uD558 \uC2DC \uD53C\uD574 -15%"
+  skillName: S10_NAME
+  skillDescription: S10_DESC
   isUnlocked: 0
   myText: {fileID: 2917857640008645648}
   blocker: {fileID: 8638784416571363895}
@@ -48063,10 +48057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S04
-  skillName: "\uD68C\uD53C"
-  skillDescription: "Shift\uD0A4\uB97C \uB204\uB97C \uC2DC \uB3CC\uC9C4, \uB370\uBBF8\uC9C0\uB97C
-    \uC785\uAE30 \uC9C1\uC804\uC5D0 \uC0AC\uC6A9 \uC2DC 0.1\uCD08 \uBB34\uC801 \uD310\uC815.
-    \uCFE8\uD0C0\uC784 3\uCD08"
+  skillName: S04_NAME
+  skillDescription: S04_DESC
   isUnlocked: 0
   myText: {fileID: 7986837945036742417}
   blocker: {fileID: 1786943586524587018}
@@ -48446,9 +48438,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S17
-  skillName: "\uBD88\uAD74"
-  skillDescription: "\uC8FD\uAE30 \uC9C1\uC804\uC5D0 \uCCB4\uB825 1%\uB85C \uB2E8
-    \uD55C \uBC88 \uBC84\uD2F0\uAE30."
+  skillName: S17_NAME
+  skillDescription: S17_DESC
   isUnlocked: 0
   myText: {fileID: 2537185235484664323}
   blocker: {fileID: 2342589748134410860}
@@ -51950,7 +51941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillCode: C24
   skillName: "\uD3EC\uD0D1 \uC0AC\uAC70\uB9AC III"
-  skillDescription: "\uD3EC\uD0D1 \uC0AC\uAC70\uB9AC +10%"
+  skillDescription: "\uD3EC\uD0D1 \uC0AC\uAC70\uB9AC +10%3"
   isUnlocked: 0
   myText: {fileID: 1218564431736125932}
   blocker: {fileID: 7793698266265846740}
@@ -52178,9 +52169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S05
-  skillName: "\uBC00\uB9BC \uC800\uD56D"
-  skillDescription: "\uB109\uBC31\uC774 \uC788\uB294 \uACF5\uACA9\uC744 \uB9DE\uC744
-    \uACBD\uC6B0 \uB109\uBC31 \uBA74\uC5ED."
+  skillName: S05_NAME
+  skillDescription: S05_DESC
   isUnlocked: 0
   myText: {fileID: 4347061325198409640}
   blocker: {fileID: 7770513302040411324}
@@ -53328,8 +53318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S01
-  skillName: "\uCCB4\uB825 \uC99D\uAC00"
-  skillDescription: "\uCCB4\uB825 +10%"
+  skillName: S01_NAME
+  skillDescription: S01_DESC
   isUnlocked: 0
   myText: {fileID: 3586785732554823511}
   blocker: {fileID: 7050477105405916870}
@@ -60357,8 +60347,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S12
-  skillName: "\uC804\uD22C \uBC18\uC751\uB825"
-  skillDescription: "\uC804\uD22C \uC911 \uD68C\uD53C \uC18D\uB3C4 +10%"
+  skillName: S12_NAME
+  skillDescription: S12_DESC
   isUnlocked: 0
   myText: {fileID: 5392803370600643138}
   blocker: {fileID: 8891799199628379373}
@@ -63447,8 +63437,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillCode: S14
-  skillName: "\uC18D\uB3C4 \uC720\uC9C0"
-  skillDescription: "\uACF5\uACA9 \uC911 \uC774\uB3D9\uC18D\uB3C4 \uAC10\uC18C \uC5C6\uC74C"
+  skillName: S14_NAME
+  skillDescription: S14_DESC
   isUnlocked: 0
   myText: {fileID: 775430090133959269}
   blocker: {fileID: 2752334463150220887}

@@ -1,0 +1,256 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: En_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 456e90ed9ed9e77469dba5e112e205fe, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 7146448972180095194
+  m_TableData:
+  - m_Id: 11593547776
+    m_Localized: Start Survive
+    m_Metadata:
+      m_Items:
+      - rid: 7146448972180095194
+  - m_Id: 475873640448
+    m_Localized: How to survive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 643385753600
+    m_Localized: Survive setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 766945755136
+    m_Localized: 'Give up '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 853440692224
+    m_Localized: Credit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 918645342208
+    m_Localized: 'W,A,S,D :  Chractor move
+
+      Left Click: Attack / Use Item
+
+      `:
+      Hide Guide UI'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4079548334080
+    m_Localized: Choose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4195520839680
+    m_Localized: Back to menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4431198781440
+    m_Localized: "The default weapon becomes an Axe.\nAttack: 10, \nAttack Speed:
+      5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4536882659328
+    m_Localized: "The default weapon becomes a Katana.\nAttack: 5, \nAttack Speed:
+      10"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5385419718656
+    m_Localized: "Electric Storage Zombie\nStores electricity within its body \nand
+      unleashes powerful shocks. Buildings hit by its discharge will malfunction
+      and be disabled temporarily."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5734234816512
+    m_Localized: "Zombie Hound\nRemarkably fast and agile. \nA troublesome foe that
+      can even leap over fences to reach its prey."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6042021232640
+    m_Localized: 'Driven by insatiable hunger, it devours anything in its path.
+
+      The
+      zombies it swallowed are still alive inside.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8847964471296
+    m_Localized: 'Prioritizes attacking bases over anything else.
+
+      Appears
+      to have been a construction worker in its past life.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9009122213888
+    m_Localized: Sprints rapidly on all fours.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9398785638400
+    m_Localized: 'Spits projectiles like a catapult.
+
+      Its saliva has a corrosive
+      effect like acid, though its duration is short.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9401037979648
+    m_Localized: 'Emits a loud sound that attracts zombies from afar.
+
+      Must
+      be eliminated before more reinforcements arrive.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11194224574464
+    m_Localized: 'Uses its thick muscles for self-protection.
+
+      However, it
+      is slow due to its purely anaerobic physique.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11195919073280
+    m_Localized: "Created through an experiment, \nit attacks from below.\nIt uniquely
+      thrusts its hands through the ground to strike."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14187749670912
+    m_Localized: 'Detonates its body to deal damage and spread infection.
+
+      Must
+      be attacked from a distance whenever possible.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14275884580864
+    m_Localized: "Appears in relatively small numbers, \nbut one hit is all it takes
+      to get infected."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14561982251008
+    m_Localized: 'The second most common type after Walkers.
+
+      Since the infection
+      is not yet fully progressed, they can still run.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14560086425600
+    m_Localized: 'The most numerous zombie.
+
+      Slow and fragile, but dangerous
+      when they swarm in large numbers.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51537921933312
+    m_Localized: Survive Together
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51618356101120
+    m_Localized: Survive alone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63413116436480
+    m_Localized: Update yet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64116136312832
+    m_Localized: Wave {waveCount} Start!
+    m_Metadata:
+      m_Items:
+      - rid: 7146448972180095194
+  - m_Id: 64380276801536
+    m_Localized: 'Maintenance time start
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63615403524096
+    m_Localized: 'Wave timer ends
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63605307834368
+    m_Localized: 'Zombie 0 Wave Ends
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64885518467072
+    m_Localized: 'The building installation was canceled.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65301018804224
+    m_Localized: Replace weapon with {myself.kind}
+    m_Metadata:
+      m_Items:
+      - rid: 7146448972180095194
+  - m_Id: 66973292003328
+    m_Localized: LevelUp!!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67366185041920
+    m_Localized: Unbreakable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67791646851072
+    m_Localized: 'Production is complete!!!
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68308678705152
+    m_Localized: resources are lacking!!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69342960517120
+    m_Localized: 'That resource is full!!!
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69834885267456
+    m_Localized: 'Your inventory is full!!!
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70841597919232
+    m_Localized: You do not have that part!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71625492365312
+    m_Localized: The parts are not installed!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72021556297728
+    m_Localized: You can only place up to {maxCount + TechTreeUnlock.additionalMineCount}
+      mines at a time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72729860997120
+    m_Localized: 'We don''t have enough power to dismantle the generator!!!
+
+'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 7146448972180095194
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 11593547776
+        - id: 64116136312832
+        - id: 65301018804224

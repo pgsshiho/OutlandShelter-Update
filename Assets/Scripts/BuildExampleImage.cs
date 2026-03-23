@@ -101,7 +101,7 @@ public class BuildExampleImage : MonoBehaviour
             resource.Wooden = Mathf.Clamp(resource.Wooden + price.wooden, 0, resource.bag.capacity);
             resource.Steel = Mathf.Clamp(resource.Steel + price.steel, 0, resource.bag.capacity);
 
-            Notion.Log("건물 설치를 취소했습니다.");
+            Notion.Log("Cancle building".Localize());
 
             for (int i = 0; i < notConstructableArea.Count; i++)
             {

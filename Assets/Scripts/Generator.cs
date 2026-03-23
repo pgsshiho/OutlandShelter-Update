@@ -20,7 +20,7 @@ public class Generator : ResourceReturn
         }
         else
         {
-            Notion.Warning("발전기를 철거할 전력이 부족합니다!!!");
+            Notion.Warning("Generatoriuninstall".Localize());
         }
     }
 

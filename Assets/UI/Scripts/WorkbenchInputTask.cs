@@ -40,11 +40,11 @@ public class WorkbenchInputTask : MonoBehaviour
             if (!isComplete)
             {
                 taskBar.fillAmount = (Time.time - StartTime) / spendTime;
-                timeCheck.text = $"´ë±â ¼ø¼­ : {taskQueue.ToList().IndexOf(timeCheck)}\n³²Àº ½Ã°£ : {(int)(WorkingManager.remainingTime[this] / 60f)}ºĞ {(int)(WorkingManager.remainingTime[this] % 60)}ÃÊ";
+                timeCheck.text = $"ëŒ€ê¸° ìˆœì„œ : {taskQueue.ToList().IndexOf(timeCheck)}\në‚¨ì€ ì‹œê°„ : {(int)(WorkingManager.remainingTime[this] / 60f)}ë¶„ {(int)(WorkingManager.remainingTime[this] % 60)}ì´ˆ";
             }
             else
             {
-                timeCheck.text = $"´ë±â ¼ø¼­ : {taskQueue.ToList().IndexOf(timeCheck)}\n³²Àº ½Ã°£ : {(int)(spendTime / 60f)}ºĞ {(int)(spendTime % 60)}ÃÊ";
+                timeCheck.text = $"ëŒ€ê¸° ìˆœì„œ : {taskQueue.ToList().IndexOf(timeCheck)}\në‚¨ì€ ì‹œê°„ : {(int)(spendTime / 60f)}ë¶„ {(int)(spendTime % 60)}ì´ˆ";
             }
         }
     }
@@ -75,11 +75,11 @@ public class WorkbenchInputTask : MonoBehaviour
             WorkingManager.remainingTime[this] = spendTime;
             taskBar.fillAmount = 0;
             taskBar.transform.parent.gameObject.SetActive(true);
-            timeCheck.text = $"´ë±â ¼ø¼­ : {taskQueue.ToList().IndexOf(timeCheck)}\n³²Àº ½Ã°£ : {(int)(WorkingManager.remainingTime[this] / 60f)}ºĞ {(int)(WorkingManager.remainingTime[this] % 60)}ÃÊ";
+            timeCheck.text = $"ëŒ€ê¸° ìˆœì„œ : {taskQueue.ToList().IndexOf(timeCheck)}\në‚¨ì€ ì‹œê°„ : {(int)(WorkingManager.remainingTime[this] / 60f)}ë¶„ {(int)(WorkingManager.remainingTime[this] % 60)}ì´ˆ";
         }
         else
         {
-            Notion.Warning("ÀÚ¿øÀÌ ºÎÁ·ÇÕ´Ï´Ù!!!");
+            Notion.Warning("Notenough".Localize());
         }
     }
 }

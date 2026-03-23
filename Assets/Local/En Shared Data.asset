@@ -1,0 +1,202 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: En Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: En
+  m_TableCollectionNameGuidString: 456e90ed9ed9e77469dba5e112e205fe
+  m_Entries:
+  - m_Id: 11593547776
+    m_Key: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 475873640448
+    m_Key: HowTo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 643385753600
+    m_Key: Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 766945755136
+    m_Key: Giveup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 853440692224
+    m_Key: Credit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 918645342208
+    m_Key: Howto2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4079548334080
+    m_Key: Choose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4195520839680
+    m_Key: Goback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4431198781440
+    m_Key: man ex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4536882659328
+    m_Key: Girl ex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5385419718656
+    m_Key: 'charger
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5734234816512
+    m_Key: Chimera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6042021232640
+    m_Key: eater
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8847964471296
+    m_Key: Ruiner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9009122213888
+    m_Key: Jumper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9398785638400
+    m_Key: valista
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9401037979648
+    m_Key: surrounder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11194224574464
+    m_Key: bigbody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11195919073280
+    m_Key: extender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14187749670912
+    m_Key: bomber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14275884580864
+    m_Key: infector
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14560086425600
+    m_Key: walker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14561982251008
+    m_Key: runner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51537921933312
+    m_Key: Survive Together
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51618356101120
+    m_Key: Survive Alone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63413116436480
+    m_Key: Update yet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63605307834368
+    m_Key: ZombieAllkill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63615403524096
+    m_Key: TimerDone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64116136312832
+    m_Key: WaveStart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64380276801536
+    m_Key: maintenance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64885518467072
+    m_Key: Cancle building
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65301018804224
+    m_Key: ChangeWeapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66973292003328
+    m_Key: LevelUp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67366185041920
+    m_Key: Unbreakable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67791646851072
+    m_Key: Create
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68308678705152
+    m_Key: Notenough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69342960517120
+    m_Key: 'resourcefull
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69834885267456
+    m_Key: inventoryfull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70841597919232
+    m_Key: nothavepart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71625492365312
+    m_Key: partinstall
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72021556297728
+    m_Key: 'mineinstall
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72729860997120
+    m_Key: Generatoriuninstall
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7146448972180095193
+  references:
+    version: 2
+    RefIds:
+    - rid: 7146448972180095193
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1774240512280

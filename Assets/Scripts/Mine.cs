@@ -8,7 +8,7 @@ using UnityEngine.Pool;
 namespace Weapons
 {
     /// <summary>
-    /// Áö·ÚµéÀ» °üÀåÇÏ´Â Å¬·¡½º
+    /// ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     public class Mine : Weapon
     {
@@ -49,7 +49,7 @@ namespace Weapons
             }
             else if (canAttack && WorkingManager.mineCount > 0)
             {
-                Notion.Warning($"Áö·Ú´Â ÇÑ ¹ø¿¡ {maxCount + TechTreeUnlock.additionalMineCount}°³ ±îÁö¸¸ ¼³Ä¡ÇÒ ¼ö ÀÖ½À´Ï´Ù");
+                Notion.Warning("mineinstall".Localize("En", maxCount + TechTreeUnlock.additionalMineCount));
             }
         }
 

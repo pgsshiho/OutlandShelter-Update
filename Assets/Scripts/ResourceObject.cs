@@ -77,7 +77,7 @@ public class ResourceObject : MonoBehaviour
         }
         else
         {
-            Notion.Warning("¿Œ∫•≈‰∏Æ∞° ≤À √°Ω¿¥œ¥Ÿ!!!");
+            Notion.Warning("inventoryfull".Localize());
             return 0;
         }
     }

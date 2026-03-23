@@ -77,7 +77,7 @@ public class MapManager : MonoBehaviour
                     if (currentZombieCount <= 0)
                     {
                         waveEnded = true;
-                        Notion.Log("좀비 0 웨이브 종료");
+                        Notion.Log("ZombieAllkill".Localize());
                         StartRest();
                     }
                 }
@@ -85,7 +85,7 @@ public class MapManager : MonoBehaviour
                 {
                     if (!waveEnded)
                     {
-                        Notion.Log("웨이브 타이머 종료");
+                        Notion.Log("TimerDone".Localize());
                         StartRest();
                     }
                 }
@@ -142,7 +142,7 @@ public class MapManager : MonoBehaviour
         if (waveCount != waves.Length) for (int i = 0; i < spawners.Length; i++) StartCoroutine(SpawnZombie(zombieCount, spawners[i], waves[waveCount - 1].summonZombie.Length, waveCount));
         else StartCoroutine(SpawnZombie(1, spawners[Random.Range(0, spawners.Length)], waves[waveCount - 1].summonZombie.Length, waveCount));
 
-        Notion.Log($"Wave {waveCount} 시작!");
+        Notion.Log("WaveStart".Localize("En",waveCount));
     }
 
     private IEnumerator SpawnZombie(int count, Transform spawner, int zombieIndex, int waveCount)
