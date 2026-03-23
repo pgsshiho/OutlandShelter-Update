@@ -170,7 +170,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
             else if (target.TryGetComponent(out IDamageable player))
             {
                 Vector2 direction = (targetPos - Position).normalized;
-                player.Damage(damage, direction * knockBackForce, AttackType.Close);
+                player.Damage(damage, direction * knockBackForce, AttackType.Close,0.1f);
             }
         }
     }

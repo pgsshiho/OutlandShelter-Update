@@ -5149,7 +5149,7 @@ MonoBehaviour:
   prices:
   - 0
   - 0
-  - 200
+  - 300
   - 0
   itemName: HalfAutoRifle
   isComplete: 1
@@ -11373,7 +11373,7 @@ MonoBehaviour:
   prices:
   - 0
   - 0
-  - 200
+  - 300
   - 0
   itemName: AutoShotGun
   isComplete: 1
@@ -11896,7 +11896,7 @@ MonoBehaviour:
   prices:
   - 0
   - 70
-  - 0
+  - 40
   - 0
   itemName: SteelArmor
   isComplete: 1

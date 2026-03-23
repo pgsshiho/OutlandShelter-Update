@@ -110,18 +110,20 @@ public class ResourceSpawner : MonoBehaviour
         Gizmos.DrawLine(range.leftBottom, new Vector3(range.leftBottom.x, range.rightTop.y));
         Gizmos.DrawLine(range.rightTop, new Vector3(range.leftBottom.x, range.rightTop.y));
 
-        //if (constraints != null && constraints.Count > 0)
-        //    foreach (Range range in constraints)
-        //    {
-        //        Vector3[] verts = new Vector3[4]
-        //        {
-        //            (Vector3)range.rightTop,
-        //            new Vector3(range.rightTop.x, range.leftBottom.y),
-        //            (Vector3)range.leftBottom,
-        //            new Vector3(range.leftBottom.x, range.rightTop.y)
-        //        };
+        if (constraints != null && constraints.Count > 0)
+            foreach (Range range in constraints)
+            {
+                Vector3[] verts = new Vector3[4]
+                {
+                    (Vector3)range.rightTop,
+                    new Vector3(range.rightTop.x, range.leftBottom.y),
+                    (Vector3)range.leftBottom,
+                    new Vector3(range.leftBottom.x, range.rightTop.y)
+                };
 
-        //        Handles.DrawSolidRectangleWithOutline(verts, new Color(1, 0, 0, 0.2f), Color.red);
-        //    }
+#if UNITY_EDITOR
+                Handles.DrawSolidRectangleWithOutline(verts, new Color(1, 0, 0, 0.2f), Color.red);
+#endif
+            }
     }
 }
