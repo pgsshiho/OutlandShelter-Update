@@ -73170,6 +73170,26 @@ PrefabInstance:
       propertyPath: turretCount
       value: 
       objectReference: {fileID: 1140279414}
+    - target: {fileID: 5034511799548429835, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: orthographic size
+      value: 5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034511799548429835, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034511799548429835, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034511799548429835, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034511799548429835, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7366396850206286796, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
       propertyPath: playerBag
       value: 

@@ -13,7 +13,7 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler,
 
     public void OnPointerMove(PointerEventData eventData)
     {
-        Notion.ToolTip(toolTipText, true);
+        Notion.ToolTip(toolTipText.Localize(), true);
     }
 
     public void OnPointerExit(PointerEventData eventData)

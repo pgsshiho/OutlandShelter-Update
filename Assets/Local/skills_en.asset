@@ -761,6 +761,10 @@ MonoBehaviour:
     m_Localized: Eliminates reload time for all firearms.
     m_Metadata:
       m_Items: []
+  - m_Id: 326734142996480
+    m_Localized: Unlocked
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

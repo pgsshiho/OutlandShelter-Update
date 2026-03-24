@@ -764,6 +764,10 @@ MonoBehaviour:
     m_Key: "\uCD1D\uAE30\uB958 \uC7AC\uC7A5\uC804 \uC2DC\uAC04 \uC0AD\uC81C"
     m_Metadata:
       m_Items: []
+  - m_Id: 326734142996480
+    m_Key: Unlocked
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
