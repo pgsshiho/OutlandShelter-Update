@@ -15355,8 +15355,8 @@ Tilemap:
   - first: {x: 9, y: -3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 23
-      m_TileSpriteIndex: 19
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -34164,7 +34164,7 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 181
+  - m_RefCount: 182
     m_Data: {fileID: 11400000, guid: 203c4d0ef5fcf6c4c8441ddb039f50b5, type: 2}
   - m_RefCount: 62
     m_Data: {fileID: 11400000, guid: adcc07b428c080546a3580591c4e9bce, type: 2}
@@ -34210,12 +34210,12 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 62
     m_Data: {fileID: 11400000, guid: 21841fdddcb6b064291ed35ebf58181a, type: 2}
-  - m_RefCount: 2483
+  - m_RefCount: 2482
     m_Data: {fileID: 11400000, guid: ca7ec372c28df7d4d8f3d4a06a9870f1, type: 2}
   - m_RefCount: 119
     m_Data: {fileID: 11400000, guid: afbcbe7837618494da46f559b9876f53, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 181
+  - m_RefCount: 182
     m_Data: {fileID: -1551442258, guid: aad9c0a8086116b438bbd544864d593e, type: 3}
   - m_RefCount: 62
     m_Data: {fileID: 193008935, guid: aad9c0a8086116b438bbd544864d593e, type: 3}
@@ -34253,7 +34253,7 @@ Tilemap:
     m_Data: {fileID: 1195430778, guid: aad9c0a8086116b438bbd544864d593e, type: 3}
   - m_RefCount: 48
     m_Data: {fileID: -1643484894, guid: aad9c0a8086116b438bbd544864d593e, type: 3}
-  - m_RefCount: 2483
+  - m_RefCount: 2482
     m_Data: {fileID: -360790334, guid: aad9c0a8086116b438bbd544864d593e, type: 3}
   - m_RefCount: 66
     m_Data: {fileID: -2131658030, guid: aad9c0a8086116b438bbd544864d593e, type: 3}
@@ -50416,7 +50416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 672098658965801250, guid: 00d026f2ebfcd804fbb7c3629f59016c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4590271758096722081, guid: 00d026f2ebfcd804fbb7c3629f59016c, type: 3}
       propertyPath: m_Pivot.x

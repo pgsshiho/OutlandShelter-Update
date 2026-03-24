@@ -19,7 +19,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     public static int deathCount = 0;
     [SerializeField] protected int dropExp;
     [SerializeField] protected int dropMatarial;
-
+    protected bool isDead = false;
     protected float HpBar
     {
         set
@@ -62,6 +62,8 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
     protected virtual void OnEnable()
     {
+        col.enabled = true;
+        isDead = false;
         HP += 10 * MapManager.waveCount;
         hp = HP;
 
@@ -210,13 +212,14 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
     public virtual void Death()
     {
+        if (isDead) return;
         stack++;
         increaseSpeed = 1 + TechTreeUnlock.continuousIncreaseMoveSpeed * Mathf.Clamp(stack, 0, TechTreeUnlock.S22MAXOVERWRAP);
         StartCoroutine(WaitAction.wait(3f, () =>
         {
             stack--;
         }));
-
+        col.enabled = false;
         deathCount++;
 
         MapManager.currentZombieCount--;
@@ -251,11 +254,12 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
     public virtual void Damage(float damage, Vector2 knockBack = default)
     {
+        if (isDead) return;
         hp = Mathf.Clamp(hp - damage, 0, hp);
 
         HpBar = hp / HP;
 
-        if (hp == 0) Death();
+        if (hp == 0) { isDead = true; Death(); }
     }
 
     protected virtual void OnCollisionStay2D(Collision2D collision)
