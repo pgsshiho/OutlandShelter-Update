@@ -161,7 +161,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 64116136312832
-    m_Localized: "Wave {waveCount} \uC2DC\uC791!"
+    m_Localized: "Wave {0} \uC2DC\uC791!"
     m_Metadata:
       m_Items:
       - rid: 7146448972180095195
@@ -174,7 +174,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 65301018804224
-    m_Localized: "{myself.kind}\uB85C \uBB34\uAE30\uB97C \uAD50\uCCB4\uD569\uB2C8\uB2E4."
+    m_Localized: "{0}\uB85C \uBB34\uAE30\uB97C \uAD50\uCCB4\uD569\uB2C8\uB2E4."
     m_Metadata:
       m_Items:
       - rid: 7146448972180095195
@@ -219,6 +219,26 @@ MonoBehaviour:
   - m_Id: 72729860997120
     m_Localized: "\uBC1C\uC804\uAE30\uB97C \uCCA0\uAC70\uD560 \uC804\uB825\uC774
       \uBD80\uC871\uD569\uB2C8\uB2E4!!!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307797883846656
+    m_Localized: "\uAC74\uC124"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307848605564928
+    m_Localized: "\uC2A4\uD0AC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307851017289728
+    m_Localized: "\uD30C\uCE20"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307852657262592
+    m_Localized: "\uAC00\uBC29"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307875784654848
+    m_Localized: "\uACF5\uACA9\n"
     m_Metadata:
       m_Items: []
   references:

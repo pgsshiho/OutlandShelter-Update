@@ -2,10 +2,14 @@ using UnityEngine.Localization.Settings;
 
 public static class LocalizationExtensions
 {
-    // string 키 값에서 바로 번역문을 가져오는 확장 메서드
     public static string Localize(this string key, string table = "En", params object[] args)
     {
-        // GetLocalizedString의 인자로 args를 넘기면 Smart String이 처리됩니다.
+        // args가 없으면 Smart String 해석을 시도하지 않도록 GetLocalizedString의 오버로드를 구분합니다.
+        if (args == null || args.Length == 0)
+        {
+            return LocalizationSettings.StringDatabase.GetLocalizedString(table, key);
+        }
+
         return LocalizationSettings.StringDatabase.GetLocalizedString(table, key, arguments: args);
     }
 }

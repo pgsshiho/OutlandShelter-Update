@@ -83,6 +83,5 @@ public class Notion : MonoBehaviour
         instance.toolTipPanel.transform.position = pos + new Vector2(0, instance.toolTipPanel.rectTransform.sizeDelta.y * panelOffset)
             * (pos.y > centerY ? -1 : 1);
     }
-    // 기존 string 기반 ToolTip은 그대로 두고, 인터페이스 버전 추가
 
 }

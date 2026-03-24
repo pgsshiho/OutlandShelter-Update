@@ -190,7 +190,7 @@ public class MapManager : MonoBehaviour
         waveEnded = false;
         restTimer = restTimerLimit;
         restskip.SetActive(true);
-        Notion.Log("휴식 시간 시작");
+        Notion.Log("maintenance".Localize());
     }
 
     public void SetZombieCount(int count)

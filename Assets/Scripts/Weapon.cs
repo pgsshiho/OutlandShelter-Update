@@ -59,7 +59,8 @@ public static class Weapon
 
         GameObject key = myself.gameObject;
 
-        Notion.Log($"ChangeWeapon".Localize("En",myself.kind));
+        string weaponName = myself.kind.ToString();
+        Notion.Log("ChangeWeapon".Localize("En", weaponName));
 
         foreach (Weapons.Weapon attack in weaponList[key])
         {

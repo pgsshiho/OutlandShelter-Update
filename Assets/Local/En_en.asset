@@ -161,7 +161,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 64116136312832
-    m_Localized: Wave {waveCount} Start!
+    m_Localized: Wave {0} Start!
     m_Metadata:
       m_Items:
       - rid: 7146448972180095194
@@ -190,7 +190,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 65301018804224
-    m_Localized: Replace weapon with {myself.kind}
+    m_Localized: Weapon changed to {0}
     m_Metadata:
       m_Items:
       - rid: 7146448972180095194
@@ -241,6 +241,26 @@ MonoBehaviour:
     m_Localized: 'We don''t have enough power to dismantle the generator!!!
 
 '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307797883846656
+    m_Localized: Construct
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307848605564928
+    m_Localized: Skill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307851017289728
+    m_Localized: Part
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307852657262592
+    m_Localized: Backpack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307875784654848
+    m_Localized: Attack
     m_Metadata:
       m_Items: []
   references:

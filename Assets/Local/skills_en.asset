@@ -264,6 +264,503 @@ MonoBehaviour:
     m_Localized: HP +15%, Damage Taken -10%, Evasion Cooldown -15%.
     m_Metadata:
       m_Items: []
+  - m_Id: 15655688962048
+    m_Localized: Electrical Efficiency I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15665142923264
+    m_Localized: Power consumption of buildings -10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15666858393600
+    m_Localized: Resource Saving I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15668427063296
+    m_Localized: Resource consumption for construction -5%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15670041870336
+    m_Localized: Structure Health I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15671568596992
+    m_Localized: Durability of all structures +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15673200181248
+    m_Localized: Turret Damage I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15674844348416
+    m_Localized: All turret damage +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15676534652928
+    m_Localized: Recovery Speed I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15678015242240
+    m_Localized: Recovery speed of healing facilities +5%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15679596494848
+    m_Localized: Repair Efficiency I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15681337131008
+    m_Localized: Repair efficiency +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15683111321600
+    m_Localized: Turret Range I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15684709351424
+    m_Localized: Turret range +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15686433210368
+    m_Localized: Structure Resilience
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15688144486400
+    m_Localized: Reduces resource cost by 20% when restoring destroyed buildings.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15689809625088
+    m_Localized: Structure Health II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15691705450496
+    m_Localized: Durability of all structures +20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15693509001216
+    m_Localized: Electrical Efficiency II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15695102836736
+    m_Localized: Power consumption of buildings -10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15696906387456
+    m_Localized: Turret Damage II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15698626052096
+    m_Localized: Turret damage +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15700534460416
+    m_Localized: Recovery Speed II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15702002466816
+    m_Localized: Recovery speed of healing facilities +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15703709548544
+    m_Localized: Resource Saving II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15705483739136
+    m_Localized: Resource consumption for construction -5%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15707245346816
+    m_Localized: Repair Efficiency II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15708956622848
+    m_Localized: Repair efficiency +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15710596595712
+    m_Localized: Base Shield Generation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15712110739456
+    m_Localized: Generates a high-durability shield around the base.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15772554854400
+    m_Localized: Turret Range II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15774308073472
+    m_Localized: Turret range +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15776048709632
+    m_Localized: Increased Mine Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15777759985664
+    m_Localized: Increases damage of placed mines by 20%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15779362209792
+    m_Localized: Increased Recovery Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15780935073792
+    m_Localized: Increases the range of healing facilities.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15782549880832
+    m_Localized: Increased Turret Attack Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15784231796736
+    m_Localized: Turret attack speed +15%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15785683025920
+    m_Localized: Increased Storage Efficiency
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15798169468928
+    m_Localized: Storage Capacity +30%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15801038372864
+    m_Localized: Base Defense Increase I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15817849143296
+    m_Localized: Base Defense +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15823746334720
+    m_Localized: Base Defense Increase II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15825612800000
+    m_Localized: Base Defense +15%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15827319881728
+    m_Localized: Increased Hammer Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15828884357120
+    m_Localized: Increases the hit range of the hammer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15830448832512
+    m_Localized: Turret Range III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15832021696512
+    m_Localized: Turret Range +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15833573588992
+    m_Localized: Recovery Speed III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15835091927040
+    m_Localized: Recovery speed of healing facilities +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15836627042304
+    m_Localized: Electrical Efficiency III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15838271209472
+    m_Localized: Power consumption of buildings -10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15841370800128
+    m_Localized: Turret Damage +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15840041205760
+    m_Localized: Turret Damage III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15843027550208
+    m_Localized: Auto-Repair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15844562665472
+    m_Localized: Automatically repairs the base when not taking damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15846026477568
+    m_Localized: Structure Fortification
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15847569981440
+    m_Localized: Increases overall structure performance by 5%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15849172205568
+    m_Localized: Infection Treatment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15850690543616
+    m_Localized: Unlocks infection treatment functionality.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20144118530048
+    m_Localized: Skill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20327824850944
+    m_Localized: Survive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20345298321408
+    m_Localized: Construct
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20369998577664
+    m_Localized: Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21240119525376
+    m_Localized: Melee Enhancement I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21241960824832
+    m_Localized: Melee damage +5%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21266971459584
+    m_Localized: Melee Enhancement II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21267801931776
+    m_Localized: Melee damage +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21294523842560
+    m_Localized: Attack Speed I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21295220097024
+    m_Localized: Attack speed +5%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21318116802560
+    m_Localized: Attack Speed II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21318867582976
+    m_Localized: Attack speed +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21355760680960
+    m_Localized: Reload Speed I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21356427575296
+    m_Localized: Reload time -10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21389088620544
+    m_Localized: Reload Speed II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21389801652224
+    m_Localized: Reload time -20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21413688213504
+    m_Localized: Attack Speed III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21414355107840
+    m_Localized: Attack speed +15%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21442574385152
+    m_Localized: Increased Projectile Speed I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21443140616192
+    m_Localized: Projectile speed +20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21467429830656
+    m_Localized: ncreased Throw Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21468071559168
+    m_Localized: Range of throwables +20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21491698073600
+    m_Localized: Reduced Throw Cooldown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21492369162240
+    m_Localized: Cooldown of throwables -15%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21519825076224
+    m_Localized: Mine Placement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21520491970560
+    m_Localized: Number of deployable mines +1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21555468271616
+    m_Localized: Increased Mine Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21556164526080
+    m_Localized: Mine explosion damage +20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21583217786880
+    m_Localized: Portable Turret Unlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21588376780800
+    m_Localized: Can be built outside turret zones, but self-destructs after 10 seconds.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21626104545280
+    m_Localized: Increased Turret Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21628893757440
+    m_Localized: Deployment turret damage +15%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21660921462784
+    m_Localized: Part Enhancement I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21661621911552
+    m_Localized: Part stats +15%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21681028956160
+    m_Localized: Automatic Weapon Damage Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21685885960192
+    m_Localized: Damage of automatic weapons +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21712779837440
+    m_Localized: Melee Enhancement III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21714042322944
+    m_Localized: Melee damage +15%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21738209902592
+    m_Localized: Increased Magazine Size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21738990043136
+    m_Localized: Magazine capacity +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21761869971456
+    m_Localized: Part Enhancement II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21762943713280
+    m_Localized: Part stats +15%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23592658501632
+    m_Localized: Part Enhancement III
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23593392504832
+    m_Localized: Part stats +15%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23633796235264
+    m_Localized: Increased Grenade Radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23634450546688
+    m_Localized: Grenade area of effect +20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23665178017792
+    m_Localized: Attack Acceleration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23665844912128
+    m_Localized: Chance to increase movement speed by 10% for 2s on a successful
+      hit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23700720549888
+    m_Localized: Combo Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23701588770816
+    m_Localized: Attack power gradually increases during consecutive melee attacks.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23736158224384
+    m_Localized: Increased Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23737106137088
+    m_Localized: Firearm range +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23779493773312
+    m_Localized: Increased Projectile Speed II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23780294885376
+    m_Localized: Projectile speed +20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23835756167168
+    m_Localized: Attack Power Enhancement I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23836527919104
+    m_Localized: Attack power +5%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23865770606592
+    m_Localized: Attack Power Enhancement II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23866626244608
+    m_Localized: Attack power +10%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23901472522240
+    m_Localized: Increased Throwable Radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23902453989376
+    m_Localized: Attack radius of throwables +20%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23938235596800
+    m_Localized: All Stats Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23939296755712
+    m_Localized: All weapon-related stats +5%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23970594652160
+    m_Localized: Remove Reloading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23971416735744
+    m_Localized: Eliminates reload time for all firearms.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
