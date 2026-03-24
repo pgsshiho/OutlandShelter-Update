@@ -1,0 +1,826 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: En_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 456e90ed9ed9e77469dba5e112e205fe, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 7146448972180095194
+  m_TableData:
+  - m_Id: 11593547776
+    m_Localized: Start Survive
+    m_Metadata:
+      m_Items:
+      - rid: 7146448972180095194
+  - m_Id: 475873640448
+    m_Localized: How to survive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 643385753600
+    m_Localized: Survive setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 766945755136
+    m_Localized: 'Give up '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 853440692224
+    m_Localized: Credit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 918645342208
+    m_Localized: 'W,A,S,D :  Chractor move
+
+      Left Click: Attack / Use Item
+
+      `:
+      Hide Guide UI'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4079548334080
+    m_Localized: Choose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4195520839680
+    m_Localized: Back to menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4431198781440
+    m_Localized: "The default weapon becomes an Axe.\nAttack: 10, \nAttack Speed:
+      5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4536882659328
+    m_Localized: "The default weapon becomes a Katana.\nAttack: 5, \nAttack Speed:
+      10"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5385419718656
+    m_Localized: "Electric Storage Zombie\nStores electricity within its body \nand
+      unleashes powerful shocks. Buildings hit by its discharge will malfunction
+      and be disabled temporarily."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5734234816512
+    m_Localized: "Zombie Hound\nRemarkably fast and agile. \nA troublesome foe that
+      can even leap over fences to reach its prey."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6042021232640
+    m_Localized: 'Driven by insatiable hunger, it devours anything in its path.
+
+      The
+      zombies it swallowed are still alive inside.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8847964471296
+    m_Localized: 'Prioritizes attacking bases over anything else.
+
+      Appears
+      to have been a construction worker in its past life.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9009122213888
+    m_Localized: Sprints rapidly on all fours.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9398785638400
+    m_Localized: 'Spits projectiles like a catapult.
+
+      Its saliva has a corrosive
+      effect like acid, though its duration is short.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9401037979648
+    m_Localized: 'Emits a loud sound that attracts zombies from afar.
+
+      Must
+      be eliminated before more reinforcements arrive.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11194224574464
+    m_Localized: 'Uses its thick muscles for self-protection.
+
+      However, it
+      is slow due to its purely anaerobic physique.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11195919073280
+    m_Localized: "Created through an experiment, \nit attacks from below.\nIt uniquely
+      thrusts its hands through the ground to strike."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14187749670912
+    m_Localized: 'Detonates its body to deal damage and spread infection.
+
+      Must
+      be attacked from a distance whenever possible.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14275884580864
+    m_Localized: "Appears in relatively small numbers, \nbut one hit is all it takes
+      to get infected."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14561982251008
+    m_Localized: 'The second most common type after Walkers.
+
+      Since the infection
+      is not yet fully progressed, they can still run.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14560086425600
+    m_Localized: 'The most numerous zombie.
+
+      Slow and fragile, but dangerous
+      when they swarm in large numbers.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51537921933312
+    m_Localized: Survive Together
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51618356101120
+    m_Localized: Survive alone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63413116436480
+    m_Localized: Update yet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64116136312832
+    m_Localized: Wave {0} Start!
+    m_Metadata:
+      m_Items:
+      - rid: 7146448972180095194
+  - m_Id: 64380276801536
+    m_Localized: 'Maintenance time start
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63615403524096
+    m_Localized: 'Wave timer ends
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63605307834368
+    m_Localized: 'Zombie 0 Wave Ends
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64885518467072
+    m_Localized: 'The building installation was canceled.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65301018804224
+    m_Localized: Weapon changed to {0}
+    m_Metadata:
+      m_Items:
+      - rid: 7146448972180095194
+  - m_Id: 66973292003328
+    m_Localized: LevelUp!!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67366185041920
+    m_Localized: Unbreakable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67791646851072
+    m_Localized: 'Production is complete!!!
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68308678705152
+    m_Localized: resources are lacking!!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69342960517120
+    m_Localized: 'That resource is full!!!
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69834885267456
+    m_Localized: 'Your inventory is full!!!
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70841597919232
+    m_Localized: You do not have that part!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71625492365312
+    m_Localized: The parts are not installed!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72021556297728
+    m_Localized: You can only place up to {maxCount + TechTreeUnlock.additionalMineCount}
+      mines at a time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72729860997120
+    m_Localized: 'We don''t have enough power to dismantle the generator!!!
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307797883846656
+    m_Localized: Construct
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307848605564928
+    m_Localized: Skill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307851017289728
+    m_Localized: Part
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307852657262592
+    m_Localized: Backpack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307875784654848
+    m_Localized: Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 330765653475328
+    m_Localized: Small Warehouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 330916983963648
+    m_Localized: '<size=50>Small Warehouse</size>
+
+
+      - You can store 150 of
+      each resource.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331276742000640
+    m_Localized: Big Warehouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 333744431398912
+    m_Localized: '<size=50>Big Warehouse</size>
+
+
+      - You can store 300 of each
+      resource.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 334045351739392
+    m_Localized: small generator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 334047897681920
+    m_Localized: '<size=50>Small Generator</size>
+
+
+      - Secures 40 watts of electricity'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 334335442386944
+    m_Localized: Big generator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 334342086164480
+    m_Localized: '<size=50>Large Generator</size>
+
+
+      - Secures 170 watts of
+      electricity<size=50>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 334867590512640
+    m_Localized: Generator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335029754888192
+    m_Localized: Warehouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335032216944640
+    m_Localized: Workbench
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335565849853952
+    m_Localized: '<size=50>Workbench</size>
+
+
+      - You can craft various items'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336335819210752
+    m_Localized: Weapon Workbench
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336337471766528
+    m_Localized: '<size=50>Weapon Workbench</size>
+
+
+      - You can craft weapons
+      that will help with hunting'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336941900333056
+    m_Localized: 'Facilities
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337082824753152
+    m_Localized: 'Recovery Facility
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337261040730112
+    m_Localized: '<size=50>Recovery Facility</size>
+
+
+      - Health is restored
+      when nearby'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337362341560320
+    m_Localized: 'Treatment Facility
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337363310444544
+    m_Localized: '<size=50>Treatment Facility</size>
+
+
+      - Hidden Building
+
+      -
+      You will not get infected even if bitten by certain zombies.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339373724237824
+    m_Localized: '<size=50>Silencer</size>
+
+
+      - Attack Power reduced by 10%
+
+      -
+      Not affected by Surrounder''s effects'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339375485845504
+    m_Localized: '<size=50>Laser</size>
+
+
+      - Hit rate increased by 1.2x
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339787395858432
+    m_Localized: '<size=50>Flashlight</size>
+
+
+      - Increased field of view'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339966383587328
+    m_Localized: '<size=50>Hologram</size>
+
+
+      - Hit rate increased by 1.2x'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 340094054006784
+    m_Localized: '<size=50>Scope</size>
+
+
+      - Accuracy increased by 1.2x
+
+      -
+      Range increased by 1.5x'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 340176602103808
+    m_Localized: '<size=50>Handle</size>
+
+
+      - Attack speed increased by 1.2x'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 340319418155008
+    m_Localized: '<size=50>muzzle brake</size>
+
+
+      - Hit rate increased by 1.5x'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 340523672371200
+    m_Localized: '<size=50>Choke</size>
+
+
+      - Range increased by 1.5 times'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 340525329121280
+    m_Localized: '<size=50>Ammo Belt</size>
+
+
+
+      - Reload time reduced by 30%'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341064569815040
+    m_Localized: '<size=50>Axe</size>
+
+
+
+      - Slow but strong'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341193993453568
+    m_Localized: '<size=50>Katana</size>
+
+
+
+      - Fast but weak'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341250830467072
+    m_Localized: '<size=50>Pistol</size>
+
+
+
+      - Ordinary pistol'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341335584768000
+    m_Localized: '<size=50>Revolver</size>
+
+
+
+      - Slow but powerful pistol'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341383240450048
+    m_Localized: '<size=50>Rifle</size>
+
+
+
+      - Fast attack speed but low accuracy'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341435560198144
+    m_Localized: '<size=50>Semi-automatic rifle</size>
+
+
+
+      - Slow but high accuracy'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341487485681664
+    m_Localized: '<size=50>PumpShotgun</size>
+
+
+
+      - Attacks enemies within a
+      certain range.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341634143715328
+    m_Localized: '<size=50>Auto Shotgun</size>
+
+
+
+      - It has weaker attack power
+      than a shotgun, but is superior in every other aspect.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341778557796352
+    m_Localized: '<size=50>Alarm</size>
+
+
+
+      - Gathers zombies in one place for
+      5 seconds.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341780554285056
+    m_Localized: '<size=50>Molotov</size>
+
+
+
+      - A fire field appears within
+      a certain range.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341945801474048
+    m_Localized: '<size=50>Grenade</size>
+
+
+
+      - Causes an explosion within a
+      certain range'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342055688044544
+    m_Localized: '<size=50>Landmine</size>
+
+
+
+      - Explodes when a zombie steps
+      on it'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342153708929024
+    m_Localized: '<size=50>Basic Turret</size>
+
+
+
+      - Short range but fast attack
+      speed'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342156682690560
+    m_Localized: '<size=50>Sniper Turret</size>
+
+
+
+      - Long range but slow attack
+      speed'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342317483917312
+    m_Localized: '<size=50>Wooden Armor</size>
+
+
+
+      - Defense increased by 5%'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342421448130560
+    m_Localized: '<size=50>Metal Armor</size>
+
+
+
+      - Defense increased by 10%
+
+      -
+      Movement speed decreased by 5%'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342426363854848
+    m_Localized: '<size=50>Iron Armor</size>
+
+
+
+      - Defense increased by 20%
+
+      -
+      Movement speed decreased by 15%'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343309164183552
+    m_Localized: Pistol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343699108626432
+    m_Localized: Revolver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343894705799168
+    m_Localized: Rifle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343994156941312
+    m_Localized: SemiAutoRifle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344143264448512
+    m_Localized: PumpShotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344259668967424
+    m_Localized: AutoShotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344423959855104
+    m_Localized: Construction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345097447636992
+    m_Localized: You are dead!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345979232944128
+    m_Localized: 'Zombies Defeated : {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 380135916666880
+    m_Localized: 'The building has been destroyed. You can rebuild it using the materials
+      below.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 380394197712896
+    m_Localized: 'If you demolish the building, you can get half of the resources
+      used for construction back. Would you like to demolish it?
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 380553518350336
+    m_Localized: demolition
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382102189604864
+    m_Localized: Rebuild
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393309747380224
+    m_Localized: 'Weapon
+
+      Workbench'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393571102851072
+    m_Localized: wooden armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393844953153536
+    m_Localized: 'materials :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394159454650368
+    m_Localized: '<size=50>Wooden Armor</size>
+
+      
+
+      - Defense increased
+      by 5%'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394891054514176
+    m_Localized: '<size=50>Metal Armor</size>
+
+      
+
+      - Defense increased
+      by 10%
+
+      - Movement speed decreased by 5%'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395222534553600
+    m_Localized: metal armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395808348798976
+    m_Localized: '<size=50>Iron Armor</size>
+
+      
+
+      - Defense increased
+      by 20%
+
+      - Movement speed decreased by 15%'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395944818868224
+    m_Localized: steel armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399793721933824
+    m_Localized: Pistol Bullet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 401546387357696
+    m_Localized: '<size=50>Pistol Bullet</size>
+
+      
+
+      - Bullets needed
+      to use pistol-type weapons'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 401664389906432
+    m_Localized: '<size=50>Rifle Bullet</size>
+
+      
+
+      - Bullets needed
+      to use rifle-type weapons'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 404413269639168
+    m_Localized: Rifle Bullet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 404638541512704
+    m_Localized: Shotgu Shell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 409777708957696
+    m_Localized: '<size=50>Shotgun Shells</size>
+
+      
+
+      - Shells needed
+      to use shotgun-type weapons'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412581202722816
+    m_Localized: Razor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412620075532288
+    m_Localized: Flashlight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413386727194624
+    m_Localized: Hologram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412642255011840
+    m_Localized: Scope
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412660974190592
+    m_Localized: Silencer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412695854022656
+    m_Localized: Muzzle Breake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412720612999168
+    m_Localized: Foregrip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412736769458176
+    m_Localized: Choke
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412774639828992
+    m_Localized: ShotgunShellbelt(Only Shotgun)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412887177199616
+    m_Localized: Pistol Turret
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412974917844992
+    m_Localized: Sniper Turret
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413016412094464
+    m_Localized: Mine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413034799923200
+    m_Localized: Alram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413055372984320
+    m_Localized: Molotov
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413076977844224
+    m_Localized: Grenade
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 7146448972180095194
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 11593547776
+        - id: 64116136312832
+        - id: 65301018804224

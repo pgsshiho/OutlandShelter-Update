@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 /// <summary>
-/// ¼ø¼­ ±â¾ï¿ë enum
+/// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ enum
 /// </summary>
 public enum Hammer
 {
@@ -47,7 +47,7 @@ public enum Turrets
 }
 
 /// <summary>
-/// ÇÃ·¹ÀÌ¾î°¡ °¡Áø ¹«±â¸¦ °ü¸®ÇÏ´Â Å¬·¡½º
+/// ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
 /// </summary>
 public static class Weapon
 {
@@ -59,7 +59,8 @@ public static class Weapon
 
         GameObject key = myself.gameObject;
 
-        Notion.Log($"{myself.kind}·Î ¹«±â¸¦ ±³Ã¼ÇÕ´Ï´Ù");
+        string weaponName = myself.kind.ToString();
+        Notion.Log("ChangeWeapon".Localize("En", weaponName));
 
         foreach (Weapons.Weapon attack in weaponList[key])
         {

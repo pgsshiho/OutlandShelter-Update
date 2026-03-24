@@ -58,7 +58,7 @@ public class Buildings : MonoBehaviour
         }
         else
         {
-            Notion.Warning("자원이 부족합니다!!!");
+            Notion.Warning("Notenough".Localize());
         }
     }
 }

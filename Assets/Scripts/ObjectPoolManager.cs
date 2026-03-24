@@ -43,7 +43,7 @@ public class ObjectPoolManager : MonoBehaviour
 
         if (clones[weaponIndex].Count < defaultCapacity[weaponIndex])
         {
-            // ¹Ì¸® ¿ÀºêÁ§Æ® »ý¼º ÇØ³õ±â
+            // ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½Ø³ï¿½ï¿½ï¿½
             for (int i = 0; i < defaultCapacity[weaponIndex]; i++)
             {
                 Pool.Release(CreatePooledItem());
@@ -51,7 +51,7 @@ public class ObjectPoolManager : MonoBehaviour
         }
     }
 
-    // »ý¼º
+    // ï¿½ï¿½ï¿½ï¿½
     private GameObject CreatePooledItem()
     {
         int index = clones[weaponIndex].Count;
@@ -59,19 +59,19 @@ public class ObjectPoolManager : MonoBehaviour
         return clones[weaponIndex][index];
     }
 
-    // »ç¿ë
+    // ï¿½ï¿½ï¿½
     private void OnTakeFromPool(GameObject poolGo)
     {
         poolGo.SetActive(true);
     }
 
-    // ¹ÝÈ¯
+    // ï¿½ï¿½È¯
     private void OnReturnedToPool(GameObject poolGo)
     {
         poolGo.SetActive(false);
     }
 
-    // »èÁ¦
+    // ï¿½ï¿½ï¿½ï¿½
     private void OnDestroyPoolObject(GameObject poolGo)
     {
         Destroy(poolGo);

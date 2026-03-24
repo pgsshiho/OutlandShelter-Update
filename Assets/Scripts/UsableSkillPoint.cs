@@ -14,6 +14,6 @@ public class UsableSkillPoint : MonoBehaviour
 
     private void Update()
     {
-        skillPoint.text = $"사용 가능한 스킬포인트 : {TechTreeUnlock.skillPoint}";
+        skillPoint.text = $"Skill Point : {TechTreeUnlock.skillPoint}";
     }
 }

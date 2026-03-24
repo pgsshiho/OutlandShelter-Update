@@ -4,24 +4,24 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Pool;
-using UnityEngine.UIElements;
 
 namespace Weapons
 {
-    /// <summary>
-    /// �� ���⸦ �����ϴ� Ŭ����
-    /// </summary>
     public class Gun : Weapon
     {
-        public float[] deviation; // +- �� ���� ����
-        public int[] oneMagazine; // źâ �ϳ� �뷮
-        private int[] loadedBullet; // ������ �Ѿ�
-        public float[] relodingTime; // ������ �ð�
+        public float[] deviation;
+        public int[] oneMagazine;
+        private int[] loadedBullet;
+        public float[] relodingTime;
         public int shotSpeed = 20;
         private Rigidbody2D rb;
         private bool isReloding = false;
         [SerializeField] private TextMeshProUGUI bullet;
         [SerializeField] private GameObject loadingGuide;
+
+        [Header("위치 보정 (X는 좌우, Height는 높이)")]
+        [SerializeField] private float fireXOffset = 0f; // X축 미세조정용
+        [SerializeField] private float characterHandHeight = 0.7f;
 
         public override void Attack()
         {
@@ -29,23 +29,17 @@ namespace Weapons
             {
                 canAttack = false;
                 isAttacking = !canAttack;
+
+                // 탄약 감소 로직
                 if (!TechTreeUnlock.isRelodingSkip) loadedBullet[poolManager.weaponIndex]--;
                 else
                 {
-                    if (poolManager.weaponIndex == 0 || poolManager.weaponIndex == 1)
-                    {
-                        BulletManager.pistolBullet--;
-                    }
-                    else if (poolManager.weaponIndex == 2 || poolManager.weaponIndex == 3)
-                    {
-                        BulletManager.rifleBullet--;
-                    }
-                    else
-                    {
-                        BulletManager.shotGunBullet--;
-                    }
+                    if (poolManager.weaponIndex <= 1) BulletManager.pistolBullet--;
+                    else if (poolManager.weaponIndex <= 3) BulletManager.rifleBullet--;
+                    else BulletManager.shotGunBullet--;
                 }
 
+                // 일반 총 (권총, 소총 등)
                 if (poolManager.weaponIndex != 4 && poolManager.weaponIndex != 5)
                 {
                     SoundManager.SFX.PlayOneShot(SFXReference.Instance.gun);
@@ -57,33 +51,40 @@ namespace Weapons
                         summonBullet.isAuto = poolManager.weaponIndex == 3;
                     }
 
-                    float deviation = this.deviation[poolManager.weaponIndex] * (TechTreeUnlock.duringMovingAccuracyFixed || rb.linearVelocity == Vector2.zero ? 1 : 1.2f);
+                    float currentDeviation = this.deviation[poolManager.weaponIndex] * (TechTreeUnlock.duringMovingAccuracyFixed || rb.linearVelocity == Vector2.zero ? 1 : 1.2f);
 
                     temp.transform.parent = attackPivot;
-                    temp.transform.localPosition = new Vector3(0, distanceBetweenPlayer[poolManager.weaponIndex], 0);
-                    temp.transform.localEulerAngles = new Vector3(0, 0, Random.Range(-deviation / GunStatManager.instance[(GunKind)poolManager.weaponIndex].accuracy, deviation / GunStatManager.instance[(GunKind)poolManager.weaponIndex].accuracy));
+
+                    // 수정: X축 오프셋 반영 (기본값 0)
+                    temp.transform.localPosition = new Vector3(fireXOffset, characterHandHeight + distanceBetweenPlayer[poolManager.weaponIndex], 0);
+
+                    temp.transform.localEulerAngles = new Vector3(0, 0, Random.Range(-currentDeviation / GunStatManager.instance[(GunKind)poolManager.weaponIndex].accuracy, currentDeviation / GunStatManager.instance[(GunKind)poolManager.weaponIndex].accuracy));
                     temp.transform.parent = null;
 
                     temp.GetComponent<Rigidbody2D>().linearVelocity = shotSpeed * TechTreeUnlock.shotSpeed * temp.transform.up;
 
                     temp.TryGetComponent(out SummonObject temp2);
-
                     temp2.StartCoroutine(WaitAction.wait(7f * TechTreeUnlock.gunRange, () =>
                     {
                         poolManager.Pool.Release(temp);
                     }));
                 }
+                // 샷건 및 오토 샷건 (4, 5번)
                 else
                 {
                     SoundManager.SFX.PlayOneShot(SFXReference.Instance.shotgun);
                     PlayerMove.canMove = false;
 
                     GameObject temp = poolManager.Pool.Get();
-
                     temp.transform.parent = attackPivot;
+
                     temp.transform.localScale = GunStatManager.instance[(GunKind)poolManager.weaponIndex].range * TechTreeUnlock.gunRange
                         * poolManager.summonPrefab[poolManager.weaponIndex].transform.localScale;
-                    temp.transform.localPosition = new Vector3(0, distanceBetweenPlayer[poolManager.weaponIndex] * (temp.transform.localScale.y / 2f), 0);
+
+                    // 수정: 샷건도 X축 오프셋 반영 및 Y축 거리 고정
+                    float shotgunForwardOffset = 0.1f;
+                    temp.transform.localPosition = new Vector3(fireXOffset, characterHandHeight + distanceBetweenPlayer[poolManager.weaponIndex] + shotgunForwardOffset, 0);
+
                     temp.transform.localEulerAngles = Vector3.zero;
                     temp.transform.parent = null;
 
@@ -102,19 +103,20 @@ namespace Weapons
                             }));
                         }
                     }));
+
                     StartCoroutine(WaitAction.wait((coolTime[poolManager.weaponIndex] / GunStatManager.instance[(GunKind)poolManager.weaponIndex].attackSpeed)
                          / TechTreeUnlock.attackSpeed / 2, () =>
-                    {
-                        PlayerMove.canMove = true;
-                    }));
+                         {
+                             PlayerMove.canMove = true;
+                         }));
                 }
 
                 StartCoroutine(WaitAction.wait(coolTime[poolManager.weaponIndex] / GunStatManager.instance[(GunKind)poolManager.weaponIndex].attackSpeed
                     / (Personal_resource.hpPercentage <= 20 ? TechTreeUnlock.lowHpAttackSpeed : 1) / TechTreeUnlock.attackSpeed, () =>
-                {
-                    canAttack = true;
-                    isAttacking = !canAttack;
-                }));
+                    {
+                        canAttack = true;
+                        isAttacking = !canAttack;
+                    }));
             }
         }
 
@@ -127,17 +129,12 @@ namespace Weapons
                 StartCoroutine(Reloding());
             }
 
-            if (!TechTreeUnlock.isRelodingSkip) bullet.text = $"{loadedBullet[poolManager.weaponIndex]}/{(poolManager.weaponIndex == 0 || poolManager.weaponIndex == 1 ? BulletManager.pistolBullet : poolManager.weaponIndex == 2 || poolManager.weaponIndex == 3 ? BulletManager.rifleBullet : BulletManager.shotGunBullet)}";
-            else bullet.text = $"{(poolManager.weaponIndex == 0 || poolManager.weaponIndex == 1 ? BulletManager.pistolBullet : poolManager.weaponIndex == 2 || poolManager.weaponIndex == 3 ? BulletManager.rifleBullet : BulletManager.shotGunBullet)}";
-            
-            if (attackPivot.eulerAngles.z < 180 && !priDirection)
-            {
-                weaponRenderer.flipX = true;
-            }
-            else if (attackPivot.eulerAngles.z > 180 && priDirection)
-            {
-                weaponRenderer.flipX = false;
-            }
+            string currentBulletCount = (poolManager.weaponIndex <= 1 ? BulletManager.pistolBullet : poolManager.weaponIndex <= 3 ? BulletManager.rifleBullet : BulletManager.shotGunBullet).ToString();
+            if (!TechTreeUnlock.isRelodingSkip) bullet.text = $"{loadedBullet[poolManager.weaponIndex]}/{currentBulletCount}";
+            else bullet.text = currentBulletCount;
+
+            if (attackPivot.eulerAngles.z < 180 && !priDirection) weaponRenderer.flipX = true;
+            else if (attackPivot.eulerAngles.z > 180 && priDirection) weaponRenderer.flipX = false;
 
             priDirection = weaponRenderer.flipX;
         }
@@ -145,7 +142,6 @@ namespace Weapons
         protected override void Awake()
         {
             base.Awake();
-
             rb = GetComponent<Rigidbody2D>();
             loadedBullet = new int[oneMagazine.Length];
 
@@ -155,19 +151,9 @@ namespace Weapons
             StartCoroutine(WaitAction.wait(() => TechTreeUnlock.isRelodingSkip, () =>
             {
                 int temp = loadedBullet[poolManager.weaponIndex];
-
-                if (poolManager.weaponIndex == 0 || poolManager.weaponIndex == 1)
-                {
-                    BulletManager.pistolBullet += temp;
-                }
-                else if (poolManager.weaponIndex == 2 || poolManager.weaponIndex == 3)
-                {
-                    BulletManager.rifleBullet += temp;
-                }
-                else
-                {
-                    BulletManager.shotGunBullet += temp;
-                }
+                if (poolManager.weaponIndex <= 1) BulletManager.pistolBullet += temp;
+                else if (poolManager.weaponIndex <= 3) BulletManager.rifleBullet += temp;
+                else BulletManager.shotGunBullet += temp;
 
                 loadedBullet[poolManager.weaponIndex] -= temp;
             }));
@@ -176,56 +162,37 @@ namespace Weapons
         IEnumerator Reloding()
         {
             int index = poolManager.weaponIndex;
-            float relodingTime = this.relodingTime[index];
-
+            float time = relodingTime[index];
             isReloding = true;
 
-            if (oneMagazine[index] - loadedBullet[index] > 0)
+            int capacity = Mathf.FloorToInt(oneMagazine[index] * TechTreeUnlock.magazineCapacity);
+            if (capacity - loadedBullet[index] > 0)
             {
                 if (index != 4)
                 {
-                    yield return new WaitForSeconds(relodingTime * TechTreeUnlock.reloadingTime);
-                    int reloadBulletCount;
+                    yield return new WaitForSeconds(time * TechTreeUnlock.reloadingTime);
+                    int currentInv = (index <= 1 ? BulletManager.pistolBullet : index <= 3 ? BulletManager.rifleBullet : BulletManager.shotGunBullet);
+                    int reloadCount = Mathf.Clamp(capacity - loadedBullet[index], 0, currentInv);
 
-                    if (index == 0 || index == 1)
-                    {
-                        reloadBulletCount = Mathf.Clamp(Mathf.FloorToInt(oneMagazine[index] * TechTreeUnlock.magazineCapacity) - loadedBullet[index],
-                            0, BulletManager.pistolBullet);
-
-                        BulletManager.pistolBullet -= reloadBulletCount;
-                    }
-                    else if (index == 2 || index == 3)
-                    {
-                        reloadBulletCount = Mathf.Clamp(Mathf.FloorToInt(oneMagazine[index] * TechTreeUnlock.magazineCapacity) - loadedBullet[index],
-                            0, BulletManager.rifleBullet);
-
-                        BulletManager.rifleBullet -= reloadBulletCount;
-                    }
-                    else
-                    {
-                        reloadBulletCount = Mathf.Clamp(Mathf.FloorToInt(oneMagazine[index] * TechTreeUnlock.magazineCapacity) - loadedBullet[index],
-                            0, BulletManager.shotGunBullet);
-
-                        BulletManager.shotGunBullet -= reloadBulletCount;
-                    }
+                    if (index <= 1) BulletManager.pistolBullet -= reloadCount;
+                    else if (index <= 3) BulletManager.rifleBullet -= reloadCount;
+                    else BulletManager.shotGunBullet -= reloadCount;
 
                     SoundManager.SFX.PlayOneShot(SFXReference.Instance.reload);
-                    loadedBullet[index] += reloadBulletCount;
+                    loadedBullet[index] += reloadCount;
                 }
                 else
                 {
-                    int temp = Mathf.Clamp(Mathf.FloorToInt(oneMagazine[index] * TechTreeUnlock.magazineCapacity) - loadedBullet[index], 0, BulletManager.shotGunBullet);
-
+                    int temp = Mathf.Clamp(capacity - loadedBullet[index], 0, BulletManager.shotGunBullet);
                     for (int i = loadedBullet[index]; i <= temp; i++)
                     {
                         loadedBullet[index] = i;
                         BulletManager.shotGunBullet--;
                         SoundManager.SFX.PlayOneShot(SFXReference.Instance.reload);
-                        yield return new WaitForSeconds(relodingTime * TechTreeUnlock.reloadingTime * GunStatManager.instance[GunKind.Shotgun].reloadingTime / temp);
+                        yield return new WaitForSeconds(time * TechTreeUnlock.reloadingTime * GunStatManager.instance[GunKind.Shotgun].reloadingTime / temp);
                     }
                 }
             }
-
             isReloding = false;
         }
 

@@ -374,8 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC81C\uC5B4\uAE30</size>\n\n- \uBA85\uC911\uB960 1.5\uBC30
-    \uC99D\uAC00"
+  toolTipText: Controller
 --- !u!1 &250090350062943116
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,8 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC190\uC804\uB4F1</size>\n\n- \uC2DC\uC57C \uBC94\uC704
-    \uC99D\uAC00"
+  toolTipText: LightDivice
 --- !u!1 &430079928901137305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,8 +1122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uB808\uC774\uC800</size>\n\n- \uBA85\uC911\uB960 1.2\uBC30
-    \uC99D\uAC00"
+  toolTipText: Razor
 --- !u!1 &538099734828067989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,8 +1936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC190\uC7A1\uC774</size>\n\n- \uACF5\uACA9 \uC18D\uB3C4
-    1.2\uBC30 \uC99D\uAC00"
+  toolTipText: Handle
 --- !u!1 &1042722336188047468
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,8 +3017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC18C\uC74C\uAE30</size>\n\n- \uACF5\uACA9\uB825 10% \uD558\uB77D\n-
-    \uC11C\uB77C\uC6B4\uB354\uC758 \uD6A8\uACFC\uB97C \uBC1B\uC9C0 \uC54A\uC74C"
+  toolTipText: Silencer
 --- !u!1 &1661826653334242275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3680,8 +3675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uCD08\uD06C</size>\n\n- \uC0AC\uC815\uAC70\uB9AC 1.5\uBC30
-    \uC99D\uAC00"
+  toolTipText: Choke
 --- !u!1 &2100473093705462336
 GameObject:
   m_ObjectHideFlags: 0
@@ -4568,8 +4562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC190\uC804\uB4F1</size>\n\n- \uC2DC\uC57C \uBC94\uC704
-    \uC99D\uAC00"
+  toolTipText: LightDivice
 --- !u!1 &2342167250817318113
 GameObject:
   m_ObjectHideFlags: 0
@@ -5170,8 +5163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uD640\uB85C\uADF8\uB7A8</size>\n\n- \uBA85\uC911\uB960
-    1.2\uBC30 \uC99D\uAC00"
+  toolTipText: Hologram
 --- !u!1 &2596362186382196012
 GameObject:
   m_ObjectHideFlags: 0
@@ -5698,8 +5690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC190\uC804\uB4F1</size>\n\n- \uC2DC\uC57C \uBC94\uC704
-    \uC99D\uAC00"
+  toolTipText: LightDivice
 --- !u!1 &3040431834716622002
 GameObject:
   m_ObjectHideFlags: 0
@@ -6316,8 +6307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC18C\uC74C\uAE30</size>\n\n- \uACF5\uACA9\uB825 10% \uD558\uB77D\n-
-    \uC11C\uB77C\uC6B4\uB354\uC758 \uD6A8\uACFC\uB97C \uBC1B\uC9C0 \uC54A\uC74C"
+  toolTipText: Silencer
 --- !u!1 &3295105754407974400
 GameObject:
   m_ObjectHideFlags: 0
@@ -7155,8 +7145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uB808\uC774\uC800</size>\n\n- \uBA85\uC911\uB960 1.2\uBC30
-    \uC99D\uAC00"
+  toolTipText: Razor
 --- !u!1 &3614871173534635009
 GameObject:
   m_ObjectHideFlags: 0
@@ -7680,8 +7669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC190\uC804\uB4F1</size>\n\n- \uC2DC\uC57C \uBC94\uC704
-    \uC99D\uAC00"
+  toolTipText: LightDivice
 --- !u!1 &3843177671690084475
 GameObject:
   m_ObjectHideFlags: 0
@@ -8619,8 +8607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC870\uC900\uACBD</size>\n\n- \uBA85\uC911\uB960 1.2\uBC30
-    \uC99D\uAC00\n- \uC0AC\uC815\uAC70\uB9AC 1.5\uBC30 \uC99D\uAC00"
+  toolTipText: Scope
 --- !u!1 &4399500874550994504
 GameObject:
   m_ObjectHideFlags: 0
@@ -8994,8 +8981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uD0C4\uB760</size>\n\n- \uC7AC\uC7A5\uC804 \uC2DC\uAC04
-    30% \uAC10\uC18C"
+  toolTipText: CartridgeBelt
 --- !u!1 &4552236217357860530
 GameObject:
   m_ObjectHideFlags: 0
@@ -11672,8 +11658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uB808\uC774\uC800</size>\n\n- \uBA85\uC911\uB960 1.2\uBC30
-    \uC99D\uAC00"
+  toolTipText: Razor
 --- !u!1 &6635810485239306297
 GameObject:
   m_ObjectHideFlags: 0
@@ -11837,8 +11822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC190\uC804\uB4F1</size>\n\n- \uC2DC\uC57C \uBC94\uC704
-    \uC99D\uAC00"
+  toolTipText: LightDivice
 --- !u!1 &6657683278584319195
 GameObject:
   m_ObjectHideFlags: 0
@@ -12851,8 +12835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC190\uC804\uB4F1</size>\n\n- \uC2DC\uC57C \uBC94\uC704
-    \uC99D\uAC00"
+  toolTipText: LightDivice
 --- !u!1 &7073533197796198119
 GameObject:
   m_ObjectHideFlags: 0
@@ -13361,8 +13344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC18C\uC74C\uAE30</size>\n\n- \uACF5\uACA9\uB825 10% \uD558\uB77D\n-
-    \uC11C\uB77C\uC6B4\uB354\uC758 \uD6A8\uACFC\uB97C \uBC1B\uC9C0 \uC54A\uC74C"
+  toolTipText: Silencer
 --- !u!1 &7220095632392464801
 GameObject:
   m_ObjectHideFlags: 0
@@ -13601,8 +13583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uB808\uC774\uC800</size>\n\n- \uBA85\uC911\uB960 1.2\uBC30
-    \uC99D\uAC00"
+  toolTipText: Razor
 --- !u!1 &7260156976871337831
 GameObject:
   m_ObjectHideFlags: 0
@@ -14257,8 +14238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC870\uC900\uACBD</size>\n\n- \uBA85\uC911\uB960 1.2\uBC30
-    \uC99D\uAC00\n- \uC0AC\uC815\uAC70\uB9AC 1.5\uBC30 \uC99D\uAC00"
+  toolTipText: Scope
 --- !u!1 &8177133176154454849
 GameObject:
   m_ObjectHideFlags: 0
@@ -14568,8 +14548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC18C\uC74C\uAE30</size>\n\n- \uACF5\uACA9\uB825 10% \uD558\uB77D\n-
-    \uC11C\uB77C\uC6B4\uB354\uC758 \uD6A8\uACFC\uB97C \uBC1B\uC9C0 \uC54A\uC74C"
+  toolTipText: Silencer
 --- !u!1 &8282578677503074957
 GameObject:
   m_ObjectHideFlags: 0
@@ -15403,8 +15382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uB808\uC774\uC800</size>\n\n- \uBA85\uC911\uB960 1.2\uBC30
-    \uC99D\uAC00"
+  toolTipText: Razor
 --- !u!1 &8613057732474916956
 GameObject:
   m_ObjectHideFlags: 0
@@ -15704,8 +15682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uB808\uC774\uC800</size>\n\n- \uBA85\uC911\uB960 1.2\uBC30
-    \uC99D\uAC00"
+  toolTipText: Razor
 --- !u!1 &8874946042327472361
 GameObject:
   m_ObjectHideFlags: 0
@@ -16218,5 +16195,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uD640\uB85C\uADF8\uB7A8</size>\n\n- \uBA85\uC911\uB960
-    1.2\uBC30 \uC99D\uAC00"
+  toolTipText: Hologram

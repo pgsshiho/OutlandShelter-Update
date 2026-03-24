@@ -66,7 +66,7 @@ public class WorkingManager : MonoBehaviour
                 WorkbenchInputTask.taskQueue.Dequeue();
                 task.isComplete = true;
                 task.taskBar.transform.parent.gameObject.SetActive(false);
-                Notion.Log($"{task.itemName}제작이 완료되었습니다!!!");
+                Notion.Log("Production is complete!!!".Localize("En",task.itemName));
                 Invoke(task.itemName, 0f);
             }
         }

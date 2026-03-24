@@ -1,0 +1,578 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: En Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: En
+  m_TableCollectionNameGuidString: 456e90ed9ed9e77469dba5e112e205fe
+  m_Entries:
+  - m_Id: 11593547776
+    m_Key: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 475873640448
+    m_Key: HowTo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 643385753600
+    m_Key: Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 766945755136
+    m_Key: Giveup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 853440692224
+    m_Key: Credit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 918645342208
+    m_Key: Howto2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4079548334080
+    m_Key: Choose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4195520839680
+    m_Key: Goback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4431198781440
+    m_Key: man ex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4536882659328
+    m_Key: Girl ex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5385419718656
+    m_Key: 'charger
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5734234816512
+    m_Key: Chimera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6042021232640
+    m_Key: eater
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8847964471296
+    m_Key: Ruiner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9009122213888
+    m_Key: Jumper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9398785638400
+    m_Key: valista
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9401037979648
+    m_Key: surrounder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11194224574464
+    m_Key: bigbody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11195919073280
+    m_Key: extender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14187749670912
+    m_Key: bomber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14275884580864
+    m_Key: infector
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14560086425600
+    m_Key: walker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14561982251008
+    m_Key: runner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51537921933312
+    m_Key: Survive Together
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51618356101120
+    m_Key: Survive Alone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63413116436480
+    m_Key: Update yet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63605307834368
+    m_Key: ZombieAllkill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63615403524096
+    m_Key: TimerDone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64116136312832
+    m_Key: WaveStart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64380276801536
+    m_Key: maintenance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64885518467072
+    m_Key: Cancle building
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65301018804224
+    m_Key: ChangeWeapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66973292003328
+    m_Key: LevelUp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67366185041920
+    m_Key: Unbreakable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67791646851072
+    m_Key: Create
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68308678705152
+    m_Key: Notenough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69342960517120
+    m_Key: 'resourcefull
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69834885267456
+    m_Key: inventoryfull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70841597919232
+    m_Key: nothavepart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71625492365312
+    m_Key: partinstall
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72021556297728
+    m_Key: 'mineinstall
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72729860997120
+    m_Key: Generatoriuninstall
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307797883846656
+    m_Key: const
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307848605564928
+    m_Key: Skkiillll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307851017289728
+    m_Key: Paart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307852657262592
+    m_Key: Backckpack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307875784654848
+    m_Key: Atttttack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 330765653475328
+    m_Key: Small Container
+    m_Metadata:
+      m_Items: []
+  - m_Id: 330916983963648
+    m_Key: SmallContainers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331276742000640
+    m_Key: Big Container
+    m_Metadata:
+      m_Items: []
+  - m_Id: 333744431398912
+    m_Key: Big Containers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 334045351739392
+    m_Key: small generator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 334047897681920
+    m_Key: small generators
+    m_Metadata:
+      m_Items: []
+  - m_Id: 334335442386944
+    m_Key: Big generator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 334342086164480
+    m_Key: Big generators
+    m_Metadata:
+      m_Items: []
+  - m_Id: 334867590512640
+    m_Key: generator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335029754888192
+    m_Key: Warehouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335032216944640
+    m_Key: Workbench
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335565849853952
+    m_Key: Workbenchs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336335819210752
+    m_Key: Weapon Workbench
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336337471766528
+    m_Key: Weapon Workbenchs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336941900333056
+    m_Key: 'facilities
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337082824753152
+    m_Key: 'recovery facility
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337261040730112
+    m_Key: recovery facilitys
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337362341560320
+    m_Key: 'treatment facility
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337363310444544
+    m_Key: treatment facilitys
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339373724237824
+    m_Key: Silencer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339375485845504
+    m_Key: Razor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339787395858432
+    m_Key: LightDivice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339966383587328
+    m_Key: Hologram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 340094054006784
+    m_Key: Scope
+    m_Metadata:
+      m_Items: []
+  - m_Id: 340176602103808
+    m_Key: Handle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 340319418155008
+    m_Key: Controller
+    m_Metadata:
+      m_Items: []
+  - m_Id: 340523672371200
+    m_Key: Choke
+    m_Metadata:
+      m_Items: []
+  - m_Id: 340525329121280
+    m_Key: CartridgeBelt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341064569815040
+    m_Key: AXE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341193993453568
+    m_Key: katana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341250830467072
+    m_Key: Pistol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341335584768000
+    m_Key: Revolver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341383240450048
+    m_Key: Rifle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341435560198144
+    m_Key: Semi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341487485681664
+    m_Key: Shotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341634143715328
+    m_Key: Auto Shotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341778557796352
+    m_Key: Alarm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341780554285056
+    m_Key: Molotov
+    m_Metadata:
+      m_Items: []
+  - m_Id: 341945801474048
+    m_Key: Grenade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342055688044544
+    m_Key: Mine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342153708929024
+    m_Key: Basic Turret
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342156682690560
+    m_Key: Sniper Turret
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342317483917312
+    m_Key: Wooden Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342421448130560
+    m_Key: Metal Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342426363854848
+    m_Key: Iron Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343309164183552
+    m_Key: 'Pistols
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343699108626432
+    m_Key: Revolvers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343894705799168
+    m_Key: Rifl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343994156941312
+    m_Key: HalfAuto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344143264448512
+    m_Key: PumpShotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344259668967424
+    m_Key: AutoShotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 344423959855104
+    m_Key: Construction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345097447636992
+    m_Key: dead
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345979232944128
+    m_Key: DeadZombieCountFormat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 380135916666880
+    m_Key: Rebuild
+    m_Metadata:
+      m_Items: []
+  - m_Id: 380394197712896
+    m_Key: ruin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 380553518350336
+    m_Key: yesruin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382102189604864
+    m_Key: Rebuilds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393309747380224
+    m_Key: WeaponWorkbbench
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393571102851072
+    m_Key: wooden armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393844953153536
+    m_Key: materials
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394159454650368
+    m_Key: wooden button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394891054514176
+    m_Key: metalbutton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395222534553600
+    m_Key: metal armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395808348798976
+    m_Key: steel button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395944818868224
+    m_Key: steel armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 399793721933824
+    m_Key: Pistolbullet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 401546387357696
+    m_Key: pistol bullet button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 401664389906432
+    m_Key: Rifle Bullet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 404413269639168
+    m_Key: RifleBullet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 404638541512704
+    m_Key: ShotguShell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 409777708957696
+    m_Key: ShotgunShellbutton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412581202722816
+    m_Key: Razorname
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412620075532288
+    m_Key: Flashname
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412642255011840
+    m_Key: Scopename
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412660974190592
+    m_Key: Silencername
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412695854022656
+    m_Key: Muzzlename
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412720612999168
+    m_Key: Handlename
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412736769458176
+    m_Key: Chokename
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412774639828992
+    m_Key: ShotgunShellbeltname
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412887177199616
+    m_Key: BasicTurretname
+    m_Metadata:
+      m_Items: []
+  - m_Id: 412974917844992
+    m_Key: SniperTurretName
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413016412094464
+    m_Key: Minename
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413034799923200
+    m_Key: Ararmname
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413055372984320
+    m_Key: Molotovname
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413076977844224
+    m_Key: Grenadename
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413386727194624
+    m_Key: Hologramname
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7146448972180095193
+  references:
+    version: 2
+    RefIds:
+    - rid: 7146448972180095193
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1774240512280

@@ -5,6 +5,7 @@ using UnityEngine;
 public class HoldWeapon : MonoBehaviour
 {
     private List<Weapons.Weapon> weapons = new();
+    [SerializeField] private float yOffset = 0.5f;
     private SpriteRenderer spriteRenderer;
     private Transform child;
 
@@ -26,7 +27,7 @@ public class HoldWeapon : MonoBehaviour
             if (weapon.enabled)
             {
                 int index = weapon.poolManager.weaponIndex;
-                Vector2 targetOffset = weapon.offset[index];
+                Vector2 targetOffset = weapon.offset[index] + new Vector2(0, yOffset);
                 Sprite targetSprite = weapon.weapons[index];
                 bool isFlip = weapon.isFlip[index];
 

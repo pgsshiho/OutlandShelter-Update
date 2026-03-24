@@ -160,8 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC9C0\uB8B0</size>\n\n- \uC880\uBE44\uAC00 \uBC1F\uC73C\uBA74
-    \uD3ED\uBC1C\uD55C\uB2E4"
+  toolTipText: Mine
 --- !u!1 &266008603066690786
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,8 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uAE30\uBCF8 \uD3EC\uD0D1</size>\n\n- \uC0AC\uAC70\uB9AC\uAC00
-    \uC9E7\uC9C0\uB9CC \uACF5\uACA9 \uC18D\uB3C4\uAC00 \uBE60\uB974\uB2E4"
+  toolTipText: Basic Turret
 --- !u!1 &1222619342538090619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,7 +1022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uAD8C\uCD1D</size>\n\n- \uD3C9\uBC94\uD55C \uAD8C\uCD1D"
+  toolTipText: Pistol
 --- !u!1 &1608729507388395683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,8 +1183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC0F7\uAC74</size>\n\n- \uC77C\uC815 \uBC94\uC704 \uB0B4\uC758
-    \uC801\uC5D0\uAC8C \uBC94\uC704 \uACF5\uACA9\uC744 \uD55C\uB2E4"
+  toolTipText: Shotgun
 --- !u!1 &1647839155965330660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,8 +1494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC54C\uB78C\uC2DC\uACC4</size>\n\n- 5\uCD08\uAC04 \uC880\uBE44\uB97C
-    \uD55C \uACF3\uC73C\uB85C \uBAA8\uC544\uC900\uB2E4."
+  toolTipText: Alarm
 --- !u!1 &2585526288810055458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,7 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uB3C4\uB07C</size>\n\n- \uB290\uB9AC\uC9C0\uB9CC \uAC15\uD558\uB2E4"
+  toolTipText: AXE
 --- !u!1 &4102998752330584814
 GameObject:
   m_ObjectHideFlags: 0
@@ -2549,8 +2545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uCE74\uD0C0\uB098</size>\n\n- \uBE60\uB974\uC9C0\uB9CC
-    \uC57D\uD558\uB2E4"
+  toolTipText: katana
 --- !u!1 &4506226062654653604
 GameObject:
   m_ObjectHideFlags: 0
@@ -2711,8 +2706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uB098\uBB34 \uAC11\uC637</size>\n\n- \uBC29\uC5B4\uB825
-    5% \uC99D\uAC00"
+  toolTipText: Wooden Armor
 --- !u!1 &4560476473441503062
 GameObject:
   m_ObjectHideFlags: 0
@@ -3659,8 +3653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uD654\uC5FC\uBCD1</size>\n\n- \uC77C\uC815 \uBC94\uC704
-    \uB0B4\uC5D0 \uBD88 \uC7A5\uD310\uC774 \uC0DD\uAE34\uB2E4."
+  toolTipText: Molotov
 --- !u!1 &5644235493406314875
 GameObject:
   m_ObjectHideFlags: 0
@@ -3974,9 +3967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC790\uB3D9 \uC0F7\uAC74</size>\n\n- \uC0F7\uAC74\uBCF4\uB2E4
-    \uACF5\uACA9\uB825\uC740 \uC57D\uD558\uC9C0\uB9CC \uB2E4\uB978 \uBAA8\uB4E0 \uBA74\uC5D0\uC11C
-    \uB6F0\uC5B4\uB098\uB2E4"
+  toolTipText: Auto Shotgun
 --- !u!1 &5991744813581304959
 GameObject:
   m_ObjectHideFlags: 0
@@ -4212,8 +4203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC800\uACA9 \uD3EC\uD0D1</size>\n\n- \uC0AC\uAC70\uB9AC\uAC00
-    \uAE38\uC9C0\uB9CC \uACF5\uACA9 \uC18D\uB3C4\uAC00 \uB290\uB9AC\uB2E4"
+  toolTipText: Sniper Turret
 --- !u!1 &6065246702247149866
 GameObject:
   m_ObjectHideFlags: 0
@@ -4601,8 +4591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uC18C\uCD1D</size>\n\n- \uACF5\uACA9 \uC18D\uB3C4\uAC00
-    \uBE60\uB974\uC9C0\uB9CC \uBA85\uC911\uB960\uC774 \uB0AE\uB2E4"
+  toolTipText: Rifle
 --- !u!1 &7315994432547253955
 GameObject:
   m_ObjectHideFlags: 0
@@ -4763,8 +4752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uBC18\uC790\uB3D9\uC18C\uCD1D</size>\n\n- \uB290\uB9AC\uC9C0\uB9CC
-    \uB192\uC740 \uBA85\uC911\uB960\uC744 \uAC00\uC84C\uB2E4"
+  toolTipText: Semi
 --- !u!1 &7808176308982564145
 GameObject:
   m_ObjectHideFlags: 0

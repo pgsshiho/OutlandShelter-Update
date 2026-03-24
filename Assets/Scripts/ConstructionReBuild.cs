@@ -91,7 +91,7 @@ public class ConstructionReBuild : Guide
         }
         else
         {
-            Notion.Warning("자원이 부족합니다");
+            Notion.Warning("Notenough".Localize());
         }
     }
 

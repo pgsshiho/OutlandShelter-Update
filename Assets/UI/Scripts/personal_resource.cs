@@ -87,7 +87,7 @@ public class Personal_resource : MonoBehaviour, IDamageable, IEnemyAttackable
 
                 curExp -= needExp;
 
-                Notion.Log("레벨업!!");
+                Notion.Log("LevelUp".Localize());
 
                 needExp += 100;
             }
@@ -141,7 +141,7 @@ public class Personal_resource : MonoBehaviour, IDamageable, IEnemyAttackable
 
         if (TechTreeUnlock.finalResistance && nowhp < 1)
         {
-            Notion.Log("불굴 발동!!!");
+            Notion.Log("Unbreakable".Localize());
             nowhp = 1;
             TechTreeUnlock.finalResistance = false;
         }
