@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 825cfc762b3fa70468dabdb20145617d
+guid: 048944d5800cb6f4481110931c83d27e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,51 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: manEater_move_0
+      name: manEater_attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b0dcc9f2251d434d98b9eb73417e305
+      internalID: -1126414977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manEater_attack_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebcbe71bb7d6f146b30141941fb9773
+      internalID: 479495594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manEater_attack_2
       rect:
         serializedVersion: 2
         x: 0
@@ -138,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1c2d0509f7ae694ea7fd0c79e71b8f6
-      internalID: 1645700671
+      spriteID: e0e5d702200593541a3066af43a5511f
+      internalID: 1228993909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: manEater_move_1
+      name: manEater_attack_3
       rect:
         serializedVersion: 2
         x: 0
@@ -160,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84755360505971d429a1e130dbcc5ff1
-      internalID: -338352094
+      spriteID: aee589db4c3c2864a8d356b24b826e1d
+      internalID: 1383464864
       vertices: []
       indices: 
       edges: []
@@ -180,10 +224,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":2.0},"gridSpriteSize":{"x":160.0,"y":160.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":4.0},"gridSpriteSize":{"x":160.0,"y":160.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      manEater_move_0: 1645700671
-      manEater_move_1: -338352094
+      manEater_attack_0: -1126414977
+      manEater_attack_1: 479495594
+      manEater_attack_2: 1228993909
+      manEater_attack_3: 1383464864
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

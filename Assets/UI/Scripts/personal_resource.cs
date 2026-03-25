@@ -9,7 +9,7 @@ public class Personal_resource : MonoBehaviour, IDamageable, IEnemyAttackable
 {
     [HideInInspector] public PlayerBag bag;
     public static Personal_resource instance;
-
+    public bool isInfect = false;
     public int Wooden
     {
         get
