@@ -678,21 +678,20 @@ MonoBehaviour:
   - m_Id: 394159454650368
     m_Localized: '<size=50>Wooden Armor</size>
 
-      
 
-      - Defense increased
-      by 5%'
+
+      - Defense increased by 5%'
     m_Metadata:
       m_Items: []
   - m_Id: 394891054514176
     m_Localized: '<size=50>Metal Armor</size>
 
-      
 
-      - Defense increased
-      by 10%
 
-      - Movement speed decreased by 5%'
+      - Defense increased by 10%
+
+      -
+      Movement speed decreased by 5%'
     m_Metadata:
       m_Items: []
   - m_Id: 395222534553600
@@ -702,12 +701,12 @@ MonoBehaviour:
   - m_Id: 395808348798976
     m_Localized: '<size=50>Iron Armor</size>
 
-      
 
-      - Defense increased
-      by 20%
 
-      - Movement speed decreased by 15%'
+      - Defense increased by 20%
+
+      -
+      Movement speed decreased by 15%'
     m_Metadata:
       m_Items: []
   - m_Id: 395944818868224
@@ -721,19 +720,19 @@ MonoBehaviour:
   - m_Id: 401546387357696
     m_Localized: '<size=50>Pistol Bullet</size>
 
-      
 
-      - Bullets needed
-      to use pistol-type weapons'
+
+      - Bullets needed to use
+      pistol-type weapons'
     m_Metadata:
       m_Items: []
   - m_Id: 401664389906432
     m_Localized: '<size=50>Rifle Bullet</size>
 
-      
 
-      - Bullets needed
-      to use rifle-type weapons'
+
+      - Bullets needed to use rifle-type
+      weapons'
     m_Metadata:
       m_Items: []
   - m_Id: 404413269639168
@@ -747,10 +746,10 @@ MonoBehaviour:
   - m_Id: 409777708957696
     m_Localized: '<size=50>Shotgun Shells</size>
 
-      
 
-      - Shells needed
-      to use shotgun-type weapons'
+
+      - Shells needed to use
+      shotgun-type weapons'
     m_Metadata:
       m_Items: []
   - m_Id: 412581202722816
@@ -811,6 +810,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 413076977844224
     m_Localized: Grenade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 791654508756992
+    m_Localized: Production is complete!!!
     m_Metadata:
       m_Items: []
   references:

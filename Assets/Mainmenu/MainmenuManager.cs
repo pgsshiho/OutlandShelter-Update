@@ -18,7 +18,7 @@ public class MainmenuManager : MonoBehaviour
     [SerializeField] GameObject page6;
     [SerializeField] GameObject page7;
     [SerializeField] GameObject manual;
-
+    [SerializeField] public static bool isLong;
     public void Update()
     {
         if (credits == true)
@@ -115,20 +115,44 @@ public class MainmenuManager : MonoBehaviour
 
     public void GoMapA()
     {
-        OnAnyButtonClicked?.Invoke();
-        SceneChanger.BG("MapA");
+        if (!isLong)
+        {
+            OnAnyButtonClicked?.Invoke();
+            SceneChanger.BG("MapA");
+        }
+        else
+        {
+            OnAnyButtonClicked?.Invoke();
+            SceneChanger.BG("MapALong");
+        }
     }
 
     public void GoMapB()
     {
-        OnAnyButtonClicked?.Invoke();
-        SceneChanger.BG("MapB");
+        if (!isLong)
+        {
+            OnAnyButtonClicked?.Invoke();
+            SceneChanger.BG("MapB");
+        }
+        else
+        {
+            OnAnyButtonClicked?.Invoke();
+            SceneChanger.BG("MapBLong");
+        }
     }
 
     public void GoMapC()
     {
-        OnAnyButtonClicked?.Invoke();
-        SceneChanger.BG("MapC");
+        if (!isLong)
+        {
+            OnAnyButtonClicked?.Invoke();
+            SceneChanger.BG("MapC");
+        }
+        else
+        {
+            OnAnyButtonClicked?.Invoke();
+            SceneChanger.BG("MapCLong");
+        }
     }
 
     public void Page1()
@@ -173,8 +197,8 @@ public class MainmenuManager : MonoBehaviour
         page7.SetActive(true);
         page6.SetActive(false);
     }
-    public void ChangeLagua()
+    public void ChangeLong()
     {
-
+        isLong = !isLong;
     }
 }

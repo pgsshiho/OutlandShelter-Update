@@ -20,6 +20,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     [SerializeField] protected int dropExp;
     [SerializeField] protected int dropMatarial;
     protected bool isDead = false;
+
     protected float HpBar
     {
         set
@@ -34,14 +35,12 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
             hpBar.fillAmount = value;
         }
     }
+
     public Vector2 offset = new(0, 1.5f);
     protected Animator anim;
     protected SpriteRenderer spriteRenderer;
-
     [SerializeField] protected float range = 2;
-
     [SerializeField] protected int zombieIndex;
-
     protected Collider2D col;
 
     protected Vector3 Position
@@ -64,9 +63,21 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     {
         col.enabled = true;
         isDead = false;
-        HP += 10 * MapManager.waveCount;
-        hp = HP;
 
+        if (MainmenuManager.isLong)
+        {
+            // 20웨이브 기준: 초기 체력 80%, 웨이브당 증가치 60%
+            HP = 8f + (6f * MapManager.waveCount);
+            // 공격력 70% 수준 (3 * 0.7 = 2.1 -> 약 2)
+            damage = Mathf.Max(1, Mathf.RoundToInt(3f * 0.7f));
+        }
+        else
+        {
+            HP = 10f + (10f * MapManager.waveCount);
+            damage = 3;
+        }
+
+        hp = HP;
         HpBar = hp / HP;
 
         Transform temp = hpBar.transform.parent;
@@ -76,16 +87,14 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         }
 
         canAttack = true;
-
         temp.gameObject.SetActive(true);
     }
 
     protected virtual void Update()
     {
-        target = SelectTarget(); // 타겟 지정
+        target = SelectTarget();
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(Position, range);
-
         bool inRange = false;
 
         foreach (Collider2D hit in hits)
@@ -123,7 +132,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
                     PlayerAvoidSkill.targetPos = Position;
                 }));
             }
-            
+
             StartCoroutine(WaitAction.wait(() => { return spriteRenderer.sprite.name[^1] == '3'; }, () =>
             {
                 if (temp) PlayerAvoidSkill.useable = false;
@@ -137,13 +146,13 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y / 1000f);
 
-        if (hpBar.transform.parent.gameObject.activeSelf) hpBar.transform.parent.position = Camera.main.WorldToScreenPoint(transform.position + (Vector3)offset);
+        if (hpBar.transform.parent.gameObject.activeSelf)
+            hpBar.transform.parent.position = Camera.main.WorldToScreenPoint(transform.position + (Vector3)offset);
     }
 
     protected virtual void Attack(Transform target)
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(Position, range);
-
         bool inRange = false;
 
         foreach (Collider2D hit in hits)
@@ -172,7 +181,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
             else if (target.TryGetComponent(out IDamageable player))
             {
                 Vector2 direction = (targetPos - Position).normalized;
-                player.Damage(damage, direction * knockBackForce, AttackType.Close,0.1f);
+                player.Damage(damage, direction * knockBackForce, AttackType.Close, 0.1f);
             }
         }
     }
@@ -180,7 +189,6 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     protected virtual Transform SelectTarget()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(Position, 1000, ~wall);
-
         List<Collider2D> targets = new();
 
         foreach (Collider2D hit in hits)
@@ -194,15 +202,12 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         if (targets.Count != 0)
         {
             targets.Sort((c1, c2) => Vector2.Distance(Position, c1.transform.position).CompareTo(Vector2.Distance(Position, c2.transform.position)));
-
             targetPos = targets[0].transform.position + (Vector3)targets[0].offset;
-
             return targets[0].transform;
         }
         else
         {
             targetPos = Position;
-
             return null;
         }
     }
@@ -224,10 +229,14 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
         MapManager.currentZombieCount--;
 
-        Personal_resource.CurExp += dropExp;
-        Personal_resource.instance.Metal += dropMatarial;
+        // 보상 60% 조정 (웨이브가 2배 길어졌으므로)
+        int finalExp = MainmenuManager.isLong ? Mathf.Max(1, Mathf.RoundToInt(dropExp * 0.6f)) : dropExp;
+        int finalMat = MainmenuManager.isLong ? Mathf.Max(1, Mathf.RoundToInt(dropMatarial * 0.6f)) : dropMatarial;
 
-        Notion.Log($"+{dropExp}EXP, +{dropMatarial}Metal");
+        Personal_resource.CurExp += finalExp;
+        Personal_resource.instance.Metal += finalMat;
+
+        Notion.Log($"+{finalExp}EXP, +{finalMat}Metal");
 
         GameObject temp = ObjectPoolManager.instance[Kind.ZombieDeathEffect].Pool.Get();
         temp.transform.position = transform.position;
@@ -256,7 +265,6 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     {
         if (isDead) return;
         hp = Mathf.Clamp(hp - damage, 0, hp);
-
         HpBar = hp / HP;
 
         if (hp == 0) { isDead = true; Death(); }
