@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainmenuManager : MonoBehaviour
 {
@@ -32,7 +33,19 @@ public class MainmenuManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape)) { settingPanel.SetActive(false); mainMenuPanel.SetActive(true); }
         }
     }
-
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void OnDisable()
+    {
+        // 오브젝트가 비활성화될 때 이벤트 연결 해제 (메모리 누수 방지)
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        isLong = false;
+    }
     public void Starts()
     {
         OnAnyButtonClicked?.Invoke();

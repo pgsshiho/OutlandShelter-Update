@@ -218,6 +218,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     public virtual void Death()
     {
         if (isDead) return;
+        isDead = true;
         stack++;
         increaseSpeed = 1 + TechTreeUnlock.continuousIncreaseMoveSpeed * Mathf.Clamp(stack, 0, TechTreeUnlock.S22MAXOVERWRAP);
         StartCoroutine(WaitAction.wait(3f, () =>
@@ -267,7 +268,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         hp = Mathf.Clamp(hp - damage, 0, hp);
         HpBar = hp / HP;
 
-        if (hp == 0) { isDead = true; Death(); }
+        if (hp == 0) { Death(); }
     }
 
     protected virtual void OnCollisionStay2D(Collision2D collision)
