@@ -89,7 +89,8 @@ GameObject:
   - component: {fileID: 7104137639548614860}
   - component: {fileID: 1016953814431525864}
   - component: {fileID: 6360790140705104625}
-  m_Layer: 0
+  - component: {fileID: 9127426343037663375}
+  m_Layer: 7
   m_Name: Bomber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +216,7 @@ MonoBehaviour:
   dropMatarial: 3
   offset: {x: 0, y: 1.5}
   range: 2
-  zombieIndex: 0
+  zombieIndex: 6
   explosionRadius: 2
   explosionDamage: 20
   selfDestructRange: 2.5
@@ -234,6 +235,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9240077ff8a1c4b92250c2d0755cd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoLayerControl
+--- !u!70 &9127426343037663375
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4042536656534418334}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.6, y: 1.6}
+  m_Direction: 0
 --- !u!1 &7550355191892529058
 GameObject:
   m_ObjectHideFlags: 0
