@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 901373693773354945}
   - component: {fileID: 7621868372524063491}
   - component: {fileID: 1953532694355233567}
-  m_Layer: 0
+  - component: {fileID: 6987967698519771058}
+  m_Layer: 7
   m_Name: Eater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +153,44 @@ MonoBehaviour:
   offset: {x: 0, y: 1.5}
   range: 2
   zombieIndex: 7
-  melten: {fileID: 0}
+  melten: {fileID: 4025666261397585445, guid: 04652ba650fe0774a8f57645819d6269, type: 3}
+--- !u!70 &6987967698519771058
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116881483001781960}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.6, y: 1.6}
+  m_Direction: 0
 --- !u!1 &4532580733277897354
 GameObject:
   m_ObjectHideFlags: 0

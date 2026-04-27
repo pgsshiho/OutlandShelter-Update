@@ -125,7 +125,7 @@ public class Personal_resource : MonoBehaviour, IDamageable, IEnemyAttackable
 
     public GameObject backpack;
 
-    public void Damage(float damage, Vector2 knockBackDirection = new Vector2(), AttackType type = AttackType.None, float stiffenTime = 0.2f)
+    public void Damage(float damage, Vector2 knockBackDirection = new Vector2(), AttackType type = AttackType.None, float stiffenTime = 0.15f)
     {
         bool isEquipedArmor = ItemOwnManager.ownWeapon[Kind.Armor][ObjectPoolManager.instance[Kind.Armor].weaponIndex];
 

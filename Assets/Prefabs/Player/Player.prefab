@@ -207,7 +207,7 @@ MonoBehaviour:
   kind: 1
   distanceBetweenPlayer:
   - 1
-  - 0.75
+  - 0.8
   isFlip: 0000
   offset:
   - {x: 0, y: 1}
