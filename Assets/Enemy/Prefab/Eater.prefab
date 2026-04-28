@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7621868372524063491}
   - component: {fileID: 1953532694355233567}
   - component: {fileID: 6987967698519771058}
+  - component: {fileID: -2599436455408144771}
   m_Layer: 7
   m_Name: Eater
   m_TagString: Untagged
@@ -151,7 +152,7 @@ MonoBehaviour:
   dropExp: 20
   dropMatarial: 10
   offset: {x: 0, y: 1.5}
-  range: 2
+  range: 4
   zombieIndex: 7
   melten: {fileID: 4025666261397585445, guid: 04652ba650fe0774a8f57645819d6269, type: 3}
 --- !u!70 &6987967698519771058
@@ -191,6 +192,33 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.6, y: 1.6}
   m_Direction: 0
+--- !u!50 &-2599436455408144771
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116881483001781960}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: cbe8c82a37d3a9b4eb75dd3899b374c0, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &4532580733277897354
 GameObject:
   m_ObjectHideFlags: 0

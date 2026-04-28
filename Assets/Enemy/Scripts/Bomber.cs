@@ -73,7 +73,6 @@ public class Bomber : BasicZombie
     {
         if (hasExploded) return;
         hasExploded = true;
-        isDead = true;
 
         // 범위 피해 및 감염 처리
         Explode();

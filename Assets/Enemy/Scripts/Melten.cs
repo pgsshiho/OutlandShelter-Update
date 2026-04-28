@@ -12,7 +12,17 @@ public class Melten : BasicZombie
         base.Update();
         damageTimer += Time.deltaTime;
     }
-
+    // BasicZombie 클래스 안에 추가
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + (Vector3)GetComponent<Collider2D>().offset, range);
+    }
+    public override void Death()
+    {
+        MapManager.currentZombieCount++;
+        base.Death();
+    }
     protected override void Attack(Transform target) { }
 
     protected override void OnCollisionStay2D(Collision2D collision)

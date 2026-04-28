@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7437848804756445101}
   - component: {fileID: 1245804036974637943}
   - component: {fileID: 7522592734843274146}
+  - component: {fileID: 3117394845060316645}
+  - component: {fileID: -4275316092309562495}
   - component: {fileID: 4085472831625480911}
   - component: {fileID: 4637335545977037350}
-  - component: {fileID: 3117394845060316645}
   m_Layer: 7
   m_Name: Bigbody
   m_TagString: Untagged
@@ -117,42 +118,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4085472831625480911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333617093806041205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c9240077ff8a1c4b92250c2d0755cd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AutoLayerControl
---- !u!114 &4637335545977037350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333617093806041205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0487abda4f73d484e81c5b3340072be6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Worker
-  speed: 3
-  target: {fileID: 0}
-  HP: 30
-  damage: 3
-  attackCool: 0.7
-  hpBar: {fileID: 2105308588839945215}
-  knockBackForce: 0
-  dropExp: 20
-  dropMatarial: 10
-  offset: {x: 0, y: 1.5}
-  range: 2
-  zombieIndex: 9
 --- !u!70 &3117394845060316645
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -190,6 +155,69 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 2, y: 2}
   m_Direction: 0
+--- !u!50 &-4275316092309562495
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333617093806041205}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: cbe8c82a37d3a9b4eb75dd3899b374c0, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &4085472831625480911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333617093806041205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9240077ff8a1c4b92250c2d0755cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoLayerControl
+--- !u!114 &4637335545977037350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333617093806041205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0487abda4f73d484e81c5b3340072be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Worker
+  speed: 3
+  target: {fileID: 0}
+  HP: 30
+  damage: 3
+  attackCool: 0.7
+  hpBar: {fileID: 2105308588839945215}
+  knockBackForce: 0
+  dropExp: 20
+  dropMatarial: 10
+  offset: {x: 0, y: 1.5}
+  range: 4
+  zombieIndex: 9
 --- !u!1 &3333196029427621525
 GameObject:
   m_ObjectHideFlags: 0

@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 7425562278483292575}
   - component: {fileID: 5036885850268931195}
   - component: {fileID: 4613597114141936882}
+  - component: {fileID: 6700791144783978110}
   m_Layer: 7
   m_Name: Charger
   m_TagString: Untagged
@@ -380,6 +381,33 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.6, y: 1.6}
   m_Direction: 0
+--- !u!50 &6700791144783978110
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725732071208107759}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: cbe8c82a37d3a9b4eb75dd3899b374c0, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &9183368700989374787
 GameObject:
   m_ObjectHideFlags: 0
