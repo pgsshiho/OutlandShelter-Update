@@ -7,11 +7,11 @@ using UnityEngine.Pool;
 namespace Weapons
 {
     /// <summary>
-    /// ±ÙÁ¢¹«±â¸¦ °üÀåÇÏ´Â Å¬·¡½º
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     public class Melee : Weapon
     {
-        // Ä® Ãß°¡ ÈÄ ¼ÒÈ¯ Å¸ÀÌ¹Ö Á¶Á¤ ¿¹Á¤
+        // Ä® ï¿½ß°ï¿½ ï¿½ï¿½ ï¿½ï¿½È¯ Å¸ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         public override void Attack()
         {
             if (canAttack)

@@ -66,7 +66,11 @@ public class WorkingManager : MonoBehaviour
                 WorkbenchInputTask.taskQueue.Dequeue();
                 task.isComplete = true;
                 task.taskBar.transform.parent.gameObject.SetActive(false);
-                Notion.Log("Production is complete!!!".Localize("En",task.itemName));
+                Notion.Log("Production is complete!!!".Localize("En", task.itemName));
+                if (SFXReference.Instance.making != null)
+                { 
+                    SoundManager.SFX.PlayOneShot(SFXReference.Instance.making, 1f);
+                }
                 Invoke(task.itemName, 0f);
             }
         }

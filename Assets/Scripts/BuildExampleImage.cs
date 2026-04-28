@@ -74,7 +74,10 @@ public class BuildExampleImage : MonoBehaviour
                 && !IsOverlap(transform.position, transform.localScale, area.constraints.GetRange(1, area.constraints.Count - 1)))
             {
                 GameObject temp = Instantiate(building, transform.position, Quaternion.identity);
-
+                if (SFXReference.Instance.construct != null)
+                {
+                    SoundManager.SFX.PlayOneShot(SFXReference.Instance.construct, 0.7f);
+                }
                 if (temp.TryGetComponent(out ResourceReturn _return))
                 {
                     _return.returnResources.wooden = price.wooden / 3;

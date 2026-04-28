@@ -13,7 +13,10 @@ public class SFXReference : MonoBehaviour
     public AudioClip bomb;
     public AudioClip fire;
     public AudioClip alram;
-
+    public AudioClip startWave;
+    public AudioClip zombieDie;
+    public AudioClip construct;
+    public AudioClip making;
     private void Awake()
     {
         _instance = this;
