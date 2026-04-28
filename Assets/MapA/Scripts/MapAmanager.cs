@@ -128,6 +128,10 @@ public class MapManager : MonoBehaviour
 
     public void StartWave()
     {
+        if (SFXReference.Instance.startWave != null)
+        {
+            SoundManager.SFX.PlayOneShot(SFXReference.Instance.startWave, 0.5f);
+        }
         Personal_resource.NowHP += Personal_resource.MaxHP * TechTreeUnlock.afterEndWaveRecoverHP;
         isWave = true;
         waveEnded = false;

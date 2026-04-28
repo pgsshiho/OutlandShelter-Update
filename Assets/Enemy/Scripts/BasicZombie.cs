@@ -229,16 +229,17 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         deathCount++;
 
         MapManager.currentZombieCount--;
-
-        // 보상 60% 조정 (웨이브가 2배 길어졌으므로)
         int finalExp = MainmenuManager.isLong ? Mathf.Max(1, Mathf.RoundToInt(dropExp * 0.6f)) : dropExp;
         int finalMat = MainmenuManager.isLong ? Mathf.Max(1, Mathf.RoundToInt(dropMatarial * 0.6f)) : dropMatarial;
-
-        Personal_resource.CurExp += finalExp;
+       
+            Personal_resource.CurExp += finalExp;
         Personal_resource.instance.Metal += finalMat;
 
         Notion.Log($"+{finalExp}EXP, +{finalMat}Metal");
-
+        if (SFXReference.Instance.zombieDie != null)
+        {
+            SoundManager.SFX.PlayOneShot(SFXReference.Instance.zombieDie, 0.5f);
+        }
         GameObject temp = ObjectPoolManager.instance[Kind.ZombieDeathEffect].Pool.Get();
         temp.transform.position = transform.position;
 

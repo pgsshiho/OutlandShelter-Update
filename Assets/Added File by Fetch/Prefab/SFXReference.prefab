@@ -52,3 +52,7 @@ MonoBehaviour:
   bomb: {fileID: 8300000, guid: 12b7131b5eb925d4e97cb87a021de1d4, type: 3}
   fire: {fileID: 8300000, guid: f09d1bc67dd7a6040b496eae45f2ee77, type: 3}
   alram: {fileID: 8300000, guid: 43c1b9dfea1d0954f8262364ac8e2b5a, type: 3}
+  startWave: {fileID: 8300000, guid: 1a82b4116763a804aafac1df624f556c, type: 3}
+  zombieDie: {fileID: 8300000, guid: bf5f866c3c6ec044e84810ce3d21f2d1, type: 3}
+  construct: {fileID: 8300000, guid: a28f7373dcf17f542a29b057c9e384e8, type: 3}
+  making: {fileID: 8300000, guid: 7a17b6fb166e4c247b7964bc0ae50ee7, type: 3}
