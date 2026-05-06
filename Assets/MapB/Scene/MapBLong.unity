@@ -37148,6 +37148,26 @@ PrefabInstance:
       propertyPath: loadingGuide
       value: 
       objectReference: {fileID: 1492133349}
+    - target: {fileID: 7574697281784294165, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: coolTime.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574697281784294165, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: deviation.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574697281784294165, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: 'coolTime.Array.data[6]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574697281784294165, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: distanceBetweenPlayer.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574697281784294165, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: 'distanceBetweenPlayer.Array.data[6]'
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9027600650229844998, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
       propertyPath: mineCount
       value: 
@@ -38750,6 +38770,10 @@ PrefabInstance:
     - target: {fileID: 1222619342538090619, guid: 6e864ad1af64fce4491ee26cf6701782, type: 3}
       propertyPath: m_Name
       value: WeaponChangeUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560476473441503062, guid: 6e864ad1af64fce4491ee26cf6701782, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5646605524706103150, guid: 6e864ad1af64fce4491ee26cf6701782, type: 3}
       propertyPath: m_Pivot.x

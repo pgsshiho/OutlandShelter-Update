@@ -569,6 +569,10 @@ MonoBehaviour:
     m_Key: Production is complete!!!
     m_Metadata:
       m_Items: []
+  - m_Id: 13438963163824128
+    m_Key: RPG
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

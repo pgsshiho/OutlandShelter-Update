@@ -14,6 +14,12 @@ public class ChangeWeapon : MonoBehaviour
 
     private void Update()
     {
+        if (weapon is Weapons.Gun g && g.poolManager.weaponIndex == 6 && Weapons.Weapon.isAttacking == false)
+        {
+            // RPG를 들고 있을 때는 숫자키 입력을 무시하도록 함
+            // 단, 발사 후 소유권이 false가 되면 다시 교체 가능해짐
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             weapon = GetComponent<Weapons.Hammer>();

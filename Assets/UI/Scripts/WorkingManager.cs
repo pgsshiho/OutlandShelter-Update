@@ -238,4 +238,18 @@ public class WorkingManager : MonoBehaviour
     {
         ItemOwnManager.ownWeapon[Kind.Gun][5] = true;
     }
+    private void RPG()
+    {
+        int rpgIndex = 6; // RPG 인덱스 번호
+        ItemOwnManager.ownWeapon[Kind.Gun][rpgIndex] = true;
+
+        // 추가 액션: 제작 완료 시 유저에게 강제로 장착시키기
+        var playerWeapon = FindAnyObjectByType<Weapons.Gun>();
+        if (playerWeapon != null && playerWeapon.kind == Kind.Gun)
+        {
+            Weapon.WeaponChange(playerWeapon, rpgIndex);
+        }
+        BulletManager.granadeLauncherBullet += 1;
+        Notion.Log("Special RPG Crafted: One shot only.");
+    }
 }
