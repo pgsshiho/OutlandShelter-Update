@@ -54,9 +54,19 @@ public class ObjectPoolManager : MonoBehaviour
     // ����
     private GameObject CreatePooledItem()
     {
-        int index = clones[weaponIndex].Count;
-        clones[weaponIndex].Add(Instantiate(summonPrefab[weaponIndex]));
-        return clones[weaponIndex][index];
+        GameObject go = Instantiate(summonPrefab[weaponIndex]);
+
+        // 2. 생성된 오브젝트에 "너의 주인(Pool)은 얘야"라고 알려줍니다. (가장 중요!)
+        if (go.TryGetComponent(out SummonRPG rpg))
+        {
+            rpg.pool = pool[weaponIndex];
+        }
+
+        // 3. 리스트에 기록하고 오브젝트를 반환합니다.
+        if (!clones.ContainsKey(weaponIndex)) clones[weaponIndex] = new List<GameObject>();
+        clones[weaponIndex].Add(go);
+
+        return go;
     }
 
     // ���

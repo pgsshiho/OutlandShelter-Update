@@ -249,7 +249,6 @@ public class WorkingManager : MonoBehaviour
         {
             Weapon.WeaponChange(playerWeapon, rpgIndex);
         }
-        BulletManager.granadeLauncherBullet += 1;
         Notion.Log("Special RPG Crafted: One shot only.");
     }
 }

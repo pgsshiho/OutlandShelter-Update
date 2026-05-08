@@ -40,7 +40,12 @@ public class SummonRPG : SummonObject
         }
 
         // 이펙트 생성 및 풀 복귀
-        // Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        if (SFXReference.Instance.rpgShot != null)
+        {
+            SoundManager.SFX.PlayOneShot(SFXReference.Instance.rpgShot, 0.5f);
+        }
+        Destroy(effect, 2.0f); // 2초 뒤 삭제 (이펙트 길이에 맞춰 조절)
         pool.Release(gameObject);
     }
 }

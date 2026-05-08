@@ -56,3 +56,4 @@ MonoBehaviour:
   zombieDie: {fileID: 8300000, guid: bf5f866c3c6ec044e84810ce3d21f2d1, type: 3}
   construct: {fileID: 8300000, guid: a28f7373dcf17f542a29b057c9e384e8, type: 3}
   making: {fileID: 8300000, guid: 7a17b6fb166e4c247b7964bc0ae50ee7, type: 3}
+  rpgShot: {fileID: 8300000, guid: 21d44dd4c7a201f498602480ce37bcb8, type: 3}
