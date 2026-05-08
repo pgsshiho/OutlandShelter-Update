@@ -69,6 +69,36 @@ namespace Weapons
                         poolManager.Pool.Release(temp);
                     }));
                 }
+                else if(poolManager.weaponIndex == 6)
+                {
+                    SoundManager.SFX.PlayOneShot(SFXReference.Instance.rpgShot); // RPG 발사음
+
+                    GameObject temp = poolManager.Pool.Get();
+                    temp.transform.parent = attackPivot;
+
+                    // 위치 설정 (기존 총구 오프셋 활용)
+                    temp.transform.localPosition = new Vector3(fireXOffset, characterHandHeight + distanceBetweenPlayer[poolManager.weaponIndex], 0);
+                    temp.transform.localEulerAngles = Vector3.zero;
+                    temp.transform.parent = null;
+
+                    // RPG 탄두 속도 및 물리 설정
+                    Rigidbody2D rpgRb = temp.GetComponent<Rigidbody2D>();
+                    rpgRb.linearVelocity = shotSpeed * 0.5f * temp.transform.up; // RPG는 보통 탄속이 느림
+
+                    // RPG 전용 스크립트가 있다면 데이터 전달
+                    if (temp.TryGetComponent(out SummonRPG rpgScript))
+                    {
+                        rpgScript.pool = poolManager.Pool;
+                    }
+                    loadedBullet[poolManager.weaponIndex] = 0;
+                    canAttack = false;
+
+                    // 무기 소유권 박탈 (내려놓지도 못하게 하려면 인벤토리에서 제거)
+                    ItemOwnManager.ownWeapon[Kind.Gun][6] = false;
+
+                    // 알림 메시지
+                    Notion.Log("The RPG has been used and is no longer available.");
+                }
                 // 샷건 및 오토 샷건 (4, 5번)
                 else
                 {
@@ -129,8 +159,15 @@ namespace Weapons
                 StartCoroutine(Reloding());
             }
 
-            string currentBulletCount = (poolManager.weaponIndex <= 1 ? BulletManager.pistolBullet : poolManager.weaponIndex <= 3 ? BulletManager.rifleBullet : BulletManager.shotGunBullet).ToString();
-            if (!TechTreeUnlock.isRelodingSkip) bullet.text = $"{loadedBullet[poolManager.weaponIndex]}/{currentBulletCount}";
+            string currentBulletCount = "";
+            int idx = poolManager.weaponIndex;
+
+            if (idx == 6) currentBulletCount = BulletManager.granadeLauncherBullet.ToString();
+            else if (idx <= 1) currentBulletCount = BulletManager.pistolBullet.ToString();
+            else if (idx <= 3) currentBulletCount = BulletManager.rifleBullet.ToString();
+            else currentBulletCount = BulletManager.shotGunBullet.ToString();
+
+            if (!TechTreeUnlock.isRelodingSkip) bullet.text = $"{loadedBullet[idx]}/{currentBulletCount}";
             else bullet.text = currentBulletCount;
 
             if (attackPivot.eulerAngles.z < 180 && !priDirection) weaponRenderer.flipX = true;
@@ -168,13 +205,23 @@ namespace Weapons
             int capacity = Mathf.FloorToInt(oneMagazine[index] * TechTreeUnlock.magazineCapacity);
             if (capacity - loadedBullet[index] > 0)
             {
+                // index 4(샷건)가 아닌 경우들 (권총, 소총, RPG 등)
                 if (index != 4)
                 {
                     yield return new WaitForSeconds(time * TechTreeUnlock.reloadingTime);
-                    int currentInv = (index <= 1 ? BulletManager.pistolBullet : index <= 3 ? BulletManager.rifleBullet : BulletManager.shotGunBullet);
+
+                    // 인벤토리 탄약 결정
+                    int currentInv;
+                    if (index == 6) currentInv = BulletManager.granadeLauncherBullet; // RPG 전용
+                    else if (index <= 1) currentInv = BulletManager.pistolBullet;
+                    else if (index <= 3) currentInv = BulletManager.rifleBullet;
+                    else currentInv = BulletManager.shotGunBullet;
+
                     int reloadCount = Mathf.Clamp(capacity - loadedBullet[index], 0, currentInv);
 
-                    if (index <= 1) BulletManager.pistolBullet -= reloadCount;
+                    // 인벤토리에서 차감
+                    if (index == 6) BulletManager.granadeLauncherBullet -= reloadCount;
+                    else if (index <= 1) BulletManager.pistolBullet -= reloadCount;
                     else if (index <= 3) BulletManager.rifleBullet -= reloadCount;
                     else BulletManager.shotGunBullet -= reloadCount;
 

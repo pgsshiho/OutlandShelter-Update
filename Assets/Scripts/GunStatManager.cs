@@ -9,7 +9,8 @@ public enum GunKind
     Rifle = 2,
     HalfAutoRifle = 3,
     Shotgun = 4,
-    AutoShotgun = 5
+    AutoShotgun = 5,
+    RPG = 6
 }
 
 public class GunStatManager

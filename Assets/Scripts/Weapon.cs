@@ -24,7 +24,8 @@ public enum Gun
     None = 0,
     Pistol = 1,
     Rifle = 2,
-    ShotGun = 3
+    ShotGun = 3,
+    Granadelauncher = 4
 }
 
 public enum Mine
