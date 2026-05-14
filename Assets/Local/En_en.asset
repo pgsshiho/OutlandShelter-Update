@@ -820,6 +820,10 @@ MonoBehaviour:
     m_Localized: RPG
     m_Metadata:
       m_Items: []
+  - m_Id: 17700678856572928
+    m_Localized: This game uses the 'MapleStory' font provided by NEXON Korea Corporation.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
