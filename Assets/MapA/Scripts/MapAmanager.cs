@@ -155,7 +155,6 @@ public class MapManager : MonoBehaviour
             for (int i = 0; i < count / spawners.Length; i++)
             {
                 GameObject summonZombie = waves[waveCount - 1].summonZombie[Random.Range(0, zombieIndex)];
-
                 for (int j = 0; j < poolManager.summonPrefab.Length; j++)
                 {
                     if (poolManager.summonPrefab[j].name == summonZombie.name)
@@ -179,7 +178,7 @@ public class MapManager : MonoBehaviour
             poolManager.weaponIndex = poolManager.summonPrefab.ToList().IndexOf(summonZombie);
 
             GameObject zombie = poolManager.Pool.Get();
-
+            SoundManager.SFX.PlayOneShot(SFXReference.Instance.TankSpawn, 0.5f);
             currentZombieCount++;
 
             zombie.transform.position = spawner.position;
