@@ -193,8 +193,13 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
         foreach (Collider2D hit in hits)
         {
-            if (hit.TryGetComponent<IEnemyAttackable>(out _))
+            if (hit.TryGetComponent<IEnemyAttackable>(out var attackable))
             {
+                if (attackable is MonoBehaviour mono && mono.enabled == false)
+                {
+                    continue;
+                }
+
                 targets.Add(hit);
             }
         }
