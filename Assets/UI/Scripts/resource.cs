@@ -132,4 +132,42 @@ public class Resource : MonoBehaviour, ICenter, IEnemyAttackable
             basehpUI.localPosition = basehpPositionBackpackOn;
         }
     }
+
+    public static int GetTotalStorageCapacity()
+    {
+        int total = 0;
+        // 맵상의 모든 Backpack 컴포넌트를 찾음
+        Backpack[] allBags = FindObjectsByType<Backpack>(FindObjectsSortMode.None);
+
+        foreach (var bag in allBags)
+        {
+            // 플레이어 가방은 제외하고, 설치된 창고들만 합산
+            if (bag is not PlayerBag)
+            {
+                // 각 창고의 capacity(예: 50) * 기술트리 보너스(예: 2.6) = 130
+                total += Mathf.FloorToInt(bag.capacity * TechTreeUnlock.capacity);
+            }
+        }
+        return total;
+    }
+    public static int TotalCapacity
+    {
+        get
+        {
+            int total = 0;
+            // 맵에 있는 모든 Backpack 컴포넌트를 찾음
+            Backpack[] allBags = FindObjectsByType<Backpack>(FindObjectsSortMode.None);
+
+            foreach (var bag in allBags)
+            {
+                // 플레이어 가방(PlayerBag)은 제외하고 설치된 창고만 합산
+                if (bag is not PlayerBag)
+                {
+                    // 각 창고의 기본 용량 * 기술트리 보너스 적용
+                    total += Mathf.FloorToInt(bag.capacity * TechTreeUnlock.capacity);
+                }
+            }
+            return total;
+        }
+    }
 }
