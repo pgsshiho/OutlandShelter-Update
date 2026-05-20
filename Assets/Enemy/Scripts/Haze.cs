@@ -20,33 +20,51 @@ public class Haze : BasicZombie
         base.Awake();
         mm = FindAnyObjectByType<MapManager>();
 
-        // 타임어택 설정 (4~6분 중 5분 설정)
         if (mm != null) mm.waveTimerLimit = 300f;
     }
 
     protected override void Update()
     {
-        // 스킬 사용 중에는 기본 이동 및 방향 전환 중지
-        if (isSpecialSkillUsing) return;
-
-        // 기본 이동 로직 (Move 트리)
-        Vector2 direction = (targetPos - Position).normalized;
-        HandleSpriteFlip(direction);
-
-        rb.linearVelocity = direction * speed;
-
-        // 패시브1: 지나간 자리에 연기 생성 (0.2초마다)
-        trailTimer += Time.deltaTime;
-        if (trailTimer >= 0.2f)
+        // 1. 타겟 실시간 위치 동기화 및 부모 클래스의 타겟 선택 로직 보완
+        target = SelectTarget();
+        if (target != null)
         {
-            Instantiate(trailSmokePrefab, transform.position, Quaternion.identity);
-            trailTimer = 0f;
+            targetPos = target.position;
         }
 
-        // 패턴 결정 로직
-        if (isSkillUsable)
+        // 2. 🌟 [체력바 버그 해결의 핵심] 스킬 사용 중이어도 '이동/공격'만 건너뛰고, UI 위치 갱신은 무조건 실행
+        if (!isSpecialSkillUsing)
         {
-            StartCoroutine(SkillRoutine());
+            // 기본 이동 로직
+            Vector2 direction = (targetPos - Position).normalized;
+            HandleSpriteFlip(direction);
+
+            // 스킬을 안 쓰고 있을 때만 순수 이동 속도 주입
+            rb.linearVelocity = direction * speed;
+
+            // 패시브1: 지나간 자리에 연기 생성 (0.2초마다)
+            trailTimer += Time.deltaTime;
+            if (trailTimer >= 0.2f)
+            {
+                Instantiate(trailSmokePrefab, transform.position, Quaternion.identity);
+                trailTimer = 0f;
+            }
+
+            // 패턴 결정 로직
+            if (isSkillUsable)
+            {
+                isSkillUsable = false;
+                StartCoroutine(SkillRoutine());
+            }
+        }
+
+        // 3. 🌟 [부모의 핵심 기능 강제 동기화] 
+        // 렌더링 소팅을 위한 Z축 연산 및 UI(체력바) 스크린 좌표 추적은 return에 상관없이 매 프레임 실행되어야 합니다.
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y / 1000f);
+
+        if (hpBar != null && hpBar.transform.parent != null && hpBar.transform.parent.gameObject.activeSelf)
+        {
+            hpBar.transform.parent.position = Camera.main.WorldToScreenPoint(transform.position + (Vector3)offset);
         }
     }
 
@@ -55,31 +73,27 @@ public class Haze : BasicZombie
     {
         if (dir == Vector2.zero) return;
 
-        // X축(좌우) 이동이 Y축(상하)보다 클 때 -> 사이드 모션
         if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
         {
             spriteRenderer.flipX = dir.x < 0;
             anim.SetFloat("DirX", 1f);
             anim.SetFloat("DirY", 0f);
         }
-        // Y축 이동이 더 클 때 -> 앞/뒤 모션
         else
         {
             anim.SetFloat("DirX", 0f);
-            // dir.y가 양수면 1(뒤), 음수면 -1(앞)
             anim.SetFloat("DirY", dir.y > 0 ? 1f : -1f);
         }
     }
 
     private IEnumerator SkillRoutine()
     {
-        isSkillUsable = false;
         int pattern = Random.Range(0, 2);
 
         if (pattern == 0) yield return StartCoroutine(GasExplosionPattern());
         else yield return StartCoroutine(RushPattern());
 
-        yield return new WaitForSeconds(Random.Range(3f, 5f)); // 쿨타임
+        yield return new WaitForSeconds(Random.Range(3f, 5f));
         isSkillUsable = true;
     }
 
@@ -88,20 +102,16 @@ public class Haze : BasicZombie
     {
         isSpecialSkillUsing = true;
 
-        // 1. 가스를 뿜기 직전 플레이어 쪽으로 방향 갱신
         Vector2 dirToTarget = (targetPos - Position).normalized;
         HandleSpriteFlip(dirToTarget);
         rb.linearVelocity = Vector2.zero;
 
-        // 2. Gas 블렌드 트리로 전환
         anim.SetTrigger("Gas");
+        yield return new WaitForSeconds(0.5f);
 
-        yield return new WaitForSeconds(0.5f); // 선딜레이 (가스 뿌리는 모션)
-
-        // 가스 장판 생성
         Instantiate(gasCloudPrefab, transform.position, Quaternion.identity);
 
-        yield return new WaitForSeconds(1f); // 스킬 지속 시간 대기
+        yield return new WaitForSeconds(1f);
         isSpecialSkillUsing = false;
     }
 
@@ -110,7 +120,6 @@ public class Haze : BasicZombie
     {
         isSpecialSkillUsing = true;
 
-        // 1. 돌진 직전 플레이어 쪽으로 방향 갱신 (빨갛게 깜빡임)
         Vector2 rushDir = (targetPos - Position).normalized;
         HandleSpriteFlip(rushDir);
 
@@ -119,57 +128,45 @@ public class Haze : BasicZombie
         yield return new WaitForSeconds(0.8f);
 
         spriteRenderer.color = Color.white;
-
-        // 2. Run 블렌드 트리로 전환
         anim.SetTrigger("Run");
 
         float elapsed = 0f;
         bool hitTarget = false;
         GameObject hitPlayer = null;
 
-        // 3. 돌진 이동
         while (elapsed < 3f)
         {
             rb.linearVelocity = rushDir * (speed * 4f);
             elapsed += Time.deltaTime;
 
-            // 충돌 체크
             Collider2D hit = Physics2D.OverlapCircle(transform.position, 1.5f, LayerMask.GetMask("Player"));
             if (hit != null)
             {
                 hitTarget = true;
                 hitPlayer = hit.gameObject;
-                break; // 부딪히면 돌진 중단
+                break;
             }
             yield return null;
         }
 
         rb.linearVelocity = Vector2.zero;
-
-        // 4. Strike 블렌드 트리로 전환
         anim.SetTrigger("Strike");
 
-        // 찍는 애니메이션 타격 프레임까지 대기 (약 0.5초)
         yield return new WaitForSeconds(0.5f);
 
-        // 데미지 판정
         if (hitTarget)
         {
             ApplyRushDamage(hitPlayer);
         }
 
-        // 찍은 후 일어나는 후딜레이
         yield return new WaitForSeconds(0.5f);
-
         isSpecialSkillUsing = false;
     }
 
     private void ApplyRushDamage(GameObject playerObj)
     {
-        // 직접 데미지 30
         if (playerObj.TryGetComponent(out IDamageable p)) p.Damage(30);
 
-        // 주변 스플래시 15 및 밀쳐내기 (독 적용)
         Collider2D[] near = Physics2D.OverlapCircleAll(transform.position, 4f);
         foreach (var c in near)
         {
@@ -177,7 +174,6 @@ public class Haze : BasicZombie
             {
                 if (c.TryGetComponent(out PoisonStatus ps)) ps.ApplyPoison(false);
 
-                // 밀쳐내기
                 Vector2 pushDir = (c.transform.position - transform.position).normalized;
                 c.GetComponent<Rigidbody2D>()?.AddForce(pushDir * 20f, ForceMode2D.Impulse);
             }
