@@ -2,22 +2,19 @@ using UnityEngine;
 using DG.Tweening;
 using System.Collections.Generic;
 
-public class GasCloud : MonoBehaviour
+public class TrailSmoke : MonoBehaviour
 {
-    [Header("Gas Settings")]
-    public float duration = 5f;          // 가스 장판 유지 시간
-    public float tickInterval = 0.5f;    // 데미지 주기 (0.5초당 1번)
-    public int damagePerTick = 5;        // 틱당 데미지
-    public float slowAmount = 0.5f;      // 이동 속도 감소율 (50% 감소)
+    [Header("Smoke Settings")]
+    public float duration = 2f;          // 연기가 필드에 머무는 시간
+    public float tickInterval = 0.4f;    // 데미지 주기
+    public int damagePerTick = 2;        // 잔상 데미지 수치
 
     private float lifetimeTimer = 0f;
     private float tickTimer = 0f;
     private Vector3 targetScale;         // 에디터에서 설정한 기본 스케일을 저장할 변수
 
     private SpriteRenderer spriteRenderer;
-
-    // 장판 내부의 플레이어 관리 리스트
-    private List<PlayerMove> affectedPlayers = new List<PlayerMove>();
+    private List<PlayerMove> targetPlayers = new List<PlayerMove>();
 
     private void Awake()
     {
@@ -27,16 +24,15 @@ public class GasCloud : MonoBehaviour
 
     private void Start()
     {
-        // [연출] 원래 세팅된 크기까지만 자연스럽게 커짐
         transform.localScale = Vector3.zero;
-        transform.DOScale(targetScale, 0.5f).SetEase(Ease.OutQuad);
+        transform.DOScale(targetScale, 0.3f).SetEase(Ease.OutCubic);
 
         if (spriteRenderer != null)
         {
             Color c = spriteRenderer.color;
             c.a = 0f;
             spriteRenderer.color = c;
-            spriteRenderer.DOFade(0.6f, 0.5f);
+            spriteRenderer.DOFade(0.4f, 0.2f);
         }
     }
 
@@ -46,26 +42,27 @@ public class GasCloud : MonoBehaviour
 
         if (lifetimeTimer >= duration)
         {
-            DestroyCloud();
+            FadeAndDestroy();
             return;
         }
 
         tickTimer += Time.deltaTime;
         if (tickTimer >= tickInterval)
         {
-            ApplyTickDamage();
+            ApplyTickEffect();
             tickTimer = 0f;
         }
     }
 
-    private void ApplyTickDamage()
+    private void ApplyTickEffect()
     {
-        for (int i = affectedPlayers.Count - 1; i >= 0; i--)
+        for (int i = targetPlayers.Count - 1; i >= 0; i--)
         {
-            PlayerMove player = affectedPlayers[i];
+            PlayerMove player = targetPlayers[i];
+
             if (player == null)
             {
-                affectedPlayers.RemoveAt(i);
+                targetPlayers.RemoveAt(i);
                 continue;
             }
 
@@ -83,15 +80,14 @@ public class GasCloud : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 🌟 [레이어 검사 강화] 닿은 오브젝트의 레이어가 "Player"인 경우에만 작동
+        // 🌟 [레이어 검사 강화] 닿은 오브젝트의 레이어가 "Player"인 경우에만 리스트 등록
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             if (collision.TryGetComponent(out PlayerMove pm))
             {
-                if (!affectedPlayers.Contains(pm))
+                if (!targetPlayers.Contains(pm))
                 {
-                    affectedPlayers.Add(pm);
-                    pm.CurrentSpeedMultiplier = (1f - slowAmount);
+                    targetPlayers.Add(pm);
                 }
             }
         }
@@ -103,41 +99,23 @@ public class GasCloud : MonoBehaviour
         {
             if (collision.TryGetComponent(out PlayerMove pm))
             {
-                if (affectedPlayers.Contains(pm))
+                if (targetPlayers.Contains(pm))
                 {
-                    pm.CurrentSpeedMultiplier = 1f;
-                    affectedPlayers.Remove(pm);
+                    targetPlayers.Remove(pm);
                 }
             }
         }
     }
 
-    private void DestroyCloud()
+    private void FadeAndDestroy()
     {
         if (TryGetComponent(out Collider2D col)) col.enabled = false;
 
-        ReleaseAllPlayers();
+        targetPlayers.Clear();
 
-        spriteRenderer.DOFade(0f, 0.5f);
-        transform.DOScale(Vector3.zero, 0.5f).OnComplete(() => {
+        spriteRenderer.DOFade(0f, 0.4f);
+        transform.DOScale(Vector3.zero, 0.4f).OnComplete(() => {
             Destroy(gameObject);
         });
-    }
-
-    private void ReleaseAllPlayers()
-    {
-        foreach (var player in affectedPlayers)
-        {
-            if (player != null)
-            {
-                player.CurrentSpeedMultiplier = 1f;
-            }
-        }
-        affectedPlayers.Clear();
-    }
-
-    private void OnDestroy()
-    {
-        ReleaseAllPlayers();
     }
 }
