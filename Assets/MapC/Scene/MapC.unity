@@ -34491,10 +34491,7 @@ MonoBehaviour:
   settingpanel: {fileID: 184038694}
   waves:
   - summonZombie:
-    - {fileID: 5140100318665842232, guid: c8b42be51a1fb044097a7f00901673b7, type: 3}
-    - {fileID: 5140100318665842232, guid: c8b42be51a1fb044097a7f00901673b7, type: 3}
-    - {fileID: 5140100318665842232, guid: c8b42be51a1fb044097a7f00901673b7, type: 3}
-    - {fileID: 5140100318665842232, guid: c8b42be51a1fb044097a7f00901673b7, type: 3}
+    - {fileID: 4073641658844334986, guid: 7dcc2ccf1e1503d41893b5785d4f8b7b, type: 3}
   - summonZombie:
     - {fileID: 5140100318665842232, guid: c8b42be51a1fb044097a7f00901673b7, type: 3}
     - {fileID: 5140100318665842232, guid: c8b42be51a1fb044097a7f00901673b7, type: 3}

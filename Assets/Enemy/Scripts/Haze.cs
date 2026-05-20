@@ -5,61 +5,104 @@ using UnityEngine;
 
 public class Haze : BasicZombie
 {
-    private bool isSkillUsable = true; // 스킬 사용 가능 여부
+    private bool isSkillUsable = true;
 
     [Header("Haze Settings")]
-    public GameObject gasCloudPrefab;    // 패턴1: 가스 폭발 프리팹
-    public GameObject trailSmokePrefab;  // 패시브1: 지나간 연기 프리팹
+    public GameObject gasCloudPrefab;
+    public GameObject trailSmokePrefab;
+    public GameObject phase2SmokePrefab;
 
     private bool isSpecialSkillUsing = false;
     private float trailTimer = 0f;
     private MapManager mm;
 
+    private bool isPhase2 = false;
+
     protected override void Awake()
     {
         base.Awake();
         mm = FindAnyObjectByType<MapManager>();
+    }
 
-        if (mm != null) mm.waveTimerLimit = 300f;
+    protected override void OnEnable()
+    {
+        // 1. 먼저 부모의 OnEnable을 실행시켜서 일반적인 초기화 세팅을 돌립니다.
+        // (이 과정에서 HP가시적으로 20 등으로 일시적 계산됨)
+        base.OnEnable();
+
+        // 2. 부모의 계산이 끝나자마자 보스 전용 스펙으로 "강제 덮어쓰기" 진행
+        HP = 3000f; // 🌟 프리팹에 적어둔 보스 최대 체력 강제 지정
+        hp = HP;    // 현재 체력도 만땅으로 동기화
+
+        // 체력바 UI 비율도 3000 기준으로 다시 갱신 (1f = 100%)
+        HpBar = hp / HP;
+
+        // 기존 헤이즈 전용 플래그 초기화 및 타임어택 세팅
+        isPhase2 = false;
+        isSpecialSkillUsing = false;
+        isSkillUsable = true;
+
+        if (mm != null)
+        {
+            mm.waveTimerLimit = 300f;
+        }
     }
 
     protected override void Update()
     {
-        // 1. 타겟 실시간 위치 동기화 및 부모 클래스의 타겟 선택 로직 보완
+        if (isDead) return;
+
         target = SelectTarget();
         if (target != null)
         {
-            targetPos = target.position;
+            targetPos = target.transform.position + (Vector3)target.GetComponent<Collider2D>().offset;
         }
 
-        // 2. 🌟 [체력바 버그 해결의 핵심] 스킬 사용 중이어도 '이동/공격'만 건너뛰고, UI 위치 갱신은 무조건 실행
+        // 부모의 변수(hp, HP)를 기준으로 비율 계산
+        float hpRatio = hp / HP;
+
+        // 🚨 [2페이즈] 체력 50% 이하 진입 시 연기 프리팹 및 독 상태 강화
+        if (hpRatio <= 0.5f && !isPhase2)
+        {
+            isPhase2 = true;
+            if (phase2SmokePrefab != null)
+            {
+                trailSmokePrefab = phase2SmokePrefab;
+            }
+        }
+
         if (!isSpecialSkillUsing)
         {
-            // 기본 이동 로직
-            Vector2 direction = (targetPos - Position).normalized;
-            HandleSpriteFlip(direction);
-
-            // 스킬을 안 쓰고 있을 때만 순수 이동 속도 주입
-            rb.linearVelocity = direction * speed;
-
-            // 패시브1: 지나간 자리에 연기 생성 (0.2초마다)
-            trailTimer += Time.deltaTime;
-            if (trailTimer >= 0.2f)
+            if (target != null)
             {
-                Instantiate(trailSmokePrefab, transform.position, Quaternion.identity);
-                trailTimer = 0f;
+                Vector2 direction = (targetPos - Position).normalized;
+                HandleSpriteFlip(direction);
+                rb.linearVelocity = direction * speed;
+
+                trailTimer += Time.deltaTime;
+                if (trailTimer >= 0.2f)
+                {
+                    Instantiate(trailSmokePrefab, transform.position, Quaternion.identity);
+                    trailTimer = 0f;
+                }
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero;
             }
 
-            // 패턴 결정 로직
-            if (isSkillUsable)
+            if (isSkillUsable && target != null)
             {
                 isSkillUsable = false;
                 StartCoroutine(SkillRoutine());
             }
         }
 
-        // 3. 🌟 [부모의 핵심 기능 강제 동기화] 
-        // 렌더링 소팅을 위한 Z축 연산 및 UI(체력바) 스크린 좌표 추적은 return에 상관없이 매 프레임 실행되어야 합니다.
+        UpdateUIAndSorting();
+    }
+
+    private void UpdateUIAndSorting()
+    {
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y / 1000f);
 
         if (hpBar != null && hpBar.transform.parent != null && hpBar.transform.parent.gameObject.activeSelf)
@@ -68,7 +111,6 @@ public class Haze : BasicZombie
         }
     }
 
-    // 앞/뒤/사이드 판정 로직 (블렌드 트리 파라미터 제어)
     private void HandleSpriteFlip(Vector2 dir)
     {
         if (dir == Vector2.zero) return;
@@ -97,7 +139,6 @@ public class Haze : BasicZombie
         isSkillUsable = true;
     }
 
-    // 패턴 1: 가스 폭발
     private IEnumerator GasExplosionPattern()
     {
         isSpecialSkillUsing = true;
@@ -115,7 +156,6 @@ public class Haze : BasicZombie
         isSpecialSkillUsing = false;
     }
 
-    // 패턴 2: 돌격 (Run -> Strike)
     private IEnumerator RushPattern()
     {
         isSpecialSkillUsing = true;
@@ -131,7 +171,6 @@ public class Haze : BasicZombie
         anim.SetTrigger("Run");
 
         float elapsed = 0f;
-        bool hitTarget = false;
         GameObject hitPlayer = null;
 
         while (elapsed < 3f)
@@ -142,7 +181,6 @@ public class Haze : BasicZombie
             Collider2D hit = Physics2D.OverlapCircle(transform.position, 1.5f, LayerMask.GetMask("Player"));
             if (hit != null)
             {
-                hitTarget = true;
                 hitPlayer = hit.gameObject;
                 break;
             }
@@ -154,10 +192,7 @@ public class Haze : BasicZombie
 
         yield return new WaitForSeconds(0.5f);
 
-        if (hitTarget)
-        {
-            ApplyRushDamage(hitPlayer);
-        }
+        ApplyRushDamage(hitPlayer);
 
         yield return new WaitForSeconds(0.5f);
         isSpecialSkillUsing = false;
@@ -165,18 +200,60 @@ public class Haze : BasicZombie
 
     private void ApplyRushDamage(GameObject playerObj)
     {
-        if (playerObj.TryGetComponent(out IDamageable p)) p.Damage(30);
+        if (playerObj != null && playerObj.TryGetComponent(out IDamageable p))
+        {
+            Vector2 pushDir = (playerObj.transform.position - transform.position).normalized;
+            p.Damage(30, pushDir * 20f, AttackType.Close, 0.1f);
+
+            if (playerObj.TryGetComponent(out PoisonStatus ps))
+            {
+                ps.ApplyPoison(isPhase2);
+            }
+        }
 
         Collider2D[] near = Physics2D.OverlapCircleAll(transform.position, 4f);
         foreach (var c in near)
         {
-            if (c.TryGetComponent(out PlayerMove pm))
+            if (c.gameObject != playerObj && c.TryGetComponent(out PlayerMove pm))
             {
-                if (c.TryGetComponent(out PoisonStatus ps)) ps.ApplyPoison(false);
+                if (c.TryGetComponent(out IDamageable sideTarget))
+                {
+                    Vector2 pushDir = (c.transform.position - transform.position).normalized;
+                    sideTarget.Damage(15, pushDir * 20f, AttackType.Close, 0.1f);
+                }
 
-                Vector2 pushDir = (c.transform.position - transform.position).normalized;
-                c.GetComponent<Rigidbody2D>()?.AddForce(pushDir * 20f, ForceMode2D.Impulse);
+                if (c.TryGetComponent(out PoisonStatus ps))
+                {
+                    ps.ApplyPoison(isPhase2);
+                }
             }
         }
+    }
+
+    // 평타(일반 밀착공격) 피격 시에도 중독 전이 처리
+    protected override void Attack(Transform target)
+    {
+        base.Attack(target);
+
+        if (target != null && target.TryGetComponent(out PlayerMove pm))
+        {
+            if (target.TryGetComponent(out PoisonStatus ps))
+            {
+                ps.ApplyPoison(isPhase2);
+            }
+        }
+    }
+
+    // 🏆 제한 시간 내 처치 성공 시 타임어택 플래그 리셋 및 정지 연동
+    public override void Death()
+    {
+        if (isDead) return;
+
+        if (mm != null)
+        {
+            mm.StopBossTimer();
+        }
+
+        base.Death();
     }
 }

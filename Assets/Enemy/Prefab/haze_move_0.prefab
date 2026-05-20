@@ -410,6 +410,7 @@ MonoBehaviour:
   zombieIndex: 12
   gasCloudPrefab: {fileID: 6053487985582006113, guid: b05782caa8b4bf945af231b015ffddc1, type: 3}
   trailSmokePrefab: {fileID: 8629319377084897942, guid: 6962d9421741f0846af5edcda3b38fb2, type: 3}
+  phase2SmokePrefab: {fileID: 6053487985582006113, guid: b05782caa8b4bf945af231b015ffddc1, type: 3}
 --- !u!114 &-8996231023121521465
 MonoBehaviour:
   m_ObjectHideFlags: 0

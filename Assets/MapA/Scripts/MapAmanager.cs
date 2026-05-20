@@ -30,6 +30,9 @@ public class MapManager : MonoBehaviour
 
     public static int currentZombieCount = 0;
 
+    // ⏱️ 헤이즈 보스전 전용 타임어택 감지용 플래그
+    private bool isBossTypeTimer = false;
+
     [System.Serializable]
     public struct Wave
     {
@@ -37,7 +40,6 @@ public class MapManager : MonoBehaviour
     }
 
     public Wave[] waves;
-
     public Transform[] spawners;
 
     private ObjectPoolManager poolManager;
@@ -50,7 +52,7 @@ public class MapManager : MonoBehaviour
         isActivePanel = false;
         StartRest();
     }
-    
+
     private void Start()
     {
         spawner = FindAnyObjectByType<ResourceSpawner>();
@@ -74,9 +76,17 @@ public class MapManager : MonoBehaviour
                     waveTimer = Mathf.Clamp(waveTimer - Time.deltaTime, 0, waveTimerLimit);
                     UpdateTimerUI(waveTimer);
 
+                    // 🚨 보스전 타이머 가동 중일 때 1분 미만이면 텍스트 빨간색 연출
+                    if (isBossTypeTimer && waveTimer <= 60f)
+                    {
+                        timerText.color = Color.red;
+                    }
+
                     if (currentZombieCount <= 0)
                     {
                         waveEnded = true;
+                        isBossTypeTimer = false; // 보스 클리어 시 플래그 리셋
+                        timerText.color = Color.white;
                         Notion.Log("ZombieAllkill".Localize());
                         StartRest();
                     }
@@ -85,8 +95,17 @@ public class MapManager : MonoBehaviour
                 {
                     if (!waveEnded)
                     {
-                        Notion.Log("TimerDone".Localize());
-                        StartRest();
+                        // ☠️ 헤이즈 보스전에서 제한 시간(4~6분)이 완료되었을 경우 즉사 패배 처리
+                        if (isBossTypeTimer)
+                        {
+                            TimeOverDefeat();
+                        }
+                        else
+                        {
+                            // 일반 웨이브는 기존처럼 정비 시간으로 전환
+                            Notion.Log("TimerDone".Localize());
+                            StartRest();
+                        }
                     }
                 }
             }
@@ -136,17 +155,45 @@ public class MapManager : MonoBehaviour
         isWave = true;
         waveEnded = false;
         waveCount++;
+
+        // ⏱️ 만약 Haze 보스가 Awake에서 세팅해둔 한계치가 일반 한계치(120초)보다 높다면 보스전으로 판정
+        if (waveTimerLimit > 120f)
+        {
+            isBossTypeTimer = true;
+        }
+
         waveTimer = waveTimerLimit;
         restskip.SetActive(false);
 
         spawner.Spawn();
 
         SetZombieCount(waveCount * 9);
-        
+
         if (waveCount != waves.Length) for (int i = 0; i < spawners.Length; i++) StartCoroutine(SpawnZombie(zombieCount, spawners[i], waves[waveCount - 1].summonZombie.Length, waveCount));
         else StartCoroutine(SpawnZombie(1, spawners[Random.Range(0, spawners.Length)], waves[waveCount - 1].summonZombie.Length, waveCount));
 
-        Notion.Log("WaveStart".Localize("En",waveCount));
+        Notion.Log("WaveStart".Localize("En", waveCount));
+    }
+
+    // ☠️ 타임어택 오버 시 즉사 처리 메서드
+    private void TimeOverDefeat()
+    {
+        isWave = false;
+        isBossTypeTimer = false;
+        Notion.Log("공기 감염 위험 한도 초과! 패배했습니다.");
+
+        var player = FindAnyObjectByType<PlayerMove>();
+        if (player != null && player.TryGetComponent(out IDamageable p))
+        {
+            p.Damage(99999, Vector2.zero, AttackType.Close, 0f);
+        }
+    }
+
+    // 🏆 보스 클리어 시 수동으로 타이머 플래그를 꺼주기 위한 안전 장치
+    public void StopBossTimer()
+    {
+        isBossTypeTimer = false;
+        timerText.color = Color.white;
     }
 
     private IEnumerator SpawnZombie(int count, Transform spawner, int zombieIndex, int waveCount)
@@ -164,25 +211,19 @@ public class MapManager : MonoBehaviour
                 }
 
                 GameObject zombie = poolManager.Pool.Get();
-
                 currentZombieCount++;
-
                 zombie.transform.position = spawner.position;
-
                 yield return new WaitForSeconds(5f / (count / spawners.Length));
             }
         else
         {
             GameObject summonZombie = waves[waveCount - 1].summonZombie[0];
-
             poolManager.weaponIndex = poolManager.summonPrefab.ToList().IndexOf(summonZombie);
 
             GameObject zombie = poolManager.Pool.Get();
             SoundManager.SFX.PlayOneShot(SFXReference.Instance.TankSpawn, 0.5f);
             currentZombieCount++;
-
             zombie.transform.position = spawner.position;
-
             yield return new WaitForSeconds(5f / (count / spawners.Length));
         }
     }
