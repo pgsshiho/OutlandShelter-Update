@@ -28,6 +28,7 @@ public class SceneChanger : MonoBehaviour
 
     public static void BG(string sceneName)
     {
+        image.transform.parent.gameObject.SetActive(true);
         image.gameObject.SetActive(true);
         isFading = true;
         image.DOColor(Color.black, 0.7f).OnComplete(() =>

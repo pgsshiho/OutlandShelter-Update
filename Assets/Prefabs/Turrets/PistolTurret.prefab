@@ -235,7 +235,7 @@ MonoBehaviour:
     watt: 0
     wooden: 0
     steel: 0
-  maxHp: 100
+  maxHp: 400
   reBuild: {fileID: -8673990576347139051}
   broken: {fileID: 21300000, guid: cb83c5c1e89ed9d4c8f5f1ca4c15b6e9, type: 3}
   boxCollider: {fileID: 0}
@@ -267,9 +267,9 @@ MonoBehaviour:
   - sprite: {fileID: -629105043, guid: 6e3abbf3ca52a80498b0ebc698ac163e, type: 3}
     launchSprite: {fileID: -1588806505, guid: 6e3abbf3ca52a80498b0ebc698ac163e, type: 3}
   range: 30
-  coolTime: 1.2
+  coolTime: 0.3
   kind: 9
-  damage: 30
+  damage: 17
   myPosition:
     leftBottom: {x: 0, y: 0}
     rightTop: {x: 0, y: 0}

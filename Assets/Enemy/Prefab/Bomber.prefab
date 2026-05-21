@@ -212,7 +212,7 @@ MonoBehaviour:
   attackCool: 0.7
   hpBar: {fileID: 2973318294372568155}
   knockBackForce: 0
-  dropExp: 3
+  dropExp: 8
   dropMatarial: 3
   offset: {x: 0, y: 1.5}
   range: 2

@@ -15,6 +15,6 @@ public static class Armor
     {
         new ArmorStat(1.05f, 1),
         new ArmorStat(1.1f, 0.95f),
-        new ArmorStat(1.2f, 0.85f)
+        new ArmorStat(1.25f, 0.75f)
     };
 }

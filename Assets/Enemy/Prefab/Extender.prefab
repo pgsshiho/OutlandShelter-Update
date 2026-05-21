@@ -316,7 +316,7 @@ MonoBehaviour:
   attackCool: 7
   hpBar: {fileID: 4731880306372370842}
   knockBackForce: 0
-  dropExp: 50
+  dropExp: 55
   dropMatarial: 15
   offset: {x: 0, y: 3}
   range: 6

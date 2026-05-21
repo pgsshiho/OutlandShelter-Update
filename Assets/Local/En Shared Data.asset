@@ -577,6 +577,14 @@ MonoBehaviour:
     m_Key: Font
     m_Metadata:
       m_Items: []
+  - m_Id: 21392377273352192
+    m_Key: "\uC0F7\uAC74 \uCD1D\uC54C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21395682108080128
+    m_Key: Reload
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

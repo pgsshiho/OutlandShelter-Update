@@ -44,7 +44,8 @@ namespace Weapons
                 {
                     SoundManager.SFX.PlayOneShot(SFXReference.Instance.gun);
                     GameObject temp = poolManager.Pool.Get();
-
+                    Camera.main.transform.DOComplete(); // 이전 흔들림 캔슬로 딜레이 방지
+                    Camera.main.transform.DOShakePosition(0.1f, 0.1f, 10, 90, false, true);
                     if (temp.TryGetComponent(out SummonBullet summonBullet))
                     {
                         summonBullet.pool = poolManager.Pool;
@@ -75,7 +76,8 @@ namespace Weapons
 
                     GameObject temp = poolManager.Pool.Get();
                     temp.transform.parent = attackPivot;
-
+                    Camera.main.transform.DOComplete(); // 이전 흔들림 캔슬로 딜레이 방지
+                    Camera.main.transform.DOShakePosition(0.2f, 0.3f, 15, 90, false, true);
                     // 위치 설정 (기존 총구 오프셋 활용)
                     temp.transform.localPosition = new Vector3(fireXOffset, characterHandHeight + distanceBetweenPlayer[poolManager.weaponIndex], 0);
                     temp.transform.localEulerAngles = Vector3.zero;
@@ -107,7 +109,8 @@ namespace Weapons
 
                     GameObject temp = poolManager.Pool.Get();
                     temp.transform.parent = attackPivot;
-
+                    Camera.main.transform.DOComplete(); // 이전 흔들림 캔슬로 딜레이 방지
+                    Camera.main.transform.DOShakePosition(0.4f, 0.6f, 20, 90, false, true);
                     temp.transform.localScale = GunStatManager.instance[(GunKind)poolManager.weaponIndex].range * TechTreeUnlock.gunRange
                         * poolManager.summonPrefab[poolManager.weaponIndex].transform.localScale;
 

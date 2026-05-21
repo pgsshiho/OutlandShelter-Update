@@ -19,6 +19,7 @@ public class SFXReference : MonoBehaviour
     public AudioClip making;
     public AudioClip rpgShot;
     public AudioClip TankSpawn;
+    public AudioClip Hit;
     private void Awake()
     {
         _instance = this;
