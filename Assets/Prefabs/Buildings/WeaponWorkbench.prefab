@@ -7565,7 +7565,7 @@ MonoBehaviour:
   prices:
   - 0
   - 0
-  - 200
+  - 230
   - 0
   itemName: Rifle
   isComplete: 1
@@ -10116,7 +10116,7 @@ MonoBehaviour:
   prices:
   - 0
   - 0
-  - 200
+  - 250
   - 0
   itemName: ShotGun
   isComplete: 1
@@ -12422,7 +12422,7 @@ MonoBehaviour:
   prices:
   - 0
   - 0
-  - 50
+  - 60
   - 0
   itemName: MetalArmor
   isComplete: 1
@@ -14492,7 +14492,7 @@ MonoBehaviour:
   prices:
   - 0
   - 0
-  - 40
+  - 50
   - 0
   itemName: Pistol
   isComplete: 1
@@ -14822,7 +14822,7 @@ MonoBehaviour:
   prices:
   - 0
   - 0
-  - 50
+  - 60
   - 0
   itemName: Revolver
   isComplete: 1
@@ -18620,7 +18620,7 @@ MonoBehaviour:
   - {fileID: 7837605674232242061}
   - {fileID: 4446124099208429510}
   prices:
-  - 30
+  - 40
   - 0
   - 0
   - 0

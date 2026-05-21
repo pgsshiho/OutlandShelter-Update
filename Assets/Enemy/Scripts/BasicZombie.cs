@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -182,10 +183,18 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
             {
                 Vector2 direction = (targetPos - Position).normalized;
                 player.Damage(damage, direction * knockBackForce, AttackType.Close, 0.1f);
+                SoundManager.SFX.PlayOneShot(SFXReference.Instance.Hit);
+                if (Camera.main != null)
+                {
+                    Camera.main.transform.DOComplete();
+                    float shakeDuration = 0.05f + (damage * 0.015f);
+                    float shakeStrength = 0.05f + (damage * 0.025f);
+                    int shakeVibrato = Mathf.Clamp(5 + damage, 5, 25);
+                    Camera.main.transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato, 90, false, true);
+                }
             }
         }
     }
-
     protected virtual Transform SelectTarget()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(Position, 1000, ~wall);
@@ -248,6 +257,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         GameObject temp = ObjectPoolManager.instance[Kind.ZombieDeathEffect].Pool.Get();
         temp.transform.position = transform.position;
 
+
         ObjectPoolManager.instance[Kind.ZombieDeathEffect].StartCoroutine(WaitAction.wait(0.4f, () =>
         {
             ObjectPoolManager.instance[Kind.ZombieDeathEffect].Pool.Release(temp);
@@ -273,6 +283,13 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         if (isDead) return;
         hp = Mathf.Clamp(hp - damage, 0, hp);
         HpBar = hp / HP;
+
+        if (knockBack != Vector2.zero)
+        {
+            spriteRenderer.flipX = !spriteRenderer.flipX; // 순간적으로 방향을 틀어버림
+            rb.linearVelocity = knockBack; // 기획하신 넉백 적용
+        }
+        // --------------------------------
 
         if (hp == 0) { Death(); }
     }

@@ -58,3 +58,4 @@ MonoBehaviour:
   making: {fileID: 8300000, guid: 7a17b6fb166e4c247b7964bc0ae50ee7, type: 3}
   rpgShot: {fileID: 8300000, guid: 21d44dd4c7a201f498602480ce37bcb8, type: 3}
   TankSpawn: {fileID: 8300000, guid: 9630b48fdbef32e4493536ffa8ec7abf, type: 3}
+  Hit: {fileID: 8300000, guid: 379c0a7338b65294fb5f60ff258865b6, type: 3}

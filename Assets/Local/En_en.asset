@@ -58,13 +58,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4431198781440
-    m_Localized: "The default weapon becomes an Axe.\nAttack: 10, \nAttack Speed:
-      5"
+    m_Localized: 'The default weapon becomes an Axe.
+
+      Attack: 30,
+
+      Attack
+      Speed: 5'
     m_Metadata:
       m_Items: []
   - m_Id: 4536882659328
-    m_Localized: "The default weapon becomes a Katana.\nAttack: 5, \nAttack Speed:
-      10"
+    m_Localized: "The default weapon becomes a Katana.\nAttack: 20, \nAttack Speed:
+      15"
     m_Metadata:
       m_Items: []
   - m_Id: 5385419718656
@@ -822,6 +826,16 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 17700678856572928
     m_Localized: This game uses the 'MapleStory' font provided by NEXON Korea Corporation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21392377273352192
+    m_Localized: 'shotgun shell
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21395682108080128
+    m_Localized: Reload
     m_Metadata:
       m_Items: []
   references:

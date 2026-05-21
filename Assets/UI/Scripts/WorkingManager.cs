@@ -88,17 +88,17 @@ public class WorkingManager : MonoBehaviour
 
     private void PistolBullet()
     {
-        BulletManager.pistolBullet += 10;
+        BulletManager.pistolBullet += 6;
     }
 
     private void RifleBullet()
     {
-        BulletManager.rifleBullet += 30;
+        BulletManager.rifleBullet += 15;
     }
 
     private void ShotgunBullet()
     {
-        BulletManager.shotGunBullet += 10;
+        BulletManager.shotGunBullet += 8;
     }
 
     private void Razor()

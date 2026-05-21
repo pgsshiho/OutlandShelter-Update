@@ -2222,8 +2222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: "<size=50>\uB9AC\uBCFC\uBC84</size>\n\n- \uB290\uB9AC\uC9C0\uB9CC
-    \uAC15\uD55C \uAD8C\uCD1D"
+  toolTipText: Revolver
 --- !u!1 &3502038386858272665
 GameObject:
   m_ObjectHideFlags: 0
