@@ -111,4 +111,20 @@ public class PlayerMove : MonoBehaviour
     {
         Weapon.weaponList.Remove(gameObject);
     }
+    private void OnEnable()
+    {
+        WorkingManager.OnShoesCrafted += OnSpeedBoostTriggered;
+    }
+
+    private void OnDisable()
+    {
+        WorkingManager.OnShoesCrafted -= OnSpeedBoostTriggered;
+    }
+
+    // IShoesSpeed 인터페이스 구현
+    public void OnSpeedBoostTriggered(int percentage)
+    {
+        // 내 속도는 내가 계산한다!
+        moveSpeed *= (1f + (percentage / 100f));
+    }
 }

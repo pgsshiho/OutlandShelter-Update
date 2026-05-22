@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,9 +6,9 @@ using UnityEngine;
 
 public class WorkingManager : MonoBehaviour
 {
+    public static event Action<int> OnShoesCrafted;
     public static Dictionary<WorkbenchInputTask, float> remainingTime = new Dictionary<WorkbenchInputTask, float>();
     private static Dictionary<string, int> partsOwn = new();
-
     public class Parts
     {
         public int this[string name]
@@ -90,7 +91,12 @@ public class WorkingManager : MonoBehaviour
     {
         BulletManager.pistolBullet += 6;
     }
+    private void ShoesCreate()
+    {
+        OnShoesCrafted?.Invoke(30);
 
+        Notion.Log("Shoes Production Complete!");
+    }
     private void RifleBullet()
     {
         BulletManager.rifleBullet += 15;

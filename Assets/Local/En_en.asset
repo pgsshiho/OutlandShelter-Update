@@ -838,6 +838,18 @@ MonoBehaviour:
     m_Localized: Reload
     m_Metadata:
       m_Items: []
+  - m_Id: 21745583518089216
+    m_Localized: 'electromagnetic shoes
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21746302035918848
+    m_Localized: 'Increases speed by 30%.
+
+'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

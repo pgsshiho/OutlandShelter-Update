@@ -585,6 +585,14 @@ MonoBehaviour:
     m_Key: Reload
     m_Metadata:
       m_Items: []
+  - m_Id: 21745583518089216
+    m_Key: Shose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21746302035918848
+    m_Key: Shoes button
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
