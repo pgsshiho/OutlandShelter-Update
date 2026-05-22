@@ -37934,6 +37934,56 @@ Transform:
   - {fileID: 485709117}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1848581898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1848581900}
+  - component: {fileID: 1848581899}
+  m_Layer: 0
+  m_Name: SuplyPoolManager
+  m_TagString: PoolManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1848581899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848581898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24dbe9978fc54d47a31749660fd58a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCapacity: 0a000000
+  maxPoolSize: 32000000
+  summonPrefab:
+  - {fileID: 1242987386435072043, guid: ab5067d655eda4b4b862517603052ba0, type: 3}
+  weaponIndex: 0
+  key: 12
+--- !u!4 &1848581900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848581898}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8202423, y: -0.095590934, z: -0.050081033}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1866455796 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1937366517697013425, guid: 672f12147a7ee974e8bb33885b173d17, type: 3}
@@ -38892,3 +38942,4 @@ SceneRoots:
   - {fileID: 1646232418}
   - {fileID: 346655821}
   - {fileID: 2011407007}
+  - {fileID: 1848581900}

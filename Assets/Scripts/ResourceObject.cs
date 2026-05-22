@@ -43,7 +43,6 @@ public class ResourceObject : MonoBehaviour
     public virtual int Break(float amount)
     {
         Backpack.ResourceKind kind = this is ResourceWood ? Backpack.ResourceKind.Wooden : this is ResourceSteel ? Backpack.ResourceKind.Steel : Backpack.ResourceKind.Metal;
-
         if (bag.capacity - bag.resources[(int)kind] > 0)
         {
             hp -= Mathf.Clamp(amount - defense, 0, bag.capacity - bag.resources[(int)kind]);

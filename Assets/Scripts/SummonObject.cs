@@ -13,7 +13,8 @@ public enum Kind
     Steel,
     TurretBullet,
     Zombie,
-    ZombieDeathEffect
+    ZombieDeathEffect,
+    Suply
 }
 
 public abstract class SummonObject : MonoBehaviour
