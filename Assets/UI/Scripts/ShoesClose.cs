@@ -3,12 +3,17 @@ using UnityEngine;
 public class ShoesClose : MonoBehaviour
 {
     public GameObject shoePanel;
-    private void Start()
+
+    private void Awake()
     {
         shoePanel.SetActive(false);
+        WorkingManager.OnShoesCrafted += CloseShoe;
     }
-    public void CloseShoePanel()
+
+    private void CloseShoe(int x) => shoePanel.SetActive(true);
+
+    private void OnDestroy()
     {
-        shoePanel.SetActive(true);
+        WorkingManager.OnShoesCrafted -= CloseShoe;
     }
 }

@@ -1,6 +1,6 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -13,43 +13,68 @@ namespace Weapons
     public class Mine : Weapon
     {
         public static int currentCount = 0;
-        [SerializeField] private int maxCount = 5;
-        [SerializeField] private TextMeshProUGUI mineCount;
+
+        [SerializeField]
+        private int maxCount = 5;
+
+        [SerializeField]
+        private TextMeshProUGUI mineCount;
 
         public override void Attack()
         {
-            if (canAttack && currentCount < maxCount + TechTreeUnlock.additionalMineCount && WorkingManager.mineCount > 0)
+            if (
+                canAttack
+                && currentCount < maxCount + TechTreeUnlock.additionalMineCount
+                && WorkingManager.mineCount > 0
+            )
             {
                 canAttack = false;
                 isAttacking = !canAttack;
 
-                StartCoroutine(WaitAction.wait(() => isAttackTimimg, () =>
-                {
-                    WorkingManager.mineCount--;
+                StartCoroutine(
+                    WaitAction.wait(
+                        () => isAttackTimimg,
+                        () =>
+                        {
+                            WorkingManager.mineCount--;
 
-                    currentCount++;
-                    GameObject temp = poolManager.Pool.Get();
+                            currentCount++;
+                            GameObject temp = poolManager.Pool.Get();
 
-                    temp.transform.parent = attackPivot;
-                    temp.transform.localPosition = new Vector3(0f, 0f, 0f);
-                    temp.transform.parent = null;
+                            temp.transform.parent = AttackPivot;
+                            temp.transform.localPosition = new Vector3(0f, 0f, 0f);
+                            temp.transform.parent = null;
 
-                    if (temp.TryGetComponent(out SummonMine mine))
-                    {
-                        mine.pool = poolManager.Pool;
-                    }
-                }));
+                            if (temp.TryGetComponent(out SummonMine mine))
+                            {
+                                mine.pool = poolManager.Pool;
+                            }
+                        }
+                    )
+                );
 
-                StartCoroutine(WaitAction.wait(coolTime[poolManager.weaponIndex] / (Personal_resource.hpPercentage <= 20 ? TechTreeUnlock.lowHpAttackSpeed : 1)
-                    / TechTreeUnlock.attackSpeed, () =>
-                {
-                    canAttack = true;
-                    isAttacking = !canAttack;
-                }));
+                StartCoroutine(
+                    WaitAction.wait(
+                        coolTime[poolManager.weaponIndex]
+                            / (
+                                Personal_resource.hpPercentage <= 20
+                                    ? TechTreeUnlock.lowHpAttackSpeed
+                                    : 1
+                            )
+                            / TechTreeUnlock.attackSpeed,
+                        () =>
+                        {
+                            canAttack = true;
+                            isAttacking = !canAttack;
+                        }
+                    )
+                );
             }
             else if (canAttack && WorkingManager.mineCount > 0)
             {
-                Notion.Warning("mineinstall".Localize("En", maxCount + TechTreeUnlock.additionalMineCount));
+                Notion.Warning(
+                    "mineinstall".Localize("En", maxCount + TechTreeUnlock.additionalMineCount)
+                );
             }
         }
 
@@ -57,7 +82,8 @@ namespace Weapons
         {
             base.Awake();
 
-            if (!global::Weapon.weaponList.ContainsKey(gameObject)) global::Weapon.weaponList[gameObject] = new List<Weapon>();
+            if (!global::Weapon.weaponList.ContainsKey(gameObject))
+                global::Weapon.weaponList[gameObject] = new List<Weapon>();
             global::Weapon.weaponList[gameObject].Add(this);
 
             currentCount = 0;
@@ -86,11 +112,11 @@ namespace Weapons
                 enabled = false;
             }
 
-            if (attackPivot.eulerAngles.z < 180 && !priDirection)
+            if (AttackPivot.eulerAngles.z < 180 && !priDirection)
             {
                 weaponRenderer.flipX = true;
             }
-            else if (attackPivot.eulerAngles.z > 180 && priDirection)
+            else if (AttackPivot.eulerAngles.z > 180 && priDirection)
             {
                 weaponRenderer.flipX = false;
             }
@@ -105,14 +131,30 @@ namespace Weapons
             if (canAttack && WorkingManager.mineCount > 0)
             {
                 attackAnimation = DOTween.Sequence();
-                attackAnimation.Append(grandChild.DOLocalRotate(-new Vector3(0, 0, 30 * (weaponRenderer.flipX ? 1 : -1)), coolTime[poolManager.weaponIndex] / 5f))
-                    .Append(grandChild.DOLocalRotate(new Vector3(0, 0, 30 * (weaponRenderer.flipX ? 1 : -1)), coolTime[poolManager.weaponIndex] / 5f))
+                attackAnimation
+                    .Append(
+                        grandChild.DOLocalRotate(
+                            -new Vector3(0, 0, 30 * (weaponRenderer.flipX ? 1 : -1)),
+                            coolTime[poolManager.weaponIndex] / 5f
+                        )
+                    )
+                    .Append(
+                        grandChild.DOLocalRotate(
+                            new Vector3(0, 0, 30 * (weaponRenderer.flipX ? 1 : -1)),
+                            coolTime[poolManager.weaponIndex] / 5f
+                        )
+                    )
                     .AppendCallback(() =>
                     {
                         isAttackTimimg = true;
                         StartCoroutine(WaitAction.waitOneFrame(() => isAttackTimimg = false));
                     })
-                    .Append(grandChild.DOLocalRotate(Vector3.zero, coolTime[poolManager.weaponIndex] / 3f));
+                    .Append(
+                        grandChild.DOLocalRotate(
+                            Vector3.zero,
+                            coolTime[poolManager.weaponIndex] / 3f
+                        )
+                    );
             }
         }
     }

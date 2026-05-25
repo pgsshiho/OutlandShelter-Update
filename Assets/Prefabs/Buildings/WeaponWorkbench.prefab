@@ -484,7 +484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1611.6616}
+  m_AnchoredPosition: {x: 0, y: 1958.6616}
   m_SizeDelta: {x: 463.2425, y: 73.7006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9220997576352164982
@@ -6162,7 +6162,7 @@ GameObject:
   - component: {fileID: 5400429677170718099}
   - component: {fileID: 6509952404953285414}
   m_Layer: 5
-  m_Name: Frame (4)
+  m_Name: AutoShotGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6186,7 +6186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1799.446}
+  m_AnchoredPosition: {x: 0, y: -1452.4463}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5400429677170718099
@@ -6400,7 +6400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 300.5542}
+  m_AnchoredPosition: {x: 0, y: 647.5541}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &797794263813588088
@@ -6812,7 +6812,7 @@ GameObject:
   - component: {fileID: 5163522065795298144}
   - component: {fileID: 4830313242586383729}
   m_Layer: 5
-  m_Name: Frame (1)
+  m_Name: Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6836,7 +6836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -399.44604}
+  m_AnchoredPosition: {x: 0, y: -52.446045}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5163522065795298144
@@ -7297,7 +7297,7 @@ GameObject:
   - component: {fileID: 3653807254965961968}
   - component: {fileID: 6244125430588693648}
   m_Layer: 5
-  m_Name: Frame (3)
+  m_Name: HalfAutoRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7321,7 +7321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1099.446}
+  m_AnchoredPosition: {x: 0, y: -752.44653}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3653807254965961968
@@ -9153,7 +9153,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a42ced5c0e89f0f4f97b5350c270e980, type: 3}
+  m_Sprite: {fileID: 4887388988107598836, guid: a30d9b62bfdabfb4c975887d90596324, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9210,18 +9210,6 @@ MonoBehaviour:
       - m_Target: {fileID: 2995816693985736313}
         m_TargetAssemblyTypeName: WorkbenchInputTask, Assembly-CSharp
         m_MethodName: StartTask
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7260947218983060815}
-        m_TargetAssemblyTypeName: ShoesClose, Assembly-CSharp
-        m_MethodName: CloseShoePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9395,7 +9383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1000.5542}
+  m_AnchoredPosition: {x: 0, y: 1347.5542}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4457600162762417430
@@ -9897,7 +9885,7 @@ GameObject:
   - component: {fileID: 2990544914883869011}
   - component: {fileID: 3637573876738253411}
   m_Layer: 5
-  m_Name: Frame (2)
+  m_Name: Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9921,7 +9909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -749.446}
+  m_AnchoredPosition: {x: 0, y: -402.44604}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2990544914883869011
@@ -10943,8 +10931,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8924317178205238702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.7119259}
-  m_AnchorMax: {x: 1, y: 0.91531456}
+  m_AnchorMin: {x: 0, y: 0.79661137}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15419,7 +15407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 650.5542}
+  m_AnchoredPosition: {x: 0, y: 997.5541}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2219230968844360907
@@ -15748,7 +15736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -49.446045}
+  m_AnchoredPosition: {x: 0, y: 297.55408}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5478903318691201220
@@ -16415,8 +16403,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7609964597944530811}
   m_HandleRect: {fileID: 6291749572378700839}
   m_Direction: 2
-  m_Value: 0.8936929
-  m_Size: 0.20338865
+  m_Value: 1
+  m_Size: 0.20338862
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -17146,7 +17134,7 @@ GameObject:
   - component: {fileID: 4974633476854870085}
   - component: {fileID: 3584828398646581023}
   m_Layer: 5
-  m_Name: Frame (6)
+  m_Name: RPG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17170,7 +17158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2149.446}
+  m_AnchoredPosition: {x: 0, y: -1802.4463}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4974633476854870085
@@ -19075,7 +19063,7 @@ GameObject:
   - component: {fileID: 4703531384170390722}
   - component: {fileID: 3349084377551731127}
   m_Layer: 5
-  m_Name: Frame (5)
+  m_Name: ShotGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19099,7 +19087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1449.446}
+  m_AnchoredPosition: {x: 0, y: -1102.4465}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4703531384170390722
@@ -20408,7 +20396,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 347}
+  m_AnchoredPosition: {x: 0, y: -0.00011974663}
   m_SizeDelta: {x: 0, y: 4097.517}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &7884478348363726868
@@ -21190,7 +21178,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1350.5542}
+  m_AnchoredPosition: {x: 0, y: 1697.5542}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6978445942710177328
@@ -23765,7 +23753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCCA0 \uAC11\uC637"
+  m_text: "\uC804\uC790\uB825 \uC2E0\uBC1C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0de006b35b5176e44bfa91b6b3d49931, type: 2}
   m_sharedMaterial: {fileID: -2652669358878069146, guid: 0de006b35b5176e44bfa91b6b3d49931, type: 2}

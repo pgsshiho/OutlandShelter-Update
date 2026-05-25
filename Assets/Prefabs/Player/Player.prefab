@@ -263,6 +263,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b2c158fa112fc484aaf803577b44c215, type: 3}
   - {fileID: 21300000, guid: 6deea8a750c53c2418d95922fdda6a09, type: 3}
   poolManager: {fileID: 0}
+  gun:
+  - {fileID: 11400000, guid: 4d79422252f727f418ade7f8e1ed1ec4, type: 2}
+  - {fileID: 11400000, guid: 70d65a4a01d0bf74d8e05d574d48790d, type: 2}
+  - {fileID: 11400000, guid: 32a8aabcce2b3154099f1c76fbdc29e2, type: 2}
+  - {fileID: 11400000, guid: 4b0e793bd4949944197ff5c393f786f6, type: 2}
+  - {fileID: 11400000, guid: 4e55f93f6f10c404e82ff3f75abae6ca, type: 2}
+  - {fileID: 11400000, guid: 17fcbd9c5e3866147916fd71651d41ef, type: 2}
+  - {fileID: 11400000, guid: 8301da032968f58409b9274fcfdf1e24, type: 2}
   deviation:
   - 3
   - 3

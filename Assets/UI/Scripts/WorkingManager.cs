@@ -7,23 +7,24 @@ using UnityEngine;
 public class WorkingManager : MonoBehaviour
 {
     public static event Action<int> OnShoesCrafted;
-    public static Dictionary<WorkbenchInputTask, float> remainingTime = new Dictionary<WorkbenchInputTask, float>();
+    public static Dictionary<WorkbenchInputTask, float> remainingTime =
+        new Dictionary<WorkbenchInputTask, float>();
     private static Dictionary<string, int> partsOwn = new();
+
     public class Parts
     {
         public int this[string name]
         {
             get
             {
-                if (name == null || name == "") return 0;
+                if (name == null || name == "")
+                    return 0;
 
-                if (!partsOwn.ContainsKey(name)) partsOwn[name] = 0;
+                if (!partsOwn.ContainsKey(name))
+                    partsOwn[name] = 0;
                 return partsOwn[name];
             }
-            set
-            {
-                partsOwn[name] = value;
-            }
+            set { partsOwn[name] = value; }
         }
 
         public bool ContainsKey(string name)
@@ -57,10 +58,17 @@ public class WorkingManager : MonoBehaviour
     {
         foreach (var task in remainingTime.Keys.ToList())
         {
-            if (task.isComplete) continue;
-            if (WorkbenchInputTask.taskQueue.Peek() != task.timeCheck) continue;
+            if (task.isComplete)
+                continue;
+            if (WorkbenchInputTask.taskQueue.Peek() != task.timeCheck)
+                continue;
 
-            if (remainingTime[task] != -1) remainingTime[task] = Mathf.Clamp(task.spendTime - (Time.time - task.StartTime), 0, task.spendTime);
+            if (remainingTime[task] != -1)
+                remainingTime[task] = Mathf.Clamp(
+                    task.spendTime - (Time.time - task.StartTime),
+                    0,
+                    task.spendTime
+                );
 
             if (remainingTime[task] == 0 || remainingTime[task] == -1)
             {
@@ -69,7 +77,7 @@ public class WorkingManager : MonoBehaviour
                 task.taskBar.transform.parent.gameObject.SetActive(false);
                 Notion.Log("Production is complete!!!".Localize("En", task.itemName));
                 if (SFXReference.Instance.making != null)
-                { 
+                {
                     SoundManager.SFX.PlayOneShot(SFXReference.Instance.making, 1f);
                 }
                 Invoke(task.itemName, 0f);
@@ -91,12 +99,14 @@ public class WorkingManager : MonoBehaviour
     {
         BulletManager.pistolBullet += 6;
     }
-    private void ShoesCreate()
+
+    private void Shoes()
     {
         OnShoesCrafted?.Invoke(30);
 
         Notion.Log("Shoes Production Complete!");
     }
+
     private void RifleBullet()
     {
         BulletManager.rifleBullet += 15;
@@ -244,6 +254,7 @@ public class WorkingManager : MonoBehaviour
     {
         ItemOwnManager.ownWeapon[Kind.Gun][5] = true;
     }
+
     private void RPG()
     {
         int rpgIndex = 6; // RPG 인덱스 번호
