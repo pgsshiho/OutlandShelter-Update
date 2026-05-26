@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 58b7c294aec406e43b8c57599b65249b
+guid: 1f0c72bbe8ed42b4ebe982f3b1fe3706
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5788425379795847695
-    second: UZI_muzzle_0
+      213: -277191998636682835
+    second: WyattEarp_chock_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UZI_muzzle_0
+      name: WyattEarp_chock_0
       rect:
         serializedVersion: 2
-        x: 419
-        y: 89
-        width: 32
+        x: 469
+        y: 79
+        width: 22
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f0a469be63e945050800000000000000
-      internalID: 5788425379795847695
+      spriteID: da11eaa8857372cf0800000000000000
+      internalID: -277191998636682835
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UZI_muzzle_0: 5788425379795847695
+      WyattEarp_chock_0: -277191998636682835
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

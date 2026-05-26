@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SMG
   m_EditorClassIdentifier: Assembly-CSharp::SO_SMG
   deviation: 2
-  oneMagazine: 30
+  oneMagazine: 20
   relodingTime: 0.8
   shotSpeed: 20
   fireXOffset: 0

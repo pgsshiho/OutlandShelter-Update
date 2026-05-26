@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6870251621909633982}
   - component: {fileID: 9165262501548480191}
   m_Layer: 8
-  m_Name: HalfRifle
+  m_Name: AWP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,9 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a665e48aa9f3249871a854161ca080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 250
+  damage: 500
   knockBackForce: 0
-  throughCount: 3
+  throughCount: 100
   isAuto: 0
 --- !u!96 &9165262501548480191
 TrailRenderer:

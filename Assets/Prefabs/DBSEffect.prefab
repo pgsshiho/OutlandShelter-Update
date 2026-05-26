@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 786389688816194639}
   - component: {fileID: 7557969470483359080}
   m_Layer: 8
-  m_Name: ShotGunEffect
+  m_Name: DBSEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be5c1efc35a99c46990c6c25c1ef824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 120
+  damage: 100
   knockBackForce: 0
   isAuto: 0
   enemyLayer:

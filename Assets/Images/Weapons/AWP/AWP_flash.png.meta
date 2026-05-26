@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 58b7c294aec406e43b8c57599b65249b
+guid: 89cb7f355bb05d94293417266687d04f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5788425379795847695
-    second: UZI_muzzle_0
+      213: -6390200011666137975
+    second: AWP_flash_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UZI_muzzle_0
+      name: AWP_flash_0
       rect:
         serializedVersion: 2
-        x: 419
-        y: 89
-        width: 32
-        height: 22
+        x: 379
+        y: 109
+        width: 12
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f0a469be63e945050800000000000000
-      internalID: 5788425379795847695
+      spriteID: 98c51f432f27157a0800000000000000
+      internalID: -6390200011666137975
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UZI_muzzle_0: 5788425379795847695
+      AWP_flash_0: -6390200011666137975
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
