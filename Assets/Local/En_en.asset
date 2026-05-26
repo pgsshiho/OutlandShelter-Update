@@ -565,7 +565,9 @@ MonoBehaviour:
 
 
       - Short range but fast attack
-      speed'
+      speed
+
+      - Use Pistol ammo fire when attack'
     m_Metadata:
       m_Items: []
   - m_Id: 342156682690560
@@ -574,7 +576,9 @@ MonoBehaviour:
 
 
       - Long range but slow attack
-      speed'
+      speed
+
+      - Use Turret ammo fire when attack'
     m_Metadata:
       m_Items: []
   - m_Id: 342317483917312

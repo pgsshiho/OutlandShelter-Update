@@ -11,10 +11,15 @@ public struct AngleToImage
 
 public class SummonTurret : ResourceReturn, ITurret, IEnemyAttackable
 {
+    [SerializeField]
+    private SO_UsingBullet usingBullet;
+
     public AngleToImage[] angleToImages;
 
     private Transform baseTransform;
-    [SerializeField] private float range;
+
+    [SerializeField]
+    private float range;
 
     private Vector2 direction;
 
@@ -22,13 +27,15 @@ public class SummonTurret : ResourceReturn, ITurret, IEnemyAttackable
 
     protected Transform pivot;
 
-    [SerializeField] protected float coolTime;
+    [SerializeField]
+    protected float coolTime;
 
     protected bool canAttack = true;
 
     protected ObjectPoolManager poolManager;
 
-    [SerializeField] protected Kind kind;
+    [SerializeField]
+    protected Kind kind;
 
     public float damage = 30;
 
@@ -62,7 +69,11 @@ public class SummonTurret : ResourceReturn, ITurret, IEnemyAttackable
     {
         base.Update();
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, range * TechTreeUnlock.turretRange, enemy);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
+            transform.position,
+            range * TechTreeUnlock.turretRange,
+            enemy
+        );
 
         if (hits.Length > 0)
         {
@@ -70,16 +81,24 @@ public class SummonTurret : ResourceReturn, ITurret, IEnemyAttackable
 
             for (int i = 1; i < hits.Length; i++)
             {
-                if (Vector2.Distance(baseTransform.position, hits[i].transform.position) <= Vector2.Distance(baseTransform.position, hits[index].transform.position))
+                if (
+                    Vector2.Distance(baseTransform.position, hits[i].transform.position)
+                    <= Vector2.Distance(baseTransform.position, hits[index].transform.position)
+                )
                 {
                     index = i;
                 }
             }
 
-            Vector2 distance = (Vector2)hits[index].transform.position - (Vector2)transform.position;
+            Vector2 distance =
+                (Vector2)hits[index].transform.position - (Vector2)transform.position;
             direction = distance.normalized;
 
-            if (Physics2D.Raycast(transform.position, direction, distance.magnitude, wall).collider != null) return;
+            if (
+                Physics2D.Raycast(transform.position, direction, distance.magnitude, wall).collider
+                != null
+            )
+                return;
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
 
@@ -87,7 +106,8 @@ public class SummonTurret : ResourceReturn, ITurret, IEnemyAttackable
 
             int imageNumber = Mathf.FloorToInt(angle / 30f);
 
-            if (int.Parse(spriteRenderer.sprite.name[^1].ToString()) % 2 == 0) spriteRenderer.sprite = angleToImages[imageNumber].sprite;
+            if (int.Parse(spriteRenderer.sprite.name[^1].ToString()) % 2 == 0)
+                spriteRenderer.sprite = angleToImages[imageNumber].sprite;
 
             if (canAttack)
             {
@@ -106,18 +126,29 @@ public class SummonTurret : ResourceReturn, ITurret, IEnemyAttackable
 
                 if (hits[index].TryGetComponent(out IEnemyDamage damage))
                 {
+                    usingBullet.UsingBullet--;
                     damage.Damage(this.damage);
                 }
 
-                StartCoroutine(WaitAction.wait(0.1f, () =>
-                {
-                    spriteRenderer.sprite = angleToImages[imageNumber].sprite;
-                }));
+                StartCoroutine(
+                    WaitAction.wait(
+                        0.1f,
+                        () =>
+                        {
+                            spriteRenderer.sprite = angleToImages[imageNumber].sprite;
+                        }
+                    )
+                );
 
-                StartCoroutine(WaitAction.wait(coolTime / TechTreeUnlock.turretAttackSpeed, () =>
-                {
-                    canAttack = true;
-                }));
+                StartCoroutine(
+                    WaitAction.wait(
+                        coolTime / TechTreeUnlock.turretAttackSpeed,
+                        () =>
+                        {
+                            canAttack = true;
+                        }
+                    )
+                );
             }
         }
     }
@@ -137,12 +168,18 @@ public class SummonTurret : ResourceReturn, ITurret, IEnemyAttackable
 
         Vector3 center = transform.position;
 
-        Vector3 prevPoint = center + range * TechTreeUnlock.turretRange * new Vector3(Mathf.Cos(0f), Mathf.Sin(0f), 0f);
+        Vector3 prevPoint =
+            center
+            + range * TechTreeUnlock.turretRange * new Vector3(Mathf.Cos(0f), Mathf.Sin(0f), 0f);
 
         for (int i = 1; i <= 360; i++)
         {
             float angle = i * Mathf.Deg2Rad;
-            Vector3 nextPoint = center + range * TechTreeUnlock.turretRange * new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f);
+            Vector3 nextPoint =
+                center
+                + range
+                    * TechTreeUnlock.turretRange
+                    * new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f);
             Gizmos.DrawLine(prevPoint, nextPoint);
             prevPoint = nextPoint;
         }

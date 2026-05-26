@@ -165,6 +165,7 @@ MonoBehaviour:
   boxCollider: {fileID: 0}
   hpSlider: {fileID: 8581228318018604897}
   offset: {x: 0, y: 2}
+  usingBullet: {fileID: 11400000, guid: 936a7a39816d7f648a03cf61b58b61f9, type: 2}
   angleToImages:
   - sprite: {fileID: -901281266, guid: 926a73694a08e9d4eb62dabf164e57eb, type: 3}
     launchSprite: {fileID: 1359691522, guid: 926a73694a08e9d4eb62dabf164e57eb, type: 3}
@@ -193,7 +194,7 @@ MonoBehaviour:
   range: 60
   coolTime: 1.5
   kind: 9
-  damage: 100
+  damage: 105
   myPosition:
     leftBottom: {x: 0, y: 0}
     rightTop: {x: 0, y: 0}
