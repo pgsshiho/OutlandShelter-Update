@@ -624,7 +624,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 344143264448512
-    m_Localized: PumpShotgun
+    m_Localized: 'Pump
+
+      Shotgun'
     m_Metadata:
       m_Items: []
   - m_Id: 344259668967424
