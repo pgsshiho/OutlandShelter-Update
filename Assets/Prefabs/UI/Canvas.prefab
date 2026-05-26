@@ -33773,7 +33773,7 @@ GameObject:
   - component: {fileID: 4750042339604531539}
   - component: {fileID: 2622108861381669130}
   - component: {fileID: 8082386618625622921}
-  - component: {fileID: 1479106436131385932}
+  - component: {fileID: 3994361684626162283}
   m_Layer: 5
   m_Name: Double Barrel Shotgun
   m_TagString: Untagged
@@ -33899,7 +33899,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1479106436131385932
+--- !u!114 &3994361684626162283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
