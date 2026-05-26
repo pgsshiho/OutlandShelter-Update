@@ -1,6 +1,6 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,11 +15,19 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     protected bool canAttack = true;
     protected Rigidbody2D rb;
     protected LayerMask wall;
-    [SerializeField] protected Image hpBar;
-    [SerializeField] protected float knockBackForce;
+
+    [SerializeField]
+    protected Image hpBar;
+
+    [SerializeField]
+    protected float knockBackForce;
     public static int deathCount = 0;
-    [SerializeField] protected int dropExp;
-    [SerializeField] protected int dropMatarial;
+
+    [SerializeField]
+    protected int dropExp;
+
+    [SerializeField]
+    protected int dropMatarial;
     protected bool isDead = false;
 
     protected float HpBar
@@ -27,10 +35,15 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         set
         {
             if (!hpBar.transform.parent.gameObject.activeSelf)
-                StartCoroutine(WaitAction.wait(5f, () =>
-                {
-                    hpBar.transform.parent.gameObject.SetActive(false);
-                }));
+                StartCoroutine(
+                    WaitAction.wait(
+                        5f,
+                        () =>
+                        {
+                            hpBar.transform.parent.gameObject.SetActive(false);
+                        }
+                    )
+                );
 
             hpBar.transform.parent.gameObject.SetActive(true);
             hpBar.fillAmount = value;
@@ -40,8 +53,12 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     public Vector2 offset = new(0, 1.5f);
     protected Animator anim;
     protected SpriteRenderer spriteRenderer;
-    [SerializeField] protected float range = 2;
-    [SerializeField] protected int zombieIndex;
+
+    [SerializeField]
+    protected float range = 2;
+
+    [SerializeField]
+    protected int zombieIndex;
     protected Collider2D col;
 
     protected Vector3 Position
@@ -112,7 +129,8 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
             if (target != null)
             {
                 Vector2 direction = (targetPos - Position).normalized;
-                spriteRenderer.flipX = direction.x <= 0 && (direction.x < 0 || spriteRenderer.flipX);
+                spriteRenderer.flipX =
+                    direction.x <= 0 && (direction.x < 0 || spriteRenderer.flipX);
                 rb.linearVelocity = direction * speed;
             }
         }
@@ -125,30 +143,60 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
             if (temp)
             {
-                StartCoroutine(WaitAction.wait(() => { return TechTreeUnlock.additionalAvoidAbleTiming || spriteRenderer.sprite.name[^1] == '2'; }, () =>
-                {
-                    Vector2 direction = (targetPos - Position).normalized;
-                    if (Random.Range(0f, 1f) < TechTreeUnlock.avoidProbability) PlayerAvoidSkill.SkillUse(direction, true);
-                    PlayerAvoidSkill.useable = true;
-                    PlayerAvoidSkill.targetPos = Position;
-                }));
+                StartCoroutine(
+                    WaitAction.wait(
+                        () =>
+                        {
+                            return TechTreeUnlock.additionalAvoidAbleTiming
+                                || spriteRenderer.sprite.name[^1] == '2';
+                        },
+                        () =>
+                        {
+                            Vector2 direction = (targetPos - Position).normalized;
+                            if (Random.Range(0f, 1f) < TechTreeUnlock.avoidProbability)
+                                PlayerAvoidSkill.SkillUse(direction, true);
+                            PlayerAvoidSkill.useable = true;
+                            PlayerAvoidSkill.targetPos = Position;
+                        }
+                    )
+                );
             }
 
-            StartCoroutine(WaitAction.wait(() => { return spriteRenderer.sprite.name[^1] == '3'; }, () =>
-            {
-                if (temp) PlayerAvoidSkill.useable = false;
-                Attack(target);
-            }));
-            StartCoroutine(WaitAction.wait(attackCool, () =>
-            {
-                canAttack = true;
-            }));
+            StartCoroutine(
+                WaitAction.wait(
+                    () =>
+                    {
+                        return spriteRenderer.sprite.name[^1] == '3';
+                    },
+                    () =>
+                    {
+                        if (temp)
+                            PlayerAvoidSkill.useable = false;
+                        Attack(target);
+                    }
+                )
+            );
+            StartCoroutine(
+                WaitAction.wait(
+                    attackCool,
+                    () =>
+                    {
+                        canAttack = true;
+                    }
+                )
+            );
         }
 
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y / 1000f);
+        transform.position = new Vector3(
+            transform.position.x,
+            transform.position.y,
+            transform.position.y / 1000f
+        );
 
         if (hpBar.transform.parent.gameObject.activeSelf)
-            hpBar.transform.parent.position = Camera.main.WorldToScreenPoint(transform.position + (Vector3)offset);
+            hpBar.transform.parent.position = Camera.main.WorldToScreenPoint(
+                transform.position + (Vector3)offset
+            );
     }
 
     protected virtual void Attack(Transform target)
@@ -190,11 +238,19 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
                     float shakeDuration = 0.05f + (damage * 0.015f);
                     float shakeStrength = 0.05f + (damage * 0.025f);
                     int shakeVibrato = Mathf.Clamp(5 + damage, 5, 25);
-                    Camera.main.transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato, 90, false, true);
+                    Camera.main.transform.DOShakePosition(
+                        shakeDuration,
+                        shakeStrength,
+                        shakeVibrato,
+                        90,
+                        false,
+                        true
+                    );
                 }
             }
         }
     }
+
     protected virtual Transform SelectTarget()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(Position, 1000, ~wall);
@@ -215,7 +271,12 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
         if (targets.Count != 0)
         {
-            targets.Sort((c1, c2) => Vector2.Distance(Position, c1.transform.position).CompareTo(Vector2.Distance(Position, c2.transform.position)));
+            targets.Sort(
+                (c1, c2) =>
+                    Vector2
+                        .Distance(Position, c1.transform.position)
+                        .CompareTo(Vector2.Distance(Position, c2.transform.position))
+            );
             targetPos = targets[0].transform.position + (Vector3)targets[0].offset;
             return targets[0].transform;
         }
@@ -231,22 +292,35 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
     public virtual void Death()
     {
-        if (isDead) return;
+        if (isDead)
+            return;
         isDead = true;
         stack++;
-        increaseSpeed = 1 + TechTreeUnlock.continuousIncreaseMoveSpeed * Mathf.Clamp(stack, 0, TechTreeUnlock.S22MAXOVERWRAP);
-        StartCoroutine(WaitAction.wait(3f, () =>
-        {
-            stack--;
-        }));
+        increaseSpeed =
+            1
+            + TechTreeUnlock.continuousIncreaseMoveSpeed
+                * Mathf.Clamp(stack, 0, TechTreeUnlock.S22MAXOVERWRAP);
+        StartCoroutine(
+            WaitAction.wait(
+                3f,
+                () =>
+                {
+                    stack--;
+                }
+            )
+        );
         col.enabled = false;
         deathCount++;
 
         MapManager.currentZombieCount--;
-        int finalExp = MainmenuManager.isLong ? Mathf.Max(1, Mathf.RoundToInt(dropExp * 0.6f)) : dropExp;
-        int finalMat = MainmenuManager.isLong ? Mathf.Max(1, Mathf.RoundToInt(dropMatarial * 0.6f)) : dropMatarial;
-       
-            Personal_resource.CurExp += finalExp;
+        int finalExp = MainmenuManager.isLong
+            ? Mathf.Max(1, Mathf.RoundToInt(dropExp * 0.6f))
+            : dropExp;
+        int finalMat = MainmenuManager.isLong
+            ? Mathf.Max(1, Mathf.RoundToInt(dropMatarial * 0.6f))
+            : dropMatarial;
+
+        Personal_resource.CurExp += finalExp;
         Personal_resource.instance.Metal += finalMat;
 
         Notion.Log($"+{finalExp}EXP, +{finalMat}Metal");
@@ -257,11 +331,17 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         GameObject temp = ObjectPoolManager.instance[Kind.ZombieDeathEffect].Pool.Get();
         temp.transform.position = transform.position;
 
-
-        ObjectPoolManager.instance[Kind.ZombieDeathEffect].StartCoroutine(WaitAction.wait(0.4f, () =>
-        {
-            ObjectPoolManager.instance[Kind.ZombieDeathEffect].Pool.Release(temp);
-        }));
+        ObjectPoolManager
+            .instance[Kind.ZombieDeathEffect]
+            .StartCoroutine(
+                WaitAction.wait(
+                    0.4f,
+                    () =>
+                    {
+                        ObjectPoolManager.instance[Kind.ZombieDeathEffect].Pool.Release(temp);
+                    }
+                )
+            );
 
         ObjectPoolManager.instance[Kind.Zombie].weaponIndex = zombieIndex;
         ObjectPoolManager.instance[Kind.Zombie].Pool.Release(gameObject);
@@ -280,7 +360,8 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
     public virtual void Damage(float damage, Vector2 knockBack = default)
     {
-        if (isDead) return;
+        if (isDead)
+            return;
         hp = Mathf.Clamp(hp - damage, 0, hp);
         HpBar = hp / HP;
 
@@ -291,7 +372,10 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         }
         // --------------------------------
 
-        if (hp == 0) { Death(); }
+        if (hp == 0)
+        {
+            Death();
+        }
     }
 
     protected virtual void OnCollisionStay2D(Collision2D collision)

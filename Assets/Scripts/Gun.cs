@@ -152,8 +152,6 @@ namespace Weapons
             bullet.gameObject.SetActive(true);
             loadingGuide.SetActive(true);
             weaponRack.SetActive(true);
-
-            StartCoroutine(Reloding());
         }
 
         private void OnDisable()
