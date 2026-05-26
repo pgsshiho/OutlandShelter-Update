@@ -565,7 +565,9 @@ MonoBehaviour:
 
 
       - Short range but fast attack
-      speed'
+      speed
+
+      - Use Pistol ammo fire when attack'
     m_Metadata:
       m_Items: []
   - m_Id: 342156682690560
@@ -574,7 +576,9 @@ MonoBehaviour:
 
 
       - Long range but slow attack
-      speed'
+      speed
+
+      - Use Turret ammo fire when attack'
     m_Metadata:
       m_Items: []
   - m_Id: 342317483917312
@@ -624,7 +628,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 344143264448512
-    m_Localized: PumpShotgun
+    m_Localized: 'Pump
+
+      Shotgun'
     m_Metadata:
       m_Items: []
   - m_Id: 344259668967424
@@ -848,6 +854,20 @@ MonoBehaviour:
     m_Localized: 'Increases speed by 30%.
 
 '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23195917134299136
+    m_Localized: Double Barrel Shotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23198121845030912
+    m_Localized: SMG
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23200133319983104
+    m_Localized: 'Sniper
+
+      Rifle'
     m_Metadata:
       m_Items: []
   references:

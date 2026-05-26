@@ -18,13 +18,11 @@ public class ObjectPoolManager : MonoBehaviour
     {
         get
         {
-            if (!pool.ContainsKey(weaponIndex)) Init();
+            if (!pool.ContainsKey(weaponIndex))
+                Init();
             return pool[weaponIndex];
         }
-        private set
-        {
-            pool[weaponIndex] = value;
-        }
+        private set { pool[weaponIndex] = value; }
     }
 
     private void Awake()
@@ -36,14 +34,22 @@ public class ObjectPoolManager : MonoBehaviour
 
     private void Init()
     {
-        Pool = new ObjectPool<GameObject>(CreatePooledItem, OnTakeFromPool, OnReturnedToPool,
-        OnDestroyPoolObject, true, defaultCapacity[weaponIndex], maxPoolSize[weaponIndex]);
+        Pool = new ObjectPool<GameObject>(
+            CreatePooledItem,
+            OnTakeFromPool,
+            OnReturnedToPool,
+            OnDestroyPoolObject,
+            true,
+            defaultCapacity[weaponIndex],
+            maxPoolSize[weaponIndex]
+        );
 
-        if (!clones.ContainsKey(weaponIndex)) clones[weaponIndex] = new List<GameObject>();
+        if (!clones.ContainsKey(weaponIndex))
+            clones[weaponIndex] = new List<GameObject>();
 
         if (clones[weaponIndex].Count < defaultCapacity[weaponIndex])
         {
-            // �̸� ������Ʈ ���� �س���
+            // 초기화
             for (int i = 0; i < defaultCapacity[weaponIndex]; i++)
             {
                 Pool.Release(CreatePooledItem());
@@ -51,7 +57,7 @@ public class ObjectPoolManager : MonoBehaviour
         }
     }
 
-    // ����
+    // Pool 생성
     private GameObject CreatePooledItem()
     {
         GameObject go = Instantiate(summonPrefab[weaponIndex]);
@@ -63,25 +69,26 @@ public class ObjectPoolManager : MonoBehaviour
         }
 
         // 3. 리스트에 기록하고 오브젝트를 반환합니다.
-        if (!clones.ContainsKey(weaponIndex)) clones[weaponIndex] = new List<GameObject>();
+        if (!clones.ContainsKey(weaponIndex))
+            clones[weaponIndex] = new List<GameObject>();
         clones[weaponIndex].Add(go);
 
         return go;
     }
 
-    // ���
+    // Get
     private void OnTakeFromPool(GameObject poolGo)
     {
         poolGo.SetActive(true);
     }
 
-    // ��ȯ
+    // Release
     private void OnReturnedToPool(GameObject poolGo)
     {
         poolGo.SetActive(false);
     }
 
-    // ����
+    // Destroy
     private void OnDestroyPoolObject(GameObject poolGo)
     {
         Destroy(poolGo);

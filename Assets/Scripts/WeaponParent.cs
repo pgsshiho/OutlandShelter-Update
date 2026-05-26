@@ -1,6 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEngine;
 
 namespace Weapons
 {
@@ -11,7 +11,7 @@ namespace Weapons
         protected Sequence attackAnimation;
         public float[] coolTime;
         protected bool canAttack = true;
-        protected Transform attackPivot;
+        public Transform AttackPivot { get; private set; }
         public Kind kind;
         public float[] distanceBetweenPlayer;
 
@@ -23,7 +23,8 @@ namespace Weapons
         public Vector2[] offset;
         public Sprite[] weapons;
 
-        [HideInInspector] public ObjectPoolManager poolManager;
+        [HideInInspector]
+        public ObjectPoolManager poolManager;
         protected Transform grandChild;
 
         protected GameObject weaponRack;
@@ -32,23 +33,26 @@ namespace Weapons
 
         protected virtual void Awake()
         {
-            attackPivot = transform.Find("AttackPivot");
-            if (!global::Weapon.weaponList.ContainsKey(gameObject)) global::Weapon.weaponList[gameObject] = new List<Weapon>();
+            AttackPivot = transform.Find("AttackPivot");
+            if (!global::Weapon.weaponList.ContainsKey(gameObject))
+                global::Weapon.weaponList[gameObject] = new List<Weapon>();
             global::Weapon.weaponList[gameObject].Add(this);
 
             isAttacking = false;
             isAttackTimimg = false;
 
-            grandChild = attackPivot.GetChild(0);
+            grandChild = AttackPivot.GetChild(0);
 
             weaponRack = grandChild.GetChild(0).gameObject;
             weaponRenderer = weaponRack.GetComponent<SpriteRenderer>();
             weaponRack.SetActive(false);
-        }
 
-        protected void Start()
-        {
-            poolManager = ObjectPoolManager.instance[kind];
+            StartCoroutine(
+                WaitAction.waitOneFrame(() =>
+                {
+                    poolManager = ObjectPoolManager.instance[kind];
+                })
+            );
         }
 
         protected virtual void Update()

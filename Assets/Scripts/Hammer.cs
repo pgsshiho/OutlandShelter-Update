@@ -1,6 +1,6 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -15,36 +15,64 @@ namespace Weapons
                 canAttack = false;
                 isAttacking = !canAttack;
 
-                StartCoroutine(WaitAction.wait(() => isAttackTimimg, () =>
-                {
-                    SoundManager.SFX.PlayOneShot(SFXReference.Instance.hammer);
-                    GameObject temp = poolManager.Pool.Get();
-
-                    temp.transform.parent = attackPivot;
-                    temp.transform.localPosition = new Vector3(0, distanceBetweenPlayer[poolManager.weaponIndex], 0);
-                    temp.transform.localEulerAngles = Vector3.zero;
-                    temp.transform.parent = null;
-                    if (temp.TryGetComponent(out SummonHammer hammer) && hammer.pr == null)
-                    {
-                        hammer.pr = GetComponent<Personal_resource>();
-                    }
-
-                    StartCoroutine(WaitAction.waitOneFrame(() =>
-                    {
-                        if (temp.TryGetComponent<Animator>(out Animator anim))
+                StartCoroutine(
+                    WaitAction.wait(
+                        () => isAttackTimimg,
+                        () =>
                         {
-                            StartCoroutine(WaitAction.wait(() => !anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"), () =>
+                            SoundManager.SFX.PlayOneShot(SFXReference.Instance.hammer);
+                            GameObject temp = poolManager.Pool.Get();
+
+                            temp.transform.parent = AttackPivot;
+                            temp.transform.localPosition = new Vector3(
+                                0,
+                                distanceBetweenPlayer[poolManager.weaponIndex],
+                                0
+                            );
+                            temp.transform.localEulerAngles = Vector3.zero;
+                            temp.transform.parent = null;
+                            if (temp.TryGetComponent(out SummonHammer hammer) && hammer.pr == null)
                             {
-                                poolManager.Pool.Release(temp);
-                            }));
+                                hammer.pr = GetComponent<Personal_resource>();
+                            }
+
+                            StartCoroutine(
+                                WaitAction.waitOneFrame(() =>
+                                {
+                                    if (temp.TryGetComponent<Animator>(out Animator anim))
+                                    {
+                                        StartCoroutine(
+                                            WaitAction.wait(
+                                                () =>
+                                                    !anim.GetCurrentAnimatorStateInfo(0)
+                                                        .IsTag("Attack"),
+                                                () =>
+                                                {
+                                                    poolManager.Pool.Release(temp);
+                                                }
+                                            )
+                                        );
+                                    }
+                                })
+                            );
                         }
-                    }));
-                }));
-                StartCoroutine(WaitAction.wait(coolTime[poolManager.weaponIndex] / (Personal_resource.hpPercentage <= 20 ? TechTreeUnlock.lowHpAttackSpeed : 1), () =>
-                {
-                    canAttack = true;
-                    isAttacking = !canAttack;
-                }));
+                    )
+                );
+                StartCoroutine(
+                    WaitAction.wait(
+                        coolTime[poolManager.weaponIndex]
+                            / (
+                                Personal_resource.hpPercentage <= 20
+                                    ? TechTreeUnlock.lowHpAttackSpeed
+                                    : 1
+                            ),
+                        () =>
+                        {
+                            canAttack = true;
+                            isAttacking = !canAttack;
+                        }
+                    )
+                );
             }
         }
 
@@ -52,7 +80,8 @@ namespace Weapons
         {
             base.Awake();
 
-            if (!global::Weapon.weaponList.ContainsKey(gameObject)) global::Weapon.weaponList[gameObject] = new List<Weapon>();
+            if (!global::Weapon.weaponList.ContainsKey(gameObject))
+                global::Weapon.weaponList[gameObject] = new List<Weapon>();
 
             global::Weapon.weaponList[gameObject].Add(this);
         }
@@ -71,42 +100,45 @@ namespace Weapons
         {
             if (canAttack)
             {
-                // ¿ÃπÃ Ω««‡ ¡ﬂ¿Œ æ÷¥œ∏ﬁ¿Ãº«¿Ã ¿÷¥Ÿ∏È ∏ÿ√ﬂ∞Ì ∆ƒ±´
+                // Ïù¥ÎØ∏ Ïã§Ìñâ Ï§ëÏù∏ Ïï†ÎãàÎ©îÏù¥ÏÖòÏù¥ ÏûàÎã§Î©¥ Î©àÏ∂îÍ≥† ÌååÍ¥¥
                 if (attackAnimation != null && attackAnimation.IsActive())
                 {
                     attackAnimation.Kill();
                 }
 
-                // πÊ«‚ ∞·¡§ (Ω«Ω√∞£)
-                if (attackPivot.eulerAngles.z < 180 && priDirection)
+                // Î∞©Ìñ• Í≤∞Ï†ï (Ïã§ÏãúÍ∞Ñ)
+                if (AttackPivot.eulerAngles.z < 180 && priDirection)
                 {
                     weaponRenderer.flipX = false;
                 }
-                else if (attackPivot.eulerAngles.z > 180 && !priDirection)
+                else if (AttackPivot.eulerAngles.z > 180 && !priDirection)
                 {
                     weaponRenderer.flipX = true;
                 }
                 priDirection = weaponRenderer.flipX;
 
-                // π´±‚ ∞≈ƒ°¥Î »∞º∫»≠
+                // Î¨¥Í∏∞ Í±∞ÏπòÎåÄ ÌôúÏÑ±Ìôî
                 weaponRack.SetActive(true);
 
-                // »∏¿¸ ∞¢µµ ∞ËªÍ (Ω«Ω√∞£ ∞ËªÍ)
+                // ÌöåÏ†Ñ Í∞ÅÎèÑ Í≥ÑÏÇ∞ (Ïã§ÏãúÍ∞Ñ Í≥ÑÏÇ∞)
                 float angle = 45f * (weaponRenderer.flipX ? 1 : -1);
                 float duration = coolTime[poolManager.weaponIndex] / 5f;
 
-                // Ω√ƒˆΩ∫ µø¿˚ ª˝º∫
+                // ÏãúÌÄÄÏä§ ÎèôÏ†Å ÏÉùÏÑ±
                 attackAnimation = DOTween.Sequence();
 
-                attackAnimation.Append(grandChild.DOLocalRotate(new Vector3(0, 0, angle), duration))
-                               .Append(grandChild.DOLocalRotate(new Vector3(0, 0, -angle), duration))
-                               .AppendCallback(() =>
-                               {
-                                   isAttackTimimg = true;
-                                   StartCoroutine(WaitAction.waitOneFrame(() => isAttackTimimg = false));
-                               })
-                               .Append(grandChild.DOLocalRotate(Vector3.zero, duration).SetEase(Ease.InOutElastic))
-                               .OnComplete(() => weaponRack.SetActive(false));
+                attackAnimation
+                    .Append(grandChild.DOLocalRotate(new Vector3(0, 0, angle), duration))
+                    .Append(grandChild.DOLocalRotate(new Vector3(0, 0, -angle), duration))
+                    .AppendCallback(() =>
+                    {
+                        isAttackTimimg = true;
+                        StartCoroutine(WaitAction.waitOneFrame(() => isAttackTimimg = false));
+                    })
+                    .Append(
+                        grandChild.DOLocalRotate(Vector3.zero, duration).SetEase(Ease.InOutElastic)
+                    )
+                    .OnComplete(() => weaponRack.SetActive(false));
             }
         }
     }

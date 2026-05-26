@@ -1,6 +1,6 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -12,8 +12,11 @@ namespace Weapons
     /// </summary>
     public class Throw : Weapon
     {
-        [SerializeField] private float throwForce = 10f;
-        [SerializeField] private TextMeshProUGUI throwText;
+        [SerializeField]
+        private float throwForce = 10f;
+
+        [SerializeField]
+        private TextMeshProUGUI throwText;
 
         public override void Attack()
         {
@@ -23,29 +26,50 @@ namespace Weapons
                 isAttacking = !canAttack;
                 WorkingManager.throwCounts[poolManager.weaponIndex]--;
 
-                StartCoroutine(WaitAction.wait(() => isAttackTimimg, () =>
-                {
-                    GameObject temp = poolManager.Pool.Get();
+                StartCoroutine(
+                    WaitAction.wait(
+                        () => isAttackTimimg,
+                        () =>
+                        {
+                            GameObject temp = poolManager.Pool.Get();
 
-                    temp.transform.parent = attackPivot;
-                    temp.transform.localPosition = new Vector3(0, distanceBetweenPlayer[poolManager.weaponIndex], 0);
-                    temp.transform.localEulerAngles = Vector3.zero;
-                    temp.transform.parent = null;
-                    temp.GetComponent<Rigidbody2D>().linearVelocity = temp.transform.up * throwForce * TechTreeUnlock.throwRange;
+                            temp.transform.parent = AttackPivot;
+                            temp.transform.localPosition = new Vector3(
+                                0,
+                                distanceBetweenPlayer[poolManager.weaponIndex],
+                                0
+                            );
+                            temp.transform.localEulerAngles = Vector3.zero;
+                            temp.transform.parent = null;
+                            temp.GetComponent<Rigidbody2D>().linearVelocity =
+                                temp.transform.up * throwForce * TechTreeUnlock.throwRange;
 
-                    if (temp.TryGetComponent(out SummonThrow temp2))
-                    {
-                        temp2.pool = poolManager.Pool;
-                    }
+                            if (temp.TryGetComponent(out SummonThrow temp2))
+                            {
+                                temp2.pool = poolManager.Pool;
+                            }
 
-                    isAttacking = false;
-                }));
+                            isAttacking = false;
+                        }
+                    )
+                );
 
-                StartCoroutine(WaitAction.wait(coolTime[poolManager.weaponIndex]
-                    / (Personal_resource.hpPercentage <= 20 ? TechTreeUnlock.lowHpAttackSpeed : 1) / TechTreeUnlock.attackSpeed * TechTreeUnlock.throwCoolTime, () =>
-                {
-                    canAttack = true;
-                }));
+                StartCoroutine(
+                    WaitAction.wait(
+                        coolTime[poolManager.weaponIndex]
+                            / (
+                                Personal_resource.hpPercentage <= 20
+                                    ? TechTreeUnlock.lowHpAttackSpeed
+                                    : 1
+                            )
+                            / TechTreeUnlock.attackSpeed
+                            * TechTreeUnlock.throwCoolTime,
+                        () =>
+                        {
+                            canAttack = true;
+                        }
+                    )
+                );
             }
         }
 
@@ -66,7 +90,8 @@ namespace Weapons
         {
             base.Awake();
 
-            if (!global::Weapon.weaponList.ContainsKey(gameObject)) global::Weapon.weaponList[gameObject] = new List<Weapon>();
+            if (!global::Weapon.weaponList.ContainsKey(gameObject))
+                global::Weapon.weaponList[gameObject] = new List<Weapon>();
             global::Weapon.weaponList[gameObject].Add(this);
         }
 
@@ -80,11 +105,11 @@ namespace Weapons
                 enabled = false;
             }
 
-            if (attackPivot.eulerAngles.z < 180 && !priDirection)
+            if (AttackPivot.eulerAngles.z < 180 && !priDirection)
             {
                 weaponRenderer.flipX = true;
             }
-            else if (attackPivot.eulerAngles.z > 180 && priDirection)
+            else if (AttackPivot.eulerAngles.z > 180 && priDirection)
             {
                 weaponRenderer.flipX = false;
             }
@@ -99,8 +124,19 @@ namespace Weapons
             if (canAttack && WorkingManager.throwCounts[poolManager.weaponIndex] > 0)
             {
                 attackAnimation = DOTween.Sequence();
-                attackAnimation.Append(grandChild.DOLocalRotate(-new Vector3(0, 0, 30 * (weaponRenderer.flipX ? 1 : -1)), 0.3f))
-                    .Append(grandChild.DOLocalRotate(new Vector3(0, 0, 30 * (weaponRenderer.flipX ? 1 : -1)), 0.1f))
+                attackAnimation
+                    .Append(
+                        grandChild.DOLocalRotate(
+                            -new Vector3(0, 0, 30 * (weaponRenderer.flipX ? 1 : -1)),
+                            0.3f
+                        )
+                    )
+                    .Append(
+                        grandChild.DOLocalRotate(
+                            new Vector3(0, 0, 30 * (weaponRenderer.flipX ? 1 : -1)),
+                            0.1f
+                        )
+                    )
                     .AppendCallback(() =>
                     {
                         isAttackTimimg = true;

@@ -1,6 +1,6 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -19,38 +19,66 @@ namespace Weapons
                 canAttack = false;
                 isAttacking = !canAttack;
 
-                StartCoroutine(WaitAction.wait(() => isAttackTimimg, () =>
-                {
-                    SoundManager.SFX.PlayOneShot(SFXReference.Instance.melee);
-                    GameObject temp = poolManager.Pool.Get();
-
-                    temp.transform.parent = attackPivot;
-                    temp.transform.localPosition = new Vector3(0, distanceBetweenPlayer[poolManager.weaponIndex], 0);
-                    temp.transform.localEulerAngles = Vector3.zero;
-                    temp.transform.parent = null;
-
-                    if (temp.TryGetComponent(out SpriteRenderer spriteRenderer))
-                    {
-                        spriteRenderer.flipX = weaponRenderer.flipX;
-                    }
-
-                    StartCoroutine(WaitAction.waitOneFrame(() =>
-                    {
-                        if (temp.TryGetComponent<Animator>(out Animator anim))
+                StartCoroutine(
+                    WaitAction.wait(
+                        () => isAttackTimimg,
+                        () =>
                         {
-                            StartCoroutine(WaitAction.wait(() => !anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"), () =>
+                            SoundManager.SFX.PlayOneShot(SFXReference.Instance.melee);
+                            GameObject temp = poolManager.Pool.Get();
+
+                            temp.transform.parent = AttackPivot;
+                            temp.transform.localPosition = new Vector3(
+                                0,
+                                distanceBetweenPlayer[poolManager.weaponIndex],
+                                0
+                            );
+                            temp.transform.localEulerAngles = Vector3.zero;
+                            temp.transform.parent = null;
+
+                            if (temp.TryGetComponent(out SpriteRenderer spriteRenderer))
                             {
-                                poolManager.Pool.Release(temp);
-                            }));
+                                spriteRenderer.flipX = weaponRenderer.flipX;
+                            }
+
+                            StartCoroutine(
+                                WaitAction.waitOneFrame(() =>
+                                {
+                                    if (temp.TryGetComponent<Animator>(out Animator anim))
+                                    {
+                                        StartCoroutine(
+                                            WaitAction.wait(
+                                                () =>
+                                                    !anim.GetCurrentAnimatorStateInfo(0)
+                                                        .IsTag("Attack"),
+                                                () =>
+                                                {
+                                                    poolManager.Pool.Release(temp);
+                                                }
+                                            )
+                                        );
+                                    }
+                                })
+                            );
                         }
-                    }));
-                }));
-                StartCoroutine(WaitAction.wait(coolTime[poolManager.weaponIndex] / (Personal_resource.hpPercentage <= 20 ? TechTreeUnlock.lowHpAttackSpeed : 1)
-                    / TechTreeUnlock.attackSpeed, () =>
-                {
-                    canAttack = true;
-                    isAttacking = !canAttack;
-                }));
+                    )
+                );
+                StartCoroutine(
+                    WaitAction.wait(
+                        coolTime[poolManager.weaponIndex]
+                            / (
+                                Personal_resource.hpPercentage <= 20
+                                    ? TechTreeUnlock.lowHpAttackSpeed
+                                    : 1
+                            )
+                            / TechTreeUnlock.attackSpeed,
+                        () =>
+                        {
+                            canAttack = true;
+                            isAttacking = !canAttack;
+                        }
+                    )
+                );
             }
         }
 
@@ -58,7 +86,8 @@ namespace Weapons
         {
             base.Awake();
 
-            if (!global::Weapon.weaponList.ContainsKey(gameObject)) global::Weapon.weaponList[gameObject] = new List<Weapon>();
+            if (!global::Weapon.weaponList.ContainsKey(gameObject))
+                global::Weapon.weaponList[gameObject] = new List<Weapon>();
 
             global::Weapon.weaponList[gameObject].Add(this);
         }
@@ -77,11 +106,11 @@ namespace Weapons
         {
             if (canAttack)
             {
-                if (attackPivot.eulerAngles.z < 180 && priDirection)
+                if (AttackPivot.eulerAngles.z < 180 && priDirection)
                 {
                     weaponRenderer.flipX = false;
                 }
-                else if (attackPivot.eulerAngles.z > 180 && !priDirection)
+                else if (AttackPivot.eulerAngles.z > 180 && !priDirection)
                 {
                     weaponRenderer.flipX = true;
                 }
@@ -98,15 +127,26 @@ namespace Weapons
 
                 attackAnimation = DOTween.Sequence();
                 attackAnimation
-                    .Append(grandChild.DOLocalRotate(-new Vector3(0, 0, 70 * (weaponRenderer.flipX ? 1 : -1)), coolTime[poolManager.weaponIndex] / 3f))
+                    .Append(
+                        grandChild.DOLocalRotate(
+                            -new Vector3(0, 0, 70 * (weaponRenderer.flipX ? 1 : -1)),
+                            coolTime[poolManager.weaponIndex] / 3f
+                        )
+                    )
                     .AppendCallback(() =>
                     {
-                        StartCoroutine(WaitAction.wait(coolTime[poolManager.weaponIndex] / 5f, () =>
-                        {
-                            grandChild.localEulerAngles = Vector3.zero;
-                            weaponRack.SetActive(false);
-                            if (poolManager.weaponIndex == 1) weaponRenderer.flipX = !weaponRenderer.flipX;
-                        }));
+                        StartCoroutine(
+                            WaitAction.wait(
+                                coolTime[poolManager.weaponIndex] / 5f,
+                                () =>
+                                {
+                                    grandChild.localEulerAngles = Vector3.zero;
+                                    weaponRack.SetActive(false);
+                                    if (poolManager.weaponIndex == 1)
+                                        weaponRenderer.flipX = !weaponRenderer.flipX;
+                                }
+                            )
+                        );
                     });
             }
         }

@@ -593,6 +593,18 @@ MonoBehaviour:
     m_Key: Shoes button
     m_Metadata:
       m_Items: []
+  - m_Id: 23195917134299136
+    m_Key: DBS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23198121845030912
+    m_Key: SMG
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23200133319983104
+    m_Key: SniperRifle
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -6,7 +6,14 @@ public class SummonShotGunEffect : SummonObject
 {
     private Animator anim;
     private Collider2D col;
-    [HideInInspector] public bool isAuto = false;
+
+    [HideInInspector]
+    public bool isAuto = false;
+
+    private readonly List<Collider2D> damagedEnemies = new();
+
+    [SerializeField]
+    private LayerMask enemyLayer;
 
     protected override void Awake()
     {
@@ -23,13 +30,28 @@ public class SummonShotGunEffect : SummonObject
 
     protected override void OnEnable()
     {
-        col.enabled = true;
         anim.SetTrigger("Attack");
-        StartCoroutine(WaitAction.waitOneFrame(() =>
+
+        col.Overlap(
+            new ContactFilter2D()
+            {
+                layerMask = enemyLayer,
+                useLayerMask = true,
+                useTriggers = true,
+            },
+            damagedEnemies
+        );
+        foreach (Collider2D enemyCol in damagedEnemies)
         {
-            col.enabled = false;
-        }));
+            if (enemyCol.TryGetComponent(out IEnemyDamage enemy))
+            {
+                Vector2 direction = (enemyCol.transform.position - transform.position).normalized;
+                Attack(enemy, direction);
+            }
+        }
     }
+
+    protected override void OnTriggerEnter2D(Collider2D other) { }
 
     protected override void Attack(IEnemyDamage enemy, Vector2 direction)
     {
@@ -38,16 +60,31 @@ public class SummonShotGunEffect : SummonObject
             overWrap++;
             TechTreeUnlock.moveSpeed = 1.1f;
 
-            ObjectPoolManager.instance[Kind.Gun].StartCoroutine(WaitAction.wait(2f, () =>
-            {
-                overWrap--;
+            ObjectPoolManager
+                .instance[Kind.Gun]
+                .StartCoroutine(
+                    WaitAction.wait(
+                        2f,
+                        () =>
+                        {
+                            overWrap--;
 
-                if (overWrap == 0) TechTreeUnlock.moveSpeed = 1;
-            }));
+                            if (overWrap == 0)
+                                TechTreeUnlock.moveSpeed = 1;
+                        }
+                    )
+                );
         }
 
-        enemy.Damage(damage * GunStatManager.instance[(GunKind)ObjectPoolManager.instance[Kind.Gun].weaponIndex].damage
-            * (PlayerAvoidSkill.damageUp ? TechTreeUnlock.afterAvoidDamage : 1) * (isAuto ? TechTreeUnlock.autoGunDamage : 1)
-             * TechTreeUnlock.weaponDamage, knockBackForce * direction);
+        enemy.Damage(
+            damage
+                * GunStatManager
+                    .instance[(GunKind)ObjectPoolManager.instance[Kind.Gun].weaponIndex]
+                    .damage
+                * (PlayerAvoidSkill.damageUp ? TechTreeUnlock.afterAvoidDamage : 1)
+                * (isAuto ? TechTreeUnlock.autoGunDamage : 1)
+                * TechTreeUnlock.weaponDamage,
+            knockBackForce * direction
+        );
     }
 }

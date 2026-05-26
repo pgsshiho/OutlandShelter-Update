@@ -49,10 +49,13 @@ MonoBehaviour:
   summonPrefab:
   - {fileID: 5853316964626327531, guid: 4fd13539e173d8f4aa96db8780736517, type: 3}
   - {fileID: 5853316964626327531, guid: d168c704f49f747458f559ba78398917, type: 3}
-  - {fileID: 5853316964626327531, guid: 4fd13539e173d8f4aa96db8780736517, type: 3}
+  - {fileID: 5853316964626327531, guid: eeda501f8ab7e0c4a87d2cd7fcf3d942, type: 3}
   - {fileID: 5853316964626327531, guid: 926a1ce11fc5cbc47acdac11591639aa, type: 3}
   - {fileID: 3272220324037185670, guid: a9d34b88402460a4587fded896670da5, type: 3}
   - {fileID: 3272220324037185670, guid: 343576b75c2d2c64d89eeb6cfbf32330, type: 3}
   - {fileID: 5853316964626327531, guid: 238029a730fa9d94ebfbf31a6fec8953, type: 3}
+  - {fileID: 5853316964626327531, guid: a74a53c8fde131b41b97a9400b582fd2, type: 3}
+  - {fileID: 3272220324037185670, guid: 4bdb3786d43e14d41ab8b4104c1dd5e1, type: 3}
+  - {fileID: 5853316964626327531, guid: 110dcc79c80a7bc46a42d99f4f3da9a2, type: 3}
   weaponIndex: 0
   key: 2
