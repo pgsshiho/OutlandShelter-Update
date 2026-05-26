@@ -98,6 +98,11 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         hp = HP;
         HpBar = hp / HP;
 
+        if (hpBar.transform.parent.gameObject.activeSelf)
+            hpBar.transform.parent.position = Camera.main.WorldToScreenPoint(
+                transform.position + (Vector3)offset
+            );
+
         Transform temp = hpBar.transform.parent;
         while (temp.parent != null)
         {

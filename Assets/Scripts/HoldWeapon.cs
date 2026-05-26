@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class HoldWeapon : MonoBehaviour
 {
-    private List<Weapons.Weapon> weapons = new();
-    [SerializeField] private float yOffset = 0.5f;
+    private readonly List<Weapons.Weapon> weapons = new();
+
+    [SerializeField]
+    private float yOffset = 0.5f;
     private SpriteRenderer spriteRenderer;
     private Transform child;
 
@@ -13,7 +15,8 @@ public class HoldWeapon : MonoBehaviour
     {
         foreach (Weapons.Weapon weapon in transform.parent.GetComponents<Weapons.Weapon>())
         {
-            if (weapon is not Weapons.Turret && weapon is not Weapons.WeaponArmor) weapons.Add(weapon);
+            if (weapon is not Weapons.Turret && weapon is not Weapons.WeaponArmor)
+                weapons.Add(weapon);
         }
 
         spriteRenderer = transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();

@@ -4,86 +4,47 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField]
+    private Transform player;
 
     Vector3 TargetPos
     {
-        get
-        {
-            return (Vector3)PlayerMove.moveDirection * 0.5f + new Vector3(0, 0, -500);
-        }
+        get { return (Vector3)PlayerMove.moveDirection * 0.5f + new Vector3(0, 0, -500); }
     }
 
-    [SerializeField] private Vector2 leftBottom;
-    [SerializeField] private Vector2 rightTop;
+    [SerializeField]
+    private Vector2 leftBottom;
 
-    private void Update()
+    [SerializeField]
+    private Vector2 rightTop;
+
+    private Camera main;
+
+    private void Awake()
     {
-        Vector3 targetPos = transform.parent.position + TargetPos;
-
-        float size = Camera.main.orthographicSize;
-
-        leftBottom.x += size * (16f / 9f);
-        leftBottom.y += size;
-        rightTop.x -= size * (16f / 9f);
-        rightTop.y -= size;
-
-        targetPos.x = Mathf.Clamp(targetPos.x, leftBottom.x, rightTop.x);
-        targetPos.y = Mathf.Clamp(targetPos.y, leftBottom.y, rightTop.y);
-
-        if (targetPos.x > leftBottom.x && targetPos.x < rightTop.x && targetPos.y > leftBottom.y && targetPos.y < rightTop.y) transform.position = Vector3.Lerp(transform.position, targetPos, 10f / 3f * Time.deltaTime);
-        else transform.position = targetPos;
-
-        leftBottom.x -= size * (16f / 9f);
-        leftBottom.y -= size;
-        rightTop.x += size * (16f / 9f);
-        rightTop.y += size;
-    }
-
-    private void FixedUpdate()
-    {
-        Vector3 targetPos = transform.parent.position + TargetPos;
-
-        float size = Camera.main.orthographicSize;
-
-        leftBottom.x += size * (16f / 9f);
-        leftBottom.y += size;
-        rightTop.x -= size * (16f / 9f);
-        rightTop.y -= size;
-
-        targetPos.x = Mathf.Clamp(targetPos.x, leftBottom.x, rightTop.x);
-        targetPos.y = Mathf.Clamp(targetPos.y, leftBottom.y, rightTop.y);
-
-        if (targetPos.x > leftBottom.x && targetPos.x < rightTop.x && targetPos.y > leftBottom.y && targetPos.y < rightTop.y) transform.position = Vector3.Lerp(transform.position, targetPos, 10f / 3f * Time.deltaTime);
-        else transform.position = targetPos;
-
-        leftBottom.x -= size * (16f / 9f);
-        leftBottom.y -= size;
-        rightTop.x += size * (16f / 9f);
-        rightTop.y += size;
+        main = Camera.main;
     }
 
     private void LateUpdate()
     {
-        Vector3 targetPos = transform.parent.position + TargetPos;
+        Vector3 targetPos = player.position + TargetPos;
 
-        float size = Camera.main.orthographicSize;
+        float size = main.orthographicSize;
 
-        leftBottom.x += size * (16f / 9f);
-        leftBottom.y += size;
-        rightTop.x -= size * (16f / 9f);
-        rightTop.y -= size;
+        float leftBottomX = leftBottom.x + size * main.aspect;
+        float leftBottomY = leftBottom.y + size;
+        float rightTopX = rightTop.x - size * main.aspect;
+        float rightTopY = rightTop.y - size;
 
-        targetPos.x = Mathf.Clamp(targetPos.x, leftBottom.x, rightTop.x);
-        targetPos.y = Mathf.Clamp(targetPos.y, leftBottom.y, rightTop.y);
+        targetPos.x = Mathf.Clamp(targetPos.x, leftBottomX, rightTopX);
+        targetPos.y = Mathf.Clamp(targetPos.y, leftBottomY, rightTopY);
 
-        if (targetPos.x > leftBottom.x && targetPos.x < rightTop.x && targetPos.y > leftBottom.y && targetPos.y < rightTop.y) transform.position = Vector3.Lerp(transform.position, targetPos, 10f / 3f * Time.deltaTime);
-        else transform.position = targetPos;
+        Vector3 temp = Vector3.MoveTowards(transform.position, targetPos, 5 * Time.deltaTime);
 
-        leftBottom.x -= size * (16f / 9f);
-        leftBottom.y -= size;
-        rightTop.x += size * (16f / 9f);
-        rightTop.y += size;
+        temp.x = Mathf.Clamp(temp.x, leftBottomX, rightTopX);
+        temp.y = Mathf.Clamp(temp.y, leftBottomY, rightTopY);
+
+        transform.position = temp;
     }
 
     private void OnDrawGizmos()
