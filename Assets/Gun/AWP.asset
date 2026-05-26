@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37dfc0831ed00e640b5c144c11fc056b, type: 3}
-  m_Name: AutoShotGun
-  m_EditorClassIdentifier: Assembly-CSharp::SO_AutoShotGun
+  m_Script: {fileID: 11500000, guid: 5846632a2d0ccad4ba7dc72c353a2193, type: 3}
+  m_Name: AWP
+  m_EditorClassIdentifier: Assembly-CSharp::SO_AWP
   deviation: 0
-  oneMagazine: 10
-  relodingTime: 3
+  oneMagazine: 5
+  relodingTime: 4
   shotSpeed: 20
   fireXOffset: 0
   characterHandHeight: 0.7
-  isAuto: 1
+  isAuto: 0

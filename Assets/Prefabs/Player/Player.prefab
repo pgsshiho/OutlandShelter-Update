@@ -236,6 +236,9 @@ MonoBehaviour:
   - 1.2
   - 0.3
   - 1
+  - 0.03
+  - 1.5
+  - 0.2
   kind: 2
   distanceBetweenPlayer:
   - 0.5
@@ -245,8 +248,14 @@ MonoBehaviour:
   - 2
   - 2
   - 2
-  isFlip: 00000000000000
+  - 0.5
+  - 1
+  - 2
+  isFlip: 00000000000000000000
   offset:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -262,6 +271,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8fec1530243071c4089d85358567854d, type: 3}
   - {fileID: 21300000, guid: b2c158fa112fc484aaf803577b44c215, type: 3}
   - {fileID: 21300000, guid: 6deea8a750c53c2418d95922fdda6a09, type: 3}
+  - {fileID: -6086134956035042923, guid: 1e78ce67f9290c64bb2fcb1415f3e94a, type: 3}
+  - {fileID: 1470248756882160893, guid: f577de7792f3feb44b018b4ba9639791, type: 3}
+  - {fileID: -4528080448849875259, guid: 598f57f6f889b294abe62eb41e6357d9, type: 3}
   poolManager: {fileID: 0}
   gun:
   - {fileID: 11400000, guid: 4d79422252f727f418ade7f8e1ed1ec4, type: 2}
@@ -271,28 +283,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4e55f93f6f10c404e82ff3f75abae6ca, type: 2}
   - {fileID: 11400000, guid: 17fcbd9c5e3866147916fd71651d41ef, type: 2}
   - {fileID: 11400000, guid: 8301da032968f58409b9274fcfdf1e24, type: 2}
-  deviation:
-  - 3
-  - 3
-  - 12
-  - 0
-  - 0
-  - 0
-  - 0
-  oneMagazine: 0a000000060000001e0000000a000000080000000a00000001000000
-  relodingTime:
-  - 1.5
-  - 1.2
-  - 2
-  - 2
-  - 3
-  - 3
-  - 5
-  shotSpeed: 20
+  - {fileID: 11400000, guid: 370f682a152f69a4d90b9cf3bcff227b, type: 2}
+  - {fileID: 11400000, guid: daf3cc16d7df0604dabd6839ac90e6a5, type: 2}
+  - {fileID: 11400000, guid: 9e8a2ec2e2594884db13ac8e11d6387a, type: 2}
   bullet: {fileID: 0}
   loadingGuide: {fileID: 0}
-  fireXOffset: 0
-  characterHandHeight: 0.7
 --- !u!114 &9027600650229844998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,7 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5877a0ad0fa692f4f9c1c7b6fd3783f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capacity: 130
+  capacity: 150
   otherBag: {fileID: 0}
   resources: 000000000000000000000000
   resourceCounts:

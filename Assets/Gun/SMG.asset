@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37dfc0831ed00e640b5c144c11fc056b, type: 3}
-  m_Name: AutoShotGun
-  m_EditorClassIdentifier: Assembly-CSharp::SO_AutoShotGun
-  deviation: 0
-  oneMagazine: 10
-  relodingTime: 3
+  m_Script: {fileID: 11500000, guid: 86bc539ee7be8cc41ac6072935a1eee8, type: 3}
+  m_Name: SMG
+  m_EditorClassIdentifier: Assembly-CSharp::SO_SMG
+  deviation: 2
+  oneMagazine: 30
+  relodingTime: 0.8
   shotSpeed: 20
   fireXOffset: 0
   characterHandHeight: 0.7

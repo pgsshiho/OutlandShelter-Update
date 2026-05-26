@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class WeaponChoice : MonoBehaviour
 {
-    [SerializeField] private Kind kind;
+    [SerializeField]
+    private Kind kind;
 
+    [SerializeField]
     private int myIndex;
 
     GameObject child;
@@ -14,15 +16,6 @@ public class WeaponChoice : MonoBehaviour
 
     private void Awake()
     {
-        Transform[] brothers = new Transform[transform.parent.childCount];
-
-        for (int i = 0; i < brothers.Length; i++)
-        {
-            brothers[i] = transform.parent.GetChild(i);
-
-            if (brothers[i] == transform) myIndex = i;
-        }
-
         child = transform.GetChild(0).gameObject;
 
         changeWeapon = FindAnyObjectByType<ChangeWeapon>();

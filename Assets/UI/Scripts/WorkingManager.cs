@@ -227,37 +227,37 @@ public class WorkingManager : MonoBehaviour
 
     private void Pistol()
     {
-        ItemOwnManager.ownWeapon[Kind.Gun][0] = true;
+        ItemOwnManager.ownWeapon[Kind.Gun][(int)GunKind.Pistol] = true;
     }
 
     private void Revolver()
     {
-        ItemOwnManager.ownWeapon[Kind.Gun][1] = true;
+        ItemOwnManager.ownWeapon[Kind.Gun][(int)GunKind.Revolver] = true;
     }
 
     private void Rifle()
     {
-        ItemOwnManager.ownWeapon[Kind.Gun][2] = true;
+        ItemOwnManager.ownWeapon[Kind.Gun][(int)GunKind.Rifle] = true;
     }
 
     private void HalfAutoRifle()
     {
-        ItemOwnManager.ownWeapon[Kind.Gun][3] = true;
+        ItemOwnManager.ownWeapon[Kind.Gun][(int)GunKind.HalfAutoRifle] = true;
     }
 
     private void ShotGun()
     {
-        ItemOwnManager.ownWeapon[Kind.Gun][4] = true;
+        ItemOwnManager.ownWeapon[Kind.Gun][(int)GunKind.Shotgun] = true;
     }
 
     private void AutoShotGun()
     {
-        ItemOwnManager.ownWeapon[Kind.Gun][5] = true;
+        ItemOwnManager.ownWeapon[Kind.Gun][(int)GunKind.AutoShotgun] = true;
     }
 
     private void RPG()
     {
-        int rpgIndex = 6; // RPG 인덱스 번호
+        int rpgIndex = (int)GunKind.RPG; // RPG 인덱스 번호
         ItemOwnManager.ownWeapon[Kind.Gun][rpgIndex] = true;
 
         // 추가 액션: 제작 완료 시 유저에게 강제로 장착시키기

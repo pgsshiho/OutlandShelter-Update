@@ -18,4 +18,4 @@ MonoBehaviour:
   shotSpeed: 20
   fireXOffset: 0
   characterHandHeight: 0.7
-  isAuto: 0
+  isAuto: 1
