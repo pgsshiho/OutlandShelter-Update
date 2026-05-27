@@ -9,7 +9,8 @@ public class Berserker : BasicZombie
 
     protected override void Update()
     {
-        if (isDead) return;
+        if (isDead)
+            return;
         float lostHpRatio = 1f - (hp / HP);
         float originalSpeed = speed;
         speed = originalSpeed * (1f + lostHpRatio);
