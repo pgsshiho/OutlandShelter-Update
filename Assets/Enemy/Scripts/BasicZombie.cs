@@ -367,7 +367,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     {
         if (isDead)
             return;
-        hp = Mathf.Clamp(hp - damage, 0, hp);
+        hp = Mathf.Clamp(hp - damage, 0, HP);
         HpBar = hp / HP;
 
         if (knockBack != Vector2.zero)
