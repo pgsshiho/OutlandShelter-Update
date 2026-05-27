@@ -25,6 +25,9 @@ public class ObjectPoolManager : MonoBehaviour
         private set { pool[weaponIndex] = value; }
     }
 
+    [SerializeField]
+    private bool usePooling = true; // 풀링 사용 여부를 Inspector에서 설정할 수 있도록 추가
+
     private void Awake()
     {
         instance[key] = this;
@@ -34,26 +37,32 @@ public class ObjectPoolManager : MonoBehaviour
 
     private void Init()
     {
-        Pool = new ObjectPool<GameObject>(
-            CreatePooledItem,
-            OnTakeFromPool,
-            OnReturnedToPool,
-            OnDestroyPoolObject,
-            true,
-            defaultCapacity[weaponIndex],
-            maxPoolSize[weaponIndex]
-        );
-
-        if (!clones.ContainsKey(weaponIndex))
-            clones[weaponIndex] = new List<GameObject>();
-
-        if (clones[weaponIndex].Count < defaultCapacity[weaponIndex])
+        if (usePooling)
         {
-            // 초기화
-            for (int i = 0; i < defaultCapacity[weaponIndex]; i++)
+            Pool = new ObjectPool<GameObject>(
+                CreatePooledItem,
+                OnTakeFromPool,
+                OnReturnedToPool,
+                OnDestroyPoolObject,
+                true,
+                defaultCapacity[weaponIndex],
+                maxPoolSize[weaponIndex]
+            );
+
+            if (!clones.ContainsKey(weaponIndex))
+                clones[weaponIndex] = new List<GameObject>();
+
+            if (clones[weaponIndex].Count < defaultCapacity[weaponIndex])
             {
-                Pool.Release(CreatePooledItem());
+                for (int i = 0; i < defaultCapacity[weaponIndex]; i++)
+                {
+                    Pool.Release(CreatePooledItem());
+                }
             }
+        }
+        else
+        {
+            Pool = new InstantiateDestroyPool(CreateTransientItem, OnTakeFromPool);
         }
     }
 
@@ -92,5 +101,56 @@ public class ObjectPoolManager : MonoBehaviour
     private void OnDestroyPoolObject(GameObject poolGo)
     {
         Destroy(poolGo);
+    }
+
+    // 풀링을 사용하지 않을 때, 매번 새로 생성하는 함수
+    private GameObject CreateTransientItem()
+    {
+        GameObject go = Instantiate(summonPrefab[weaponIndex]);
+
+        if (go.TryGetComponent(out SummonRPG rpg))
+        {
+            rpg.pool = pool[weaponIndex];
+        }
+
+        return go;
+    }
+
+    private sealed class InstantiateDestroyPool : IObjectPool<GameObject>
+    {
+        private readonly System.Func<GameObject> createFunc;
+        private readonly System.Action<GameObject> actionOnGet;
+
+        public int CountInactive => 0;
+
+        public InstantiateDestroyPool(
+            System.Func<GameObject> createFunc,
+            System.Action<GameObject> actionOnGet
+        )
+        {
+            this.createFunc = createFunc;
+            this.actionOnGet = actionOnGet;
+        }
+
+        public GameObject Get()
+        {
+            GameObject go = createFunc();
+            actionOnGet?.Invoke(go);
+            return go;
+        }
+
+        public PooledObject<GameObject> Get(out GameObject v)
+        {
+            v = Get();
+            return new PooledObject<GameObject>(v, this);
+        }
+
+        public void Release(GameObject element)
+        {
+            if (element != null)
+                Destroy(element);
+        }
+
+        public void Clear() { }
     }
 }

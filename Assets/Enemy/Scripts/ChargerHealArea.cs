@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class ChargerHealarea : MonoBehaviour
 {
-    [HideInInspector] public float Healamount;
+    [HideInInspector]
+    public float Healamount;
 
-    [SerializeField] private float duration = 3f;
+    [SerializeField]
+    private float duration = 3f;
 
     private void Awake()
     {
