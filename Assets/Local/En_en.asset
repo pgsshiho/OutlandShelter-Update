@@ -870,6 +870,25 @@ MonoBehaviour:
       Rifle'
     m_Metadata:
       m_Items: []
+  - m_Id: 24027474652790784
+    m_Localized: 'A lightweight automatic weapon that uses pistol ammunition for
+      a stable and high rate of fire
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24028105945874432
+    m_Localized: 'A shotgun capable of rapid two-shot bursts
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24028181695004672
+    m_Localized: 'A slow but powerful sniper rifle that pierces every enemy
+
+'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
