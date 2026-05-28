@@ -254,18 +254,22 @@ public class WorkingManager : MonoBehaviour
     {
         ItemOwnManager.ownWeapon[Kind.Gun][(int)GunKind.AutoShotgun] = true;
     }
+
     private void SMG()
     {
         ItemOwnManager.ownWeapon[Kind.Gun][(int)GunKind.SMG] = true;
     }
+
     private void DBS()
     {
         ItemOwnManager.ownWeapon[Kind.Gun][(int)GunKind.DBS] = true;
     }
+
     private void AWP()
     {
         ItemOwnManager.ownWeapon[Kind.Gun][(int)GunKind.AWP] = true;
     }
+
     private void RPG()
     {
         int rpgIndex = (int)GunKind.RPG; // RPG 인덱스 번호

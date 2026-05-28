@@ -6,11 +6,16 @@ public class Charger : BasicZombie
     private bool isShooting = false; // 공격 전용 액션 딜레이 플래그
 
     [Header("Heal Area Spawn Settings")]
-    [SerializeField] private GameObject healAreaPrefab;
-    [SerializeField] private float healAmountValue = 10f;
-    [SerializeField] private float healCooldown = 30f; 
+    [SerializeField]
+    private GameObject healAreaPrefab;
 
-    private bool canHeal = true; 
+    [SerializeField]
+    private float healAmountValue = 10f;
+
+    [SerializeField]
+    private float healCooldown = 30f;
+
+    private bool canHeal = true;
 
     protected override void OnEnable()
     {
@@ -33,9 +38,10 @@ public class Charger : BasicZombie
 
         base.Update();
     }
+
     private IEnumerator SpawnHealAreaRoutine()
     {
-        canHeal = false; 
+        canHeal = false;
 
         if (healAreaPrefab != null)
         {
@@ -53,7 +59,8 @@ public class Charger : BasicZombie
 
     protected override void Attack(Transform target)
     {
-        if (target == null || isShooting) return;
+        if (target == null || isShooting)
+            return;
 
         if (target.TryGetComponent(out SummonTurret turret))
         {
@@ -81,7 +88,8 @@ public class Charger : BasicZombie
     {
         target.enabled = false;
         yield return new WaitForSeconds(3f);
-        if (target != null) target.enabled = true;
+        if (target != null)
+            target.enabled = true;
     }
 
     private IEnumerator ActionDelay()
