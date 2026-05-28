@@ -372,10 +372,9 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
         if (knockBack != Vector2.zero)
         {
-            spriteRenderer.flipX = !spriteRenderer.flipX; // 순간적으로 방향을 틀어버림
-            rb.linearVelocity = knockBack; // 기획하신 넉백 적용
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+            rb.linearVelocity = knockBack;
         }
-        // --------------------------------
 
         if (hp == 0)
         {
