@@ -15,7 +15,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     protected bool canAttack = true;
     protected Rigidbody2D rb;
     protected LayerMask wall;
-
+    public float defense;
     [SerializeField]
     protected Image hpBar;
 
@@ -367,15 +367,16 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     {
         if (isDead)
             return;
-        hp = Mathf.Clamp(hp - damage, 0, HP);
+        float finalDamage = damage * Mathf.Max(0, (1f - (defense / 100f)));
+
+        hp = Mathf.Clamp(hp - finalDamage, 0, HP);
         HpBar = hp / HP;
 
         if (knockBack != Vector2.zero)
         {
-            spriteRenderer.flipX = !spriteRenderer.flipX; // 순간적으로 방향을 틀어버림
-            rb.linearVelocity = knockBack; // 기획하신 넉백 적용
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+            rb.linearVelocity = knockBack;
         }
-        // --------------------------------
 
         if (hp == 0)
         {
