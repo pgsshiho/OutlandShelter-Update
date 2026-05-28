@@ -605,6 +605,18 @@ MonoBehaviour:
     m_Key: SniperRifle
     m_Metadata:
       m_Items: []
+  - m_Id: 24027474652790784
+    m_Key: SMGs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24028105945874432
+    m_Key: DBSs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24028181695004672
+    m_Key: SPs
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

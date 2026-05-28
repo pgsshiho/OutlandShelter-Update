@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: Auto Shotgun
+  toolTipText: SPs
 --- !u!1 &280515503543873843
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +990,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2338.6062}
+  m_AnchoredPosition: {x: 0, y: -1638.607}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4432236728070537552
@@ -7690,7 +7690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -938.6072}
+  m_AnchoredPosition: {x: 0, y: -1988.607}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5400429677170718099
@@ -8340,7 +8340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 461.39343}
+  m_AnchoredPosition: {x: 0, y: 461.3934}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5163522065795298144
@@ -9002,7 +9002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -238.60767}
+  m_AnchoredPosition: {x: 0, y: -588.6067}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3653807254965961968
@@ -12107,7 +12107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 111.39331}
+  m_AnchoredPosition: {x: 0, y: -238.6067}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2990544914883869011
@@ -13265,8 +13265,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8924317178205238702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.8373939}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0.83388805}
+  m_AnchorMax: {x: 1, y: 0.99649423}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15403,7 +15403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: Auto Shotgun
+  toolTipText: SMGs
 --- !u!1 &4320925363791926638
 GameObject:
   m_ObjectHideFlags: 0
@@ -17245,7 +17245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1988.6064}
+  m_AnchoredPosition: {x: 0, y: -938.6067}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &935884940427474966
@@ -17882,7 +17882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f2613dd8f137442963c579938e026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolTip
-  toolTipText: Auto Shotgun
+  toolTipText: DBSs
 --- !u!1 &5336941521944774724
 GameObject:
   m_ObjectHideFlags: 0
@@ -18212,7 +18212,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:456e90ed9ed9e77469dba5e112e205fe
     m_TableEntryReference:
-      m_KeyId: 13438963163824128
+      m_KeyId: 23198121845030912
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -20344,8 +20344,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7609964597944530811}
   m_HandleRect: {fileID: 6291749572378700839}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.16260615
+  m_Value: 0.9958135
+  m_Size: 0.16260616
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -21275,7 +21275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1288.6072}
+  m_AnchoredPosition: {x: 0, y: -2338.607}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4974633476854870085
@@ -23693,7 +23693,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -588.6072}
+  m_AnchoredPosition: {x: 0, y: -1288.6072}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4703531384170390722
@@ -25281,19 +25281,19 @@ RectTransform:
   - {fileID: 6949765196855792627}
   - {fileID: 5717311709389554994}
   - {fileID: 3381803484995247707}
+  - {fileID: 5391336055566123103}
   - {fileID: 998373598575307102}
   - {fileID: 834605764134010541}
+  - {fileID: 3719589662544600667}
   - {fileID: 5313986545423396840}
+  - {fileID: 463184812501783302}
   - {fileID: 2853139207541254919}
   - {fileID: 2251442606939714603}
-  - {fileID: 5391336055566123103}
-  - {fileID: 3719589662544600667}
-  - {fileID: 463184812501783302}
   m_Father: {fileID: 6725189433860161653}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00011974663}
+  m_AnchoredPosition: {x: 0.0000019073, y: 17.96784}
   m_SizeDelta: {x: 0, y: 5125.196}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &7884478348363726868
@@ -26116,7 +26116,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:456e90ed9ed9e77469dba5e112e205fe
     m_TableEntryReference:
-      m_KeyId: 13438963163824128
+      m_KeyId: 23200133319983104
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -28181,7 +28181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1638.6067}
+  m_AnchoredPosition: {x: 0, y: 111.39331}
   m_SizeDelta: {x: 660.355, y: 278.1386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6473280409334752600
@@ -28956,7 +28956,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:456e90ed9ed9e77469dba5e112e205fe
     m_TableEntryReference:
-      m_KeyId: 13438963163824128
+      m_KeyId: 23195917134299136
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
