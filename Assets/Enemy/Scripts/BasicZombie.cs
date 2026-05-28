@@ -15,7 +15,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     protected bool canAttack = true;
     protected Rigidbody2D rb;
     protected LayerMask wall;
-
+    public float defense;
     [SerializeField]
     protected Image hpBar;
 
@@ -367,7 +367,9 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     {
         if (isDead)
             return;
-        hp = Mathf.Clamp(hp - damage, 0, HP);
+        float finalDamage = damage * Mathf.Max(0, (1f - (defense / 100f)));
+
+        hp = Mathf.Clamp(hp - finalDamage, 0, HP);
         HpBar = hp / HP;
 
         if (knockBack != Vector2.zero)
