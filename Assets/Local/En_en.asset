@@ -46,11 +46,13 @@ MonoBehaviour:
       Left Click: Attack / Use Item
 
       `:
-      Hide Guide UI'
+      Hide Guide UI
+
+      Hitting the base with a hammer restores the base''s health.'
     m_Metadata:
       m_Items: []
   - m_Id: 4079548334080
-    m_Localized: Choose
+    m_Localized: select
     m_Metadata:
       m_Items: []
   - m_Id: 4195520839680
