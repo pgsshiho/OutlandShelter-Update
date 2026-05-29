@@ -36852,6 +36852,10 @@ PrefabInstance:
       propertyPath: 'exampleImage.Array.data[2]'
       value: 
       objectReference: {fileID: 641191070794998030, guid: 165569c01d93f2744bfcbc69788e33a0, type: 3}
+    - target: {fileID: 5034511799548429835, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: orthographic size
+      value: 5.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7366396850206286796, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
       propertyPath: playerBag
       value: 

@@ -68,7 +68,7 @@ public class SummonTurret : ResourceReturn, ITurret, IEnemyAttackable
     protected override void Update()
     {
         base.Update();
-
+        if (usingBullet.UsingBullet <= 0) return;
         Collider2D[] hits = Physics2D.OverlapCircleAll(
             transform.position,
             range * TechTreeUnlock.turretRange,
@@ -109,7 +109,7 @@ public class SummonTurret : ResourceReturn, ITurret, IEnemyAttackable
             if (int.Parse(spriteRenderer.sprite.name[^1].ToString()) % 2 == 0)
                 spriteRenderer.sprite = angleToImages[imageNumber].sprite;
 
-            if (canAttack)
+            if (canAttack && usingBullet.UsingBullet > 0)
             {
                 canAttack = false;
 

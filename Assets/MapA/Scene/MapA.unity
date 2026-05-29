@@ -350,6 +350,7 @@ MonoBehaviour:
   - {fileID: 487480288720707590, guid: 066d87a983f81fe488c5fd727a396fd0, type: 3}
   weaponIndex: 0
   key: 11
+  usePooling: 1
 --- !u!4 &352555485
 Transform:
   m_ObjectHideFlags: 0
@@ -762,6 +763,7 @@ MonoBehaviour:
   - {fileID: 7722214126330807097, guid: dc1a78a0cb4bec240b95bf38d5d93654, type: 3}
   weaponIndex: 0
   key: 7
+  usePooling: 1
 --- !u!4 &537768684
 Transform:
   m_ObjectHideFlags: 0
@@ -924,6 +926,7 @@ MonoBehaviour:
   - {fileID: 1242987386435072043, guid: ab5067d655eda4b4b862517603052ba0, type: 3}
   weaponIndex: 0
   key: 12
+  usePooling: 1
 --- !u!4 &603808370
 Transform:
   m_ObjectHideFlags: 0
@@ -1028,6 +1031,7 @@ MonoBehaviour:
   - {fileID: 3919445155170265295, guid: c10304a0e12f8a3469d68f9e247c5e2e, type: 3}
   weaponIndex: 0
   key: 0
+  usePooling: 1
 --- !u!4 &788426854
 Transform:
   m_ObjectHideFlags: 0
@@ -1156,6 +1160,7 @@ MonoBehaviour:
   - {fileID: 6244620448383208262, guid: 66921cd0bb94f904ca2f537f364aa0ad, type: 3}
   weaponIndex: 0
   key: 10
+  usePooling: 1
 --- !u!4 &1029978250
 Transform:
   m_ObjectHideFlags: 0
@@ -1219,6 +1224,7 @@ MonoBehaviour:
   - {fileID: 8893923425944030378, guid: a6f9f449f7501d142ba1f11165366424, type: 3}
   weaponIndex: 0
   key: 4
+  usePooling: 1
 --- !u!4 &1074938408
 Transform:
   m_ObjectHideFlags: 0
@@ -1275,6 +1281,7 @@ MonoBehaviour:
   - {fileID: 403370440230526457, guid: 5d89a376679f5bb409a5a73676e0ae87, type: 3}
   weaponIndex: 0
   key: 1
+  usePooling: 1
 --- !u!4 &1103357118
 Transform:
   m_ObjectHideFlags: 0
@@ -1326,6 +1333,7 @@ MonoBehaviour:
   - {fileID: 641191070794998030, guid: e93e65536d97a3b4aa706857ac729036, type: 3}
   weaponIndex: 0
   key: 5
+  usePooling: 1
 --- !u!4 &1115910244
 Transform:
   m_ObjectHideFlags: 0
@@ -1498,6 +1506,7 @@ MonoBehaviour:
   - {fileID: 5878703508575988676, guid: 90949d00e4f5a454dbe25317bd4ac678, type: 3}
   weaponIndex: 0
   key: 9
+  usePooling: 1
 --- !u!4 &1400116991
 Transform:
   m_ObjectHideFlags: 0
@@ -1706,6 +1715,7 @@ MonoBehaviour:
   - {fileID: 641191070794998030, guid: 704cc35e1aa6b424ab1855c330e3ad35, type: 3}
   weaponIndex: 0
   key: 6
+  usePooling: 1
 --- !u!4 &1481023710
 Transform:
   m_ObjectHideFlags: 0
@@ -1836,32 +1846,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 672098658965801250, guid: 00d026f2ebfcd804fbb7c3629f59016c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1553502315}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d026f2ebfcd804fbb7c3629f59016c, type: 3}
---- !u!1 &1553502314 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 672098658965801250, guid: 00d026f2ebfcd804fbb7c3629f59016c, type: 3}
-  m_PrefabInstance: {fileID: 1553502313}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1553502315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553502314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a40d0840e51869448e46b97e59f9174, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ResourceSpawner
-  range:
-    leftBottom: {x: 0, y: 0}
-    rightTop: {x: 0, y: 0}
-  constraints: []
 --- !u!114 &1577478933 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6628033649236592455, guid: 4341df9ccfd06544db58b18105685306, type: 3}
@@ -68501,6 +68487,7 @@ MonoBehaviour:
   - {fileID: 7637176822129371129, guid: 7d7bd9aa5cec25f4591923d8fedf6d8e, type: 3}
   weaponIndex: 0
   key: 8
+  usePooling: 1
 --- !u!4 &1672021019
 Transform:
   m_ObjectHideFlags: 0
@@ -72212,6 +72199,7 @@ MonoBehaviour:
   - {fileID: 5844570470058654179, guid: 6b0b35d6a3b96b846bd05c14613da84a, type: 3}
   weaponIndex: 0
   key: 3
+  usePooling: 1
 --- !u!4 &1860750007
 Transform:
   m_ObjectHideFlags: 0

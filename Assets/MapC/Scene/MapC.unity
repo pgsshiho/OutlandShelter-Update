@@ -154,6 +154,7 @@ MonoBehaviour:
   - {fileID: 7637176822129371129, guid: 7d7bd9aa5cec25f4591923d8fedf6d8e, type: 3}
   weaponIndex: 0
   key: 8
+  usePooling: 1
 --- !u!4 &43478026
 Transform:
   m_ObjectHideFlags: 0
@@ -206,6 +207,7 @@ MonoBehaviour:
   - {fileID: 641191070794998030, guid: 704cc35e1aa6b424ab1855c330e3ad35, type: 3}
   weaponIndex: 0
   key: 6
+  usePooling: 1
 --- !u!4 &58362581
 Transform:
   m_ObjectHideFlags: 0
@@ -624,6 +626,7 @@ MonoBehaviour:
   - {fileID: 403370440230526457, guid: 5d89a376679f5bb409a5a73676e0ae87, type: 3}
   weaponIndex: 0
   key: 1
+  usePooling: 1
 --- !u!4 &273602643
 Transform:
   m_ObjectHideFlags: 0
@@ -861,6 +864,7 @@ MonoBehaviour:
   - {fileID: 3919445155170265295, guid: c10304a0e12f8a3469d68f9e247c5e2e, type: 3}
   weaponIndex: 0
   key: 0
+  usePooling: 1
 --- !u!4 &404466560
 Transform:
   m_ObjectHideFlags: 0
@@ -1484,6 +1488,7 @@ MonoBehaviour:
   - {fileID: 5878703508575988676, guid: 90949d00e4f5a454dbe25317bd4ac678, type: 3}
   weaponIndex: 0
   key: 9
+  usePooling: 1
 --- !u!4 &578640999
 Transform:
   m_ObjectHideFlags: 0
@@ -34307,7 +34312,7 @@ MonoBehaviour:
   settingpanel: {fileID: 184038694}
   waves:
   - summonZombie:
-    - {fileID: 4073641658844334986, guid: 7dcc2ccf1e1503d41893b5785d4f8b7b, type: 3}
+    - {fileID: 5140100318665842232, guid: c8b42be51a1fb044097a7f00901673b7, type: 3}
   - summonZombie:
     - {fileID: 5140100318665842232, guid: c8b42be51a1fb044097a7f00901673b7, type: 3}
     - {fileID: 5140100318665842232, guid: c8b42be51a1fb044097a7f00901673b7, type: 3}
@@ -34966,6 +34971,7 @@ MonoBehaviour:
   - {fileID: 5844570470058654179, guid: 6b0b35d6a3b96b846bd05c14613da84a, type: 3}
   weaponIndex: 0
   key: 3
+  usePooling: 1
 --- !u!4 &1019216621
 Transform:
   m_ObjectHideFlags: 0
@@ -35193,7 +35199,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -49395,6 +49401,7 @@ MonoBehaviour:
   - {fileID: 4073641658844334986, guid: 7dcc2ccf1e1503d41893b5785d4f8b7b, type: 3}
   weaponIndex: 0
   key: 10
+  usePooling: 1
 --- !u!4 &1338334706
 Transform:
   m_ObjectHideFlags: 0
@@ -49467,6 +49474,7 @@ MonoBehaviour:
   - {fileID: 487480288720707590, guid: 066d87a983f81fe488c5fd727a396fd0, type: 3}
   weaponIndex: 0
   key: 11
+  usePooling: 1
 --- !u!4 &1399012625
 Transform:
   m_ObjectHideFlags: 0
@@ -49574,6 +49582,7 @@ MonoBehaviour:
   - {fileID: 7722214126330807097, guid: dc1a78a0cb4bec240b95bf38d5d93654, type: 3}
   weaponIndex: 0
   key: 7
+  usePooling: 1
 --- !u!4 &1425503969
 Transform:
   m_ObjectHideFlags: 0
@@ -49625,6 +49634,7 @@ MonoBehaviour:
   - {fileID: 641191070794998030, guid: e93e65536d97a3b4aa706857ac729036, type: 3}
   weaponIndex: 0
   key: 5
+  usePooling: 1
 --- !u!4 &1439420799
 Transform:
   m_ObjectHideFlags: 0
@@ -50488,6 +50498,7 @@ MonoBehaviour:
   - {fileID: 1242987386435072043, guid: ab5067d655eda4b4b862517603052ba0, type: 3}
   weaponIndex: 0
   key: 12
+  usePooling: 1
 --- !u!4 &1852626132
 Transform:
   m_ObjectHideFlags: 0
@@ -50676,6 +50687,7 @@ MonoBehaviour:
   - {fileID: 8893923425944030378, guid: a6f9f449f7501d142ba1f11165366424, type: 3}
   weaponIndex: 0
   key: 4
+  usePooling: 1
 --- !u!4 &2145392894
 Transform:
   m_ObjectHideFlags: 0
