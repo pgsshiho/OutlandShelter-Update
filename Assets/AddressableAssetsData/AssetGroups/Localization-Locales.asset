@@ -16,13 +16,13 @@ MonoBehaviour:
   m_GUID: b629bde263a42034bb54cbca3b902efe
   m_SerializeEntries:
   - m_GUID: 565a070f9a0042245b703e6c2f95c58a
-    m_Address: English (en)
+    m_Address: En
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e57f3f3e227b8fe48a4e809c460161c5
-    m_Address: Korean (ko)
+    m_Address: Ko
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
