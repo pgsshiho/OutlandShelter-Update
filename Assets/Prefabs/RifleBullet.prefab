@@ -172,6 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 40
   knockBackForce: 0
+  slowPercent: 0.4
+  slowDuration: 1
   throughCount: 1
   isAuto: 0
 --- !u!96 &9165262501548480191

@@ -22,7 +22,8 @@ public abstract class SummonObject : MonoBehaviour
     public float damage;
     [SerializeField] protected float knockBackForce = 0;
     public static int overWrap = 0;
-
+    public float slowPercent = 0;
+    public float slowDuration = 0;
     protected abstract void Awake();
 
     protected abstract void OnEnable();
@@ -39,5 +40,6 @@ public abstract class SummonObject : MonoBehaviour
     protected virtual void Attack(IEnemyDamage enemy, Vector2 direction)
     {
         enemy.Damage(damage * TechTreeUnlock.weaponDamage, knockBackForce * direction);
+        enemy.ApplySlow(slowPercent,slowDuration);
     }
 }

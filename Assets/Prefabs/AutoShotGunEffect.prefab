@@ -179,6 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 88
   knockBackForce: 0
+  slowPercent: 0.6
+  slowDuration: 2
   isAuto: 0
   enemyLayer:
     serializedVersion: 2

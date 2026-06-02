@@ -41,6 +41,7 @@ public class SummonBullet : SummonObject
         enemy.Damage(damage * GunStatManager.instance[(GunKind)ObjectPoolManager.instance[Kind.Gun].weaponIndex].damage
             * (PlayerAvoidSkill.damageUp ? TechTreeUnlock.afterAvoidDamage : 1) * (isAuto ? TechTreeUnlock.autoGunDamage : 1) * TechTreeUnlock.weaponDamage
             , knockBackForce * direction);
+        enemy.ApplySlow(slowPercent, slowDuration);
         if (--_throughCount <= 0) pool.Release(gameObject);
     }
 

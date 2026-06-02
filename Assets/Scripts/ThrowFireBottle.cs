@@ -5,6 +5,8 @@ using UnityEngine;
 public class ThrowFireBottle : SummonThrow
 {
     [SerializeField] private GameObject fire;
+    [SerializeField] private float slowPercent = 0.5f;
+    [SerializeField] private float slowDuration = 2f;
 
     protected override void Skill()
     {
@@ -39,5 +41,6 @@ public class ThrowFireBottle : SummonThrow
         }
 
         enemy.Damage(damage * (PlayerAvoidSkill.damageUp ? TechTreeUnlock.afterAvoidDamage : 1) * TechTreeUnlock.weaponDamage, knockBackForce * direction);
+        enemy.ApplySlow(slowPercent, slowDuration);
     }
 }
