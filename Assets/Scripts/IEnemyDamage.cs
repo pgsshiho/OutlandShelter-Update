@@ -3,4 +3,5 @@ using UnityEngine;
 public interface IEnemyDamage
 {
     public void Damage(float damage, Vector2 knockBack = new Vector2());
+    public void ApplySlow(float slowPercent, float duration);
 }

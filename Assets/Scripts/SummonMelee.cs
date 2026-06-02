@@ -48,5 +48,6 @@ public class SummonMelee : SummonObject
 
         enemy.Damage(damage * (PlayerAvoidSkill.damageUp ? TechTreeUnlock.afterAvoidDamage : 1) * TechTreeUnlock.meleeDamage
             * (1 + (TechTreeUnlock.comboDamageIncrease * combo)) * TechTreeUnlock.weaponDamage, knockBackForce * direction);
+        enemy.ApplySlow(slowPercent, slowDuration);
     }
 }

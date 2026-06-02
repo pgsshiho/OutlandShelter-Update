@@ -29,7 +29,8 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     [SerializeField]
     protected int dropMatarial;
     protected bool isDead = false;
-
+    private float currentSlowMultiplier = 1.0f; // 현재 둔화 배율 (1 = 정상 속도)
+    private Coroutine slowCoroutine;
     protected float HpBar
     {
         set
@@ -111,6 +112,9 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
         canAttack = true;
         temp.gameObject.SetActive(true);
+        currentSlowMultiplier = 1.0f;
+        if (slowCoroutine != null) StopCoroutine(slowCoroutine);
+        slowCoroutine = null;
     }
 
     protected virtual void Update()
@@ -134,9 +138,10 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
             if (target != null)
             {
                 Vector2 direction = (targetPos - Position).normalized;
-                spriteRenderer.flipX =
-                    direction.x <= 0 && (direction.x < 0 || spriteRenderer.flipX);
-                rb.linearVelocity = direction * speed;
+                spriteRenderer.flipX = direction.x <= 0 && (direction.x < 0 || spriteRenderer.flipX);
+
+                // ★ 기존 속도(speed)에 '둔화 배율'과 '사망 시 속도 버프(increaseSpeed)'를 함께 적용
+                rb.linearVelocity = direction * (speed * currentSlowMultiplier * increaseSpeed);
             }
         }
         else if (canAttack)
@@ -203,7 +208,30 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
                 transform.position + (Vector3)offset
             );
     }
+    public void ApplySlow(float slowPercent, float duration)
+    {
+        if (isDead) return;
 
+        // 기존에 걸려있던 둔화 코루틴이 있다면 인터셉트(취소)하고 새로 시작
+        if (slowCoroutine != null)
+        {
+            StopCoroutine(slowCoroutine);
+        }
+
+        slowCoroutine = StartCoroutine(SlowRoutine(slowPercent, duration));
+    }
+
+    private IEnumerator SlowRoutine(float slowPercent, float duration)
+    {
+        // 예: 0.4(40%) 둔화면, 이동 속도는 원래의 0.6배(60%)가 됨
+        currentSlowMultiplier = Mathf.Clamp01(1.0f - slowPercent);
+
+        yield return new WaitForSeconds(duration);
+
+        // 시간 다 되면 원래 속도로 복구
+        currentSlowMultiplier = 1.0f;
+        slowCoroutine = null;
+    }
     protected virtual void Attack(Transform target)
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(Position, range);
@@ -371,7 +399,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
 
         hp = Mathf.Clamp(hp - finalDamage, 0, HP);
         HpBar = hp / HP;
-
+        OnHitPolished();
         if (knockBack != Vector2.zero)
         {
             spriteRenderer.flipX = !spriteRenderer.flipX;
@@ -383,7 +411,27 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
             Death();
         }
     }
+    public void OnHitPolished()
+    {
+        // 기존에 작동 중인 트윈이 있다면 꼬이지 않게 종료
+        transform.DOKill();
+        spriteRenderer.DOKill();
 
+        // 원래 상태로 초기화 (연타로 맞을 때를 대비)
+        spriteRenderer.color = Color.white;
+        transform.localScale = Vector3.one;
+
+        // DOTween 시퀀스 생성
+        Sequence hitSeq = DOTween.Sequence();
+
+        // [연출 1] 맞자마자 0.03초 만에 흰색(or빨간색)으로 변하고, 크기는 1.2배로 커짐
+        hitSeq.Join(spriteRenderer.DOColor(Color.red, 0.03f));
+        hitSeq.Join(transform.DOScale(1.2f, 0.03f));
+
+        // [연출 2] 그 다음 0.05초 만에 원래 색과 원래 크기로 복귀
+        hitSeq.Append(spriteRenderer.DOColor(Color.white, 0.1f));
+        hitSeq.Append(transform.DOScale(1.0f, 0.1f));
+    }
     protected virtual void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.layer != wall && collision.gameObject.layer != gameObject.layer)

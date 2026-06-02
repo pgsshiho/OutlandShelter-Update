@@ -14,7 +14,6 @@ public class SummonShotGunEffect : SummonObject
 
     [SerializeField]
     private LayerMask enemyLayer;
-
     protected override void Awake()
     {
         anim = GetComponent<Animator>();
@@ -86,5 +85,6 @@ public class SummonShotGunEffect : SummonObject
                 * TechTreeUnlock.weaponDamage,
             knockBackForce * direction
         );
+        enemy.ApplySlow(slowPercent, slowDuration);
     }
 }

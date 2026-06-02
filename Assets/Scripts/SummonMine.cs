@@ -39,7 +39,7 @@ public class SummonMine : SummonObject
 
         enemy.Damage(damage * (PlayerAvoidSkill.damageUp ? TechTreeUnlock.afterAvoidDamage : 1) * TechTreeUnlock.mineDamage
              * TechTreeUnlock.weaponDamage, knockBackForce * direction);
-
+        enemy.ApplySlow(slowPercent, slowDuration);
         SoundManager.SFX.PlayOneShot(SFXReference.Instance.bomb);
         Instantiate(bomb, transform.position, Quaternion.identity);
 
