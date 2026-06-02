@@ -39,8 +39,8 @@ public class GunStatManager
             "Silencer",
             (a) =>
             {
-                instance[a].damage *= 0.9f * TechTreeUnlock.partsAbility;
-                instance[a].isSilence = true;
+                instance[a].damage *= 1.1f * TechTreeUnlock.partsAbility;
+                instance[a].accuracy *= 0.9f * TechTreeUnlock.partsAbility;
             }
         },
         { "Controller", (a) => instance[a].accuracy *= 1.5f * TechTreeUnlock.partsAbility },
@@ -68,8 +68,8 @@ public class GunStatManager
             "Silencer",
             (a) =>
             {
-                instance[a].damage /= 0.9f * TechTreeUnlock.partsAbility;
-                instance[a].isSilence = false;
+                instance[a].damage /= 1.1f * TechTreeUnlock.partsAbility;
+                instance[a].accuracy /= 0.9f * TechTreeUnlock.partsAbility;
             }
         },
         { "Controller", (a) => instance[a].accuracy /= 1.5f * TechTreeUnlock.partsAbility },
