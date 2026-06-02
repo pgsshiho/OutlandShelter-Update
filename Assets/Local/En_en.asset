@@ -388,13 +388,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 339373724237824
-    m_Localized: '<size=50>Silencer</size>
+    m_Localized: '<size=50>muzzle brake
+
+      </size>
 
 
-      - Attack Power reduced by 10%
+      - Attack Power reduced
+      by 10%
 
-      -
-      Not affected by Surrounder''s effects'
+      - Not affected by Surrounder''s effects'
     m_Metadata:
       m_Items: []
   - m_Id: 339375485845504
@@ -781,7 +783,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 412660974190592
-    m_Localized: Silencer
+    m_Localized: 'muzzle brake
+
+'
     m_Metadata:
       m_Items: []
   - m_Id: 412695854022656
