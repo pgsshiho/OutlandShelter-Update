@@ -11,36 +11,56 @@ public class Ruiner : BasicZombie
 
     protected override Transform SelectTarget()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(Position, 1000, ~wall);
-        List<Collider2D> potentialTargets = new();
+        ContactFilter2D filter = new()
+        {
+            layerMask = ~wall,
+            useLayerMask = true,
+            useTriggers = true,
+        };
+        Physics2D.OverlapCircle(Position, 1000, filter, hits);
 
         foreach (Collider2D hit in hits)
         {
-            if (hit.gameObject.layer == gameObject.layer) continue;
-            if (hit.CompareTag("Player")) continue;
+            if (hit.gameObject.layer == gameObject.layer)
+                continue;
+            if (hit.CompareTag("Player"))
+                continue;
 
             if (hit.TryGetComponent<IEnemyAttackable>(out _))
             {
-                potentialTargets.Add(hit);
+                targets.Add(hit);
             }
         }
 
-        if (potentialTargets.Count > 0)
+        if (targets.Count > 0)
         {
-            potentialTargets.Sort((c1, c2) =>
-            {
-                bool isBase1 = c1.CompareTag("Base");
-                bool isBase2 = c2.CompareTag("Base");
+            targets.Sort(
+                (c1, c2) =>
+                {
+                    if (c1 is IEnemyAttackable e1 && c2 is IEnemyAttackable e2)
+                    {
+                        int p1 = e1.GetPriority();
+                        int p2 = e2.GetPriority();
+                        if (p1 != p2)
+                            return p1.CompareTo(p2);
+                    }
 
-                if (isBase1 && !isBase2) return -1;
-                if (!isBase1 && isBase2) return 1;
+                    bool isBase1 = c1.CompareTag("Base");
+                    bool isBase2 = c2.CompareTag("Base");
 
-                return Vector2.Distance(Position, c1.transform.position)
-                    .CompareTo(Vector2.Distance(Position, c2.transform.position));
-            });
+                    if (isBase1 && !isBase2)
+                        return -1;
+                    if (!isBase1 && isBase2)
+                        return 1;
 
-            targetPos = potentialTargets[0].transform.position + (Vector3)potentialTargets[0].offset;
-            return potentialTargets[0].transform;
+                    return Vector2
+                        .Distance(Position, c1.transform.position)
+                        .CompareTo(Vector2.Distance(Position, c2.transform.position));
+                }
+            );
+
+            targetPos = targets[0].transform.position + (Vector3)targets[0].offset;
+            return targets[0].transform;
         }
 
         targetPos = Position;
@@ -49,12 +69,17 @@ public class Ruiner : BasicZombie
 
     protected override void Attack(Transform target)
     {
-        if (target == null) return;
-        if (target.CompareTag("Player")) return;
+        if (target == null)
+            return;
+        if (target.CompareTag("Player"))
+            return;
 
-        if (target.TryGetComponent(out IFacility facility)) facility.Damage(damage * 2);
-        else if (target.TryGetComponent(out ITurret turret)) turret.Damage(damage * 2);
-        else if (target.TryGetComponent(out ICenter center)) center.Damage(damage * 2);
+        if (target.TryGetComponent(out IFacility facility))
+            facility.Damage(damage * 2);
+        else if (target.TryGetComponent(out ITurret turret))
+            turret.Damage(damage * 2);
+        else if (target.TryGetComponent(out ICenter center))
+            center.Damage(damage * 2);
     }
 
     protected override void OnCollisionStay2D(Collision2D collision) { }

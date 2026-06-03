@@ -284,10 +284,19 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         }
     }
 
+    protected readonly List<Collider2D> hits = new(100);
+    protected readonly List<Collider2D> targets = new();
+
     protected virtual Transform SelectTarget()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(Position, 1000, ~wall);
-        List<Collider2D> targets = new();
+        targets.Clear();
+        ContactFilter2D filter = new()
+        {
+            layerMask = ~wall,
+            useLayerMask = true,
+            useTriggers = true,
+        };
+        Physics2D.OverlapCircle(Position, 1000, filter, hits);
 
         foreach (Collider2D hit in hits)
         {
@@ -306,9 +315,19 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         {
             targets.Sort(
                 (c1, c2) =>
-                    Vector2
+                {
+                    if (c1 is IEnemyAttackable e1 && c2 is IEnemyAttackable e2)
+                    {
+                        int p1 = e1.GetPriority();
+                        int p2 = e2.GetPriority();
+                        if (p1 != p2)
+                            return p1.CompareTo(p2);
+                    }
+
+                    return Vector2
                         .Distance(Position, c1.transform.position)
-                        .CompareTo(Vector2.Distance(Position, c2.transform.position))
+                        .CompareTo(Vector2.Distance(Position, c2.transform.position));
+                }
             );
             targetPos = targets[0].transform.position + (Vector3)targets[0].offset;
             return targets[0].transform;

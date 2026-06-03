@@ -195,4 +195,6 @@ public class SummonTurret : ResourceReturn, ITurret, IEnemyAttackable
 
         temp.gameObject.SetActive(false);
     }
+
+    public int GetPriority() => 1;
 }

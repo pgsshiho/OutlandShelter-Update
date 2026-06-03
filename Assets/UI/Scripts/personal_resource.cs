@@ -338,4 +338,6 @@ public class Personal_resource : MonoBehaviour, IDamageable, IEnemyAttackable
             hpSliderUI.localPosition = hpSliderPositionBackpackOn;
         }
     }
+
+    public int GetPriority() => 1;
 }

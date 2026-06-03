@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class Extender : BasicZombie
 {
-    [SerializeField] private GameObject arm;
-    [HideInInspector] public MonoBehaviour[] playerComponents;
-    [HideInInspector] public List<MonoBehaviour> disableComponents = new();
-    [HideInInspector] public bool attackTiming = false;
-    [HideInInspector] public bool isFail = false;
-    [HideInInspector] public PlayerMove playerMove;
+    [SerializeField]
+    private GameObject arm;
+
+    [HideInInspector]
+    public MonoBehaviour[] playerComponents;
+
+    [HideInInspector]
+    public List<MonoBehaviour> disableComponents = new();
+
+    [HideInInspector]
+    public bool attackTiming = false;
+
+    [HideInInspector]
+    public bool isFail = false;
+
+    [HideInInspector]
+    public PlayerMove playerMove;
     private bool attack = false;
     private IDamageable player;
     private bool isAttacking = false;
@@ -43,15 +54,25 @@ public class Extender : BasicZombie
             anim.SetTrigger("Attack");
             isAttacking = true;
 
-            StartCoroutine(WaitAction.wait(() => spriteRenderer.sprite.name[^1] == '7', () =>
-            {
-                Attack(target);
-            }));
+            StartCoroutine(
+                WaitAction.wait(
+                    () => spriteRenderer.sprite.name[^1] == '7',
+                    () =>
+                    {
+                        Attack(target);
+                    }
+                )
+            );
 
-            StartCoroutine(WaitAction.wait(attackCool, () =>
-            {
-                canAttack = true;
-            }));
+            StartCoroutine(
+                WaitAction.wait(
+                    attackCool,
+                    () =>
+                    {
+                        canAttack = true;
+                    }
+                )
+            );
         }
 
         if (attack)
@@ -59,9 +80,16 @@ public class Extender : BasicZombie
             player.Damage(damage * Time.deltaTime);
         }
 
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y / 1000f);
+        transform.position = new Vector3(
+            transform.position.x,
+            transform.position.y,
+            transform.position.y / 1000f
+        );
 
-        if (hpBar.transform.parent.gameObject.activeSelf) hpBar.transform.parent.position = Camera.main.WorldToScreenPoint(transform.position + (Vector3)offset);
+        if (hpBar.transform.parent.gameObject.activeSelf)
+            hpBar.transform.parent.position = Camera.main.WorldToScreenPoint(
+                transform.position + (Vector3)offset
+            );
     }
 
     protected override void Attack(Transform target)
@@ -72,47 +100,66 @@ public class Extender : BasicZombie
 
         exArm.owner = this;
 
-        StartCoroutine(WaitAction.wait(() => attackTiming, () =>
-        {
-            attack = true;
-            anim.SetTrigger("Catch" + (playerMove.gender == PlayerMove.Gender.Man ? "M" : "W"));
-            target.position = transform.position;
-
-            StartCoroutine(WaitAction.wait(3f, () =>
-            {
-                foreach (MonoBehaviour temp in playerComponents)
+        StartCoroutine(
+            WaitAction.wait(
+                () => attackTiming,
+                () =>
                 {
-                    if (temp is not Personal_resource)
-                    {
-                        if (!disableComponents.Contains(temp)) temp.enabled = true;
-                    }
-                }
-                target.GetComponent<SpriteRenderer>().enabled = true;
-                target.GetComponent<Collider2D>().enabled = true;
-                attack = false;
-                isAttacking = false;
-                attackTiming = false;
-                anim.SetTrigger("Fail");
+                    attack = true;
+                    anim.SetTrigger(
+                        "Catch" + (playerMove.gender == PlayerMove.Gender.Man ? "M" : "W")
+                    );
+                    target.position = transform.position;
 
-                StartCoroutine(WaitAction.waitOneFrame(() =>
+                    StartCoroutine(
+                        WaitAction.wait(
+                            3f,
+                            () =>
+                            {
+                                foreach (MonoBehaviour temp in playerComponents)
+                                {
+                                    if (temp is not Personal_resource)
+                                    {
+                                        if (!disableComponents.Contains(temp))
+                                            temp.enabled = true;
+                                    }
+                                }
+                                target.GetComponent<SpriteRenderer>().enabled = true;
+                                target.GetComponent<Collider2D>().enabled = true;
+                                attack = false;
+                                isAttacking = false;
+                                attackTiming = false;
+                                anim.SetTrigger("Fail");
+
+                                StartCoroutine(
+                                    WaitAction.waitOneFrame(() =>
+                                    {
+                                        anim.ResetTrigger("Fail");
+                                    })
+                                );
+                            }
+                        )
+                    );
+                },
+                3f
+            )
+        );
+
+        StartCoroutine(
+            WaitAction.wait(
+                () => isFail,
+                () =>
                 {
-                    anim.ResetTrigger("Fail");
-                }));
-            }));
-        }));
-
-        StartCoroutine(WaitAction.wait(() => isFail, () =>
-        {
-            isAttacking = false;
-            isFail = false;
-            anim.SetTrigger("Fail");
-        }));
+                    isAttacking = false;
+                    isFail = false;
+                    anim.SetTrigger("Fail");
+                },
+                3f
+            )
+        );
     }
 
-    protected override void OnCollisionStay2D(Collision2D collision)
-    {
-        
-    }
+    protected override void OnCollisionStay2D(Collision2D collision) { }
 
     public override void Damage(float damage, Vector2 knockBack = default)
     {

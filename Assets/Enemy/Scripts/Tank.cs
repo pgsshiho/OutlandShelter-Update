@@ -1,5 +1,5 @@
-using DG.Tweening;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class Tank : BasicZombie
@@ -7,7 +7,7 @@ public class Tank : BasicZombie
     public enum Phase
     {
         One,
-        Two
+        Two,
     }
 
     public Phase phase;
@@ -23,16 +23,21 @@ public class Tank : BasicZombie
         target = FindAnyObjectByType<PlayerMove>().transform;
         muzzle = transform.GetChild(0);
 
-        StartCoroutine(WaitAction.wait(() => phase == Phase.Two, () =>
-        {
-            GetComponent<SpriteRenderer>().DOColor(new(1f, 0.5f, 0.5f), 0.5f);
-        }));
+        StartCoroutine(
+            WaitAction.wait(
+                () => phase == Phase.Two,
+                () =>
+                {
+                    GetComponent<SpriteRenderer>().DOColor(new(1f, 0.5f, 0.5f), 0.5f);
+                }
+            )
+        );
     }
 
     protected override void Update()
     {
         Vector2 direction = (targetPos - Position).normalized;
-        
+
         if (Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
         {
             direction.x = Mathf.Sign(direction.x);
@@ -62,7 +67,10 @@ public class Tank : BasicZombie
             {
                 int pattern = Random.Range(0, 2);
 
-                if (Mathf.Abs(targetPos.x - Position.x) < 1 || Mathf.Abs(targetPos.y - Position.y) < 1)
+                if (
+                    Mathf.Abs(targetPos.x - Position.x) < 1
+                    || Mathf.Abs(targetPos.y - Position.y) < 1
+                )
                 {
                     Dash(direction, speed * 2f);
                 }
@@ -83,25 +91,33 @@ public class Tank : BasicZombie
             {
                 int pattern = Random.Range(0, 2);
 
-                if (Mathf.Abs(targetPos.x - Position.x) < 1 || Mathf.Abs(targetPos.y - Position.y) < 1)
+                if (
+                    Mathf.Abs(targetPos.x - Position.x) < 1
+                    || Mathf.Abs(targetPos.y - Position.y) < 1
+                )
                 {
                     Dash(direction, speed * 3f);
-                    StartCoroutine(WaitAction.wait(() => !isDashing, () =>
-                    {
-                        if (Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
-                        {
-                            direction.x = Mathf.Sign(direction.x);
-                            direction.y = 0;
-                            spriteRenderer.flipX = direction.x == 1;
-                        }
-                        else
-                        {
-                            direction.x = 0;
-                            direction.y = Mathf.Sign(direction.y);
-                        }
+                    StartCoroutine(
+                        WaitAction.wait(
+                            () => !isDashing,
+                            () =>
+                            {
+                                if (Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
+                                {
+                                    direction.x = Mathf.Sign(direction.x);
+                                    direction.y = 0;
+                                    spriteRenderer.flipX = direction.x == 1;
+                                }
+                                else
+                                {
+                                    direction.x = 0;
+                                    direction.y = Mathf.Sign(direction.y);
+                                }
 
-                        Dash(direction, speed * 3f);
-                    }));
+                                Dash(direction, speed * 3f);
+                            }
+                        )
+                    );
                 }
                 else
                 {
@@ -118,24 +134,38 @@ public class Tank : BasicZombie
             }
 
             float coolTime = Random.Range(3f, 8f);
-            StartCoroutine(WaitAction.wait(coolTime, () =>
-            {
-                isSkillUsable = true;
-            }));
+            StartCoroutine(
+                WaitAction.wait(
+                    coolTime,
+                    () =>
+                    {
+                        isSkillUsable = true;
+                    }
+                )
+            );
         }
 
-        if (!isUsingSkill && !isKamekaze) rb.linearVelocity = direction * speed;
+        if (!isUsingSkill && !isKamekaze)
+            rb.linearVelocity = direction * speed;
 
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y / 1000f);
+        transform.position = new Vector3(
+            transform.position.x,
+            transform.position.y,
+            transform.position.y / 1000f
+        );
 
-        if (hpBar.transform.parent.gameObject.activeSelf) hpBar.transform.parent.position = Camera.main.WorldToScreenPoint(transform.position + (Vector3)offset);
+        if (hpBar.transform.parent.gameObject.activeSelf)
+            hpBar.transform.parent.position = Camera.main.WorldToScreenPoint(
+                transform.position + (Vector3)offset
+            );
     }
 
     public override void Damage(float damage, Vector2 knockBack = default)
     {
         base.Damage(damage, knockBack);
 
-        if (hp <= HP / 2f) phase = Phase.Two;
+        if (hp <= HP / 2f)
+            phase = Phase.Two;
     }
 
     protected override void OnCollisionStay2D(Collision2D collision)
@@ -162,7 +192,8 @@ public class Tank : BasicZombie
         }
     }
 
-    [SerializeField] private GameObject bomb;
+    [SerializeField]
+    private GameObject bomb;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -228,15 +259,21 @@ public class Tank : BasicZombie
 
         rb.linearVelocity = direction * speed;
 
-        StartCoroutine(WaitAction.wait(() => Vector2.Distance(initPos, transform.position) >= 15, () =>
-        {
-            isDashing = false;
+        StartCoroutine(
+            WaitAction.wait(
+                () => Vector2.Distance(initPos, transform.position) >= 15,
+                () =>
+                {
+                    isDashing = false;
 
-            StartCoroutine(WaitAction.waitOneFrame(() => isUsingSkill = false));
-        }));
+                    StartCoroutine(WaitAction.waitOneFrame(() => isUsingSkill = false));
+                }
+            )
+        );
     }
 
-    [SerializeField] private GameObject cannon;
+    [SerializeField]
+    private GameObject cannon;
 
     private void Cannon(int count)
     {
@@ -264,7 +301,8 @@ public class Tank : BasicZombie
         isUsingSkill = false;
     }
 
-    [SerializeField] private GameObject bullet;
+    [SerializeField]
+    private GameObject bullet;
 
     private void Rifle(int count)
     {

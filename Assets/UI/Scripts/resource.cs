@@ -43,17 +43,30 @@ public class Resource : MonoBehaviour, ICenter, IEnemyAttackable
     {
         if (!shildUI.activeSelf)
         {
-            basenowhp = Mathf.Clamp(basenowhp - (amount / TechTreeUnlock.basecampDefence), 0, basemaxhp);
+            basenowhp = Mathf.Clamp(
+                basenowhp - (amount / TechTreeUnlock.basecampDefence),
+                0,
+                basemaxhp
+            );
         }
         else
         {
-            float temp = (baseShildNowHp * TechTreeUnlock.basecampDefence / baseShildResistance) - amount;
+            float temp =
+                (baseShildNowHp * TechTreeUnlock.basecampDefence / baseShildResistance) - amount;
 
-            baseShildNowHp = Mathf.Clamp(baseShildNowHp - (amount / TechTreeUnlock.basecampDefence * baseShildResistance), 0, baseShildMaxHp);
+            baseShildNowHp = Mathf.Clamp(
+                baseShildNowHp - (amount / TechTreeUnlock.basecampDefence * baseShildResistance),
+                0,
+                baseShildMaxHp
+            );
 
             if (temp > 0)
             {
-                basenowhp = Mathf.Clamp(basenowhp - (temp / TechTreeUnlock.basecampDefence), 0, basemaxhp);
+                basenowhp = Mathf.Clamp(
+                    basenowhp - (temp / TechTreeUnlock.basecampDefence),
+                    0,
+                    basemaxhp
+                );
             }
         }
 
@@ -89,7 +102,7 @@ public class Resource : MonoBehaviour, ICenter, IEnemyAttackable
         public_steel = 0;
         public_metal = 0;
         public_watt = 0;
-}
+    }
 
     void Update()
     {
@@ -120,9 +133,13 @@ public class Resource : MonoBehaviour, ICenter, IEnemyAttackable
         {
             if (baseTarget != null)
             {
-                Vector3 baseScreenPos = Camera.main.WorldToScreenPoint(baseTarget.position + baseTargetOffset);
+                Vector3 baseScreenPos = Camera.main.WorldToScreenPoint(
+                    baseTarget.position + baseTargetOffset
+                );
                 basehpUI.position = baseScreenPos;
-                baseScreenPos = Camera.main.WorldToScreenPoint(baseTarget.position + baseShildTargetOffset);
+                baseScreenPos = Camera.main.WorldToScreenPoint(
+                    baseTarget.position + baseShildTargetOffset
+                );
 
                 shildUI.transform.position = baseScreenPos;
             }
@@ -150,6 +167,7 @@ public class Resource : MonoBehaviour, ICenter, IEnemyAttackable
         }
         return total;
     }
+
     public static int TotalCapacity
     {
         get
@@ -170,4 +188,6 @@ public class Resource : MonoBehaviour, ICenter, IEnemyAttackable
             return total;
         }
     }
+
+    public int GetPriority() => 1;
 }

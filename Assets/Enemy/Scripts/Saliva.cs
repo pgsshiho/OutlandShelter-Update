@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Saliva : MonoBehaviour
 {
-    [HideInInspector] public float damage;
+    [HideInInspector]
+    public float damage;
     Rigidbody2D rb;
 
-    [SerializeField] private float duration = 0.8f;
+    [SerializeField]
+    private float duration = 0.8f;
 
-    [SerializeField] private GameObject linoleum;
+    [SerializeField]
+    private GameObject linoleum;
 
     private Transform target;
 
@@ -19,18 +22,31 @@ public class Saliva : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, duration);
 
-        StartCoroutine(WaitAction.wait(() => Vector2.Distance(transform.position, target.position) < (TechTreeUnlock.additionalAvoidAbleTiming ? 2 : 1), () =>
-        {
-            Vector2 direction = (target.position - transform.position).normalized;
-            if (Random.Range(0f, 1f) < TechTreeUnlock.avoidProbability) PlayerAvoidSkill.SkillUse(direction, true);
-            PlayerAvoidSkill.useable = true;
-            PlayerAvoidSkill.targetPos = transform.position;
+        StartCoroutine(
+            WaitAction.wait(
+                () =>
+                    Vector2.Distance(transform.position, target.position)
+                    < (TechTreeUnlock.additionalAvoidAbleTiming ? 2 : 1),
+                () =>
+                {
+                    Vector2 direction = (target.position - transform.position).normalized;
+                    if (Random.Range(0f, 1f) < TechTreeUnlock.avoidProbability)
+                        PlayerAvoidSkill.SkillUse(direction, true);
+                    PlayerAvoidSkill.useable = true;
+                    PlayerAvoidSkill.targetPos = transform.position;
 
-            StartCoroutine(WaitAction.wait(() => Vector2.Distance(transform.position, target.position) >= 2, () =>
-            {
-                PlayerAvoidSkill.useable = false;
-            }));
-        }));
+                    StartCoroutine(
+                        WaitAction.wait(
+                            () => Vector2.Distance(transform.position, target.position) >= 2,
+                            () =>
+                            {
+                                PlayerAvoidSkill.useable = false;
+                            }
+                        )
+                    );
+                }
+            )
+        );
     }
 
     public void ThrowTo(Vector2 direction, float force)

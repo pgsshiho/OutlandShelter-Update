@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ThrowAlram : SummonThrow, IEnemyAttackable
 {
-    [SerializeField] private float skillTime = 5;
+    [SerializeField]
+    private float skillTime = 5;
 
     protected override void Skill()
     {
@@ -13,9 +14,16 @@ public class ThrowAlram : SummonThrow, IEnemyAttackable
         SoundManager.SFX.PlayOneShot(SFXReference.Instance.alram);
         anim.SetTrigger("Alram");
 
-        StartCoroutine(WaitAction.wait(skillTime, () =>
-        {
-            pool.Release(gameObject);
-        }));
+        StartCoroutine(
+            WaitAction.wait(
+                skillTime,
+                () =>
+                {
+                    pool.Release(gameObject);
+                }
+            )
+        );
     }
+
+    public int GetPriority() => 0;
 }

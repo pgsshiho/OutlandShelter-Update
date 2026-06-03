@@ -11,12 +11,22 @@ public class FireSeed : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.SetTrigger("Boom");
 
-        StartCoroutine(WaitAction.waitOneFrame(() =>
-        {
-            StartCoroutine(WaitAction.wait(() => { return !anim.GetCurrentAnimatorStateInfo(0).IsTag("Boom"); }, () =>
+        StartCoroutine(
+            WaitAction.waitOneFrame(() =>
             {
-                gameObject.SetActive(false);
-            }));
-        }));
+                StartCoroutine(
+                    WaitAction.wait(
+                        () =>
+                        {
+                            return !anim.GetCurrentAnimatorStateInfo(0).IsTag("Boom");
+                        },
+                        () =>
+                        {
+                            gameObject.SetActive(false);
+                        }
+                    )
+                );
+            })
+        );
     }
 }

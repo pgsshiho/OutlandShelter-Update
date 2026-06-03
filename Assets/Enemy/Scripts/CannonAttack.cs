@@ -1,6 +1,6 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class CannonAttack : MonoBehaviour
@@ -13,32 +13,54 @@ public class CannonAttack : MonoBehaviour
     private void Awake()
     {
         target = FindAnyObjectByType<PlayerMove>().transform;
-        transform.DOMoveY(target.position.y + 50, 0.5f).OnComplete(() =>
-        {
-            Vector2 targetPos = target.position;
-            GameObject temp = Instantiate(rangeExpect, targetPos, Quaternion.identity);
-            StartCoroutine(WaitAction.wait(1.5f, () =>
+        transform
+            .DOMoveY(target.position.y + 50, 0.5f)
+            .OnComplete(() =>
             {
-                transform.position = new Vector3(targetPos.x, targetPos.y + 50);
-
-                if (TechTreeUnlock.additionalAvoidAbleTiming) PlayerAvoidSkill.useable = true;
-                else    StartCoroutine(WaitAction.wait(() => Vector2.Distance(transform.position, targetPos) < 10, () =>
+                Vector2 targetPos = target.position;
+                GameObject temp = Instantiate(rangeExpect, targetPos, Quaternion.identity);
+                StartCoroutine(
+                    WaitAction.wait(
+                        1.5f,
+                        () =>
                         {
-                            Vector2 direction = (target.position - transform.position).normalized;
-                            if (Random.Range(0f, 1f) < TechTreeUnlock.avoidProbability) PlayerAvoidSkill.SkillUse(direction, true);
-                            PlayerAvoidSkill.useable = true;
-                            PlayerAvoidSkill.targetPos = transform.position;
-                        }));
+                            transform.position = new Vector3(targetPos.x, targetPos.y + 50);
 
-                transform.DOMoveY(targetPos.y, 0.5f).OnComplete(() =>
-                {
-                    GetComponent<Collider2D>().enabled = true;
-                    PlayerAvoidSkill.useable = false;
-                    Destroy(temp);
-                    Destroy(gameObject, Time.fixedDeltaTime);
-                });
-            }));
-        });
+                            if (TechTreeUnlock.additionalAvoidAbleTiming)
+                                PlayerAvoidSkill.useable = true;
+                            else
+                                StartCoroutine(
+                                    WaitAction.wait(
+                                        () => Vector2.Distance(transform.position, targetPos) < 10,
+                                        () =>
+                                        {
+                                            Vector2 direction = (
+                                                target.position - transform.position
+                                            ).normalized;
+                                            if (
+                                                Random.Range(0f, 1f)
+                                                < TechTreeUnlock.avoidProbability
+                                            )
+                                                PlayerAvoidSkill.SkillUse(direction, true);
+                                            PlayerAvoidSkill.useable = true;
+                                            PlayerAvoidSkill.targetPos = transform.position;
+                                        }
+                                    )
+                                );
+
+                            transform
+                                .DOMoveY(targetPos.y, 0.5f)
+                                .OnComplete(() =>
+                                {
+                                    GetComponent<Collider2D>().enabled = true;
+                                    PlayerAvoidSkill.useable = false;
+                                    Destroy(temp);
+                                    Destroy(gameObject, Time.fixedDeltaTime);
+                                });
+                        }
+                    )
+                );
+            });
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

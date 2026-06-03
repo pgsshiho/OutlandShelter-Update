@@ -10,9 +10,16 @@ public class WaitAction
         action();
     }
 
-    public static IEnumerator wait(Func<bool> condition, Action action)
+    public static IEnumerator wait(Func<bool> condition, Action action, float timeOut = -1)
     {
-        yield return new WaitUntil(condition);
+        float startTime = Time.time;
+        while (!condition())
+        {
+            if (timeOut > 0 && Time.time - startTime > timeOut)
+                break;
+            yield return null;
+        }
+
         action();
     }
 

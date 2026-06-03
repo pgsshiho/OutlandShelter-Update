@@ -6,21 +6,26 @@ public class PlayerBag : Backpack
 {
     public GameObject playerBag;
 
-    protected override void Awake()
-    {
-        
-    }
+    protected override void Awake() { }
 
     public override void OtherBagReceive(Backpack backpack)
     {
         otherBag = backpack;
-        
+
         playerBag.SetActive(true);
 
-        StartCoroutine(WaitAction.wait(() => { return !otherBag.gameObject.activeSelf; }, () =>
-        {
-            playerBag.SetActive(false);
-        }));
+        StartCoroutine(
+            WaitAction.wait(
+                () =>
+                {
+                    return !otherBag.gameObject.activeSelf;
+                },
+                () =>
+                {
+                    playerBag.SetActive(false);
+                }
+            )
+        );
     }
 
     public override int Put(ResourceKind resourceKind, int count)
