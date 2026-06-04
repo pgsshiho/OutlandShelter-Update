@@ -164,6 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 100
   knockBackForce: 5
+  slowPercent: 0.7
+  slowDuration: 2
   movingTime: 0.7
   fire: {fileID: 1956056966309572191, guid: 32758a6187107fc4b8c0fe2aa53cb757, type: 3}
   rangeExpect: {fileID: 6521100064052203353, guid: e43089483cbed9641a35873a5a8a7349, type: 3}

@@ -20,6 +20,7 @@ public class ResourceSuply : ResourceObject
                 Notion.Log("Shotgunammoget");
                 break;
         }
+        SoundManager.SFX.PlayOneShot(SFXReference.Instance.Supplyget, 0.5f);
         return 0;
     }
 }

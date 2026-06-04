@@ -349,7 +349,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.14192304, y: -0.016658068}
-  m_Size: {x: 0.6693639, y: 1.7040286}
+  m_Size: {x: 1, y: 1.7040286}
   m_Direction: 0
 --- !u!95 &5568582561413863437
 Animator:
@@ -390,6 +390,7 @@ MonoBehaviour:
   HP: 15
   damage: 1
   attackCool: 0.7
+  defense: 0
   hpBar: {fileID: 3191268379372024318}
   knockBackForce: 0
   dropExp: 20
