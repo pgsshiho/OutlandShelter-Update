@@ -147,6 +147,7 @@ MonoBehaviour:
   HP: 10
   damage: 3
   attackCool: 0.7
+  defense: 0
   hpBar: {fileID: 2439978950828919385}
   knockBackForce: 0
   dropExp: 25
@@ -190,7 +191,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.6, y: 1.6}
+  m_Size: {x: 2, y: 2}
   m_Direction: 0
 --- !u!50 &5014180267091752186
 Rigidbody2D:
@@ -207,7 +208,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -218,7 +219,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &4532580733277897354
 GameObject:
   m_ObjectHideFlags: 0

@@ -171,6 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 80
   knockBackForce: 0
+  slowPercent: 0.5
+  slowDuration: 1
   movingTime: 0.7
   fire: {fileID: 1549254510597466942, guid: 52564987e462b01428768b29ed34248e, type: 3}
 --- !u!95 &2113175202202061149
