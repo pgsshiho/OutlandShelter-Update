@@ -144,10 +144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Worker
   speed: 3
   target: {fileID: 0}
-  HP: 40
+  HP: 30
   damage: 3
   attackCool: 0.7
-  defense: 10
   hpBar: {fileID: 2105308588839945215}
   knockBackForce: 0
   dropExp: 25
@@ -190,7 +189,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.4, y: 2}
+  m_Size: {x: 2, y: 2}
   m_Direction: 0
 --- !u!50 &87450684487869783
 Rigidbody2D:
@@ -207,7 +206,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -218,7 +217,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!1 &3333196029427621525
 GameObject:
   m_ObjectHideFlags: 0

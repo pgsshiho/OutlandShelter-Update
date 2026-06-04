@@ -337,7 +337,6 @@ MonoBehaviour:
   HP: 10
   damage: 5
   attackCool: 0.7
-  defense: 0
   hpBar: {fileID: 6990615159521973535}
   knockBackForce: 0
   dropExp: 25
@@ -400,7 +399,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: cbe8c82a37d3a9b4eb75dd3899b374c0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -411,7 +410,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!1 &9183368700989374787
 GameObject:
   m_ObjectHideFlags: 0
