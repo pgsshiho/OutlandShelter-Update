@@ -1347,12 +1347,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24dbe9978fc54d47a31749660fd58a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCapacity: 030000000300000003000000
-  maxPoolSize: 0f0000000f0000000f000000
+  defaultCapacity: 03000000030000000300000003000000
+  maxPoolSize: 0f0000000f0000000f0000000f000000
   summonPrefab:
   - {fileID: 8893923425944030378, guid: bf4e72bb7d4ca7f44a2e31df8ad9e8ba, type: 3}
   - {fileID: 8893923425944030378, guid: 00f352e1de7f4d4418710b6ef4755c69, type: 3}
   - {fileID: 8893923425944030378, guid: a6f9f449f7501d142ba1f11165366424, type: 3}
+  - {fileID: 812532268454905076, guid: 6792058317afa6e4183be828df6dcd9a, type: 3}
   weaponIndex: 0
   key: 4
   usePooling: 1

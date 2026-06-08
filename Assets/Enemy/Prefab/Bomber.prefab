@@ -206,6 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19383309e41914c4aadfecbf407cb042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bomber
+  bonusVib: 1
+  bonusStrength: 0.5
   speed: 1
   target: {fileID: 0}
   HP: 6

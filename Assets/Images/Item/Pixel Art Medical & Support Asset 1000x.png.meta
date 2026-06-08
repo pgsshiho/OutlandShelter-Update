@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: d02b3904bc489854ab70595f6f714686
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8236092130297809872
+    second: Pixel Art Medical & Support Asset 1000x_0
+  - first:
+      213: 824473786467269057
+    second: Pixel Art Medical & Support Asset 1000x_1
+  - first:
+      213: 4059895566495547492
+    second: Pixel Art Medical & Support Asset 1000x_2
+  - first:
+      213: -3378334101736956527
+    second: Pixel Art Medical & Support Asset 1000x_3
+  - first:
+      213: -5437619339295883155
+    second: Pixel Art Medical & Support Asset 1000x_4
+  - first:
+      213: 4091291832823751941
+    second: Pixel Art Medical & Support Asset 1000x_5
+  - first:
+      213: -2698642181245905971
+    second: Pixel Art Medical & Support Asset 1000x_6
+  - first:
+      213: -2925169565555437299
+    second: Pixel Art Medical & Support Asset 1000x_7
+  - first:
+      213: -1996737548932429436
+    second: Pixel Art Medical & Support Asset 1000x_8
+  - first:
+      213: 1956631502267572549
+    second: Pixel Art Medical & Support Asset 1000x_9
+  - first:
+      213: -1928801592716978841
+    second: Pixel Art Medical & Support Asset 1000x_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pixel Art Medical & Support Asset 1000x_0
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 769
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db8ac3e72a7c4270800000000000000
+      internalID: 8236092130297809872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Medical & Support Asset 1000x_1
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 779
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c9b0016a8e117b00800000000000000
+      internalID: 824473786467269057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Medical & Support Asset 1000x_2
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 789
+        width: 142
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 460862ae185a75830800000000000000
+      internalID: 4059895566495547492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Medical & Support Asset 1000x_3
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 789
+        width: 142
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19d516d980fbd11d0800000000000000
+      internalID: -3378334101736956527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Medical & Support Asset 1000x_4
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 449
+        width: 222
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6089794502b984b0800000000000000
+      internalID: -5437619339295883155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Medical & Support Asset 1000x_5
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 449
+        width: 222
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505aaefce3037c830800000000000000
+      internalID: 4091291832823751941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Medical & Support Asset 1000x_6
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 449
+        width: 142
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc3d3f2fb3f7c8ad0800000000000000
+      internalID: -2698642181245905971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Medical & Support Asset 1000x_7
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 469
+        width: 122
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d01d84147c5b767d0800000000000000
+      internalID: -2925169565555437299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Medical & Support Asset 1000x_8
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 89
+        width: 202
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489c23647c92a44e0800000000000000
+      internalID: -1996737548932429436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Medical & Support Asset 1000x_9
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 149
+        width: 162
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5416ff01cf9572b10800000000000000
+      internalID: 1956631502267572549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Medical & Support Asset 1000x_10
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 99
+        width: 102
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76595efab258b35e0800000000000000
+      internalID: -1928801592716978841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Pixel Art Medical & Support Asset 1000x_0: 8236092130297809872
+      Pixel Art Medical & Support Asset 1000x_1: 824473786467269057
+      Pixel Art Medical & Support Asset 1000x_10: -1928801592716978841
+      Pixel Art Medical & Support Asset 1000x_2: 4059895566495547492
+      Pixel Art Medical & Support Asset 1000x_3: -3378334101736956527
+      Pixel Art Medical & Support Asset 1000x_4: -5437619339295883155
+      Pixel Art Medical & Support Asset 1000x_5: 4091291832823751941
+      Pixel Art Medical & Support Asset 1000x_6: -2698642181245905971
+      Pixel Art Medical & Support Asset 1000x_7: -2925169565555437299
+      Pixel Art Medical & Support Asset 1000x_8: -1996737548932429436
+      Pixel Art Medical & Support Asset 1000x_9: 1956631502267572549
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

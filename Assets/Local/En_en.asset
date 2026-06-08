@@ -895,6 +895,16 @@ MonoBehaviour:
 '
     m_Metadata:
       m_Items: []
+  - m_Id: 27870671896281088
+    m_Localized: First aid kit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27871195047624704
+    m_Localized: 'When used, it restores 20% of health after the healing time.
+
+'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

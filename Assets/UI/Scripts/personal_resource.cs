@@ -95,6 +95,15 @@ public class Personal_resource : MonoBehaviour, IDamageable, IEnemyAttackable
     public static float hpPercentage;
 
     public GameObject backpack;
+    
+    public void heal(float healAmount)
+    {
+        NowHP += healAmount;
+        if(NowHP > MaxHP)
+        {
+            NowHP = MaxHP;
+        }
+    }
 
     public void Damage(
         float damage,
@@ -215,6 +224,7 @@ public class Personal_resource : MonoBehaviour, IDamageable, IEnemyAttackable
         TechTreeUnlock.haveAvoidSkill = false;
         TechTreeUnlock.haveIgnoreKnockBack = false;
         TechTreeUnlock.additionalInvincibilityTime = 0;
+        TechTreeUnlock.isMedikitOpen = false;
         TechTreeUnlock.avoidSkillCoolTime = 3;
         TechTreeUnlock.stiffenTime = 1;
         TechTreeUnlock.duringAttackingReceiveDamage = 1;

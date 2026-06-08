@@ -144,11 +144,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7817700802560
-    m_Localized: Movement Speed Boost
+    m_Localized: 'Making a first aid kit
+
+'
     m_Metadata:
       m_Items: []
   - m_Id: 7817973432320
-    m_Localized: Movement Speed +20%
+    m_Localized: 'It becomes possible to make first aid kits.
+
+'
     m_Metadata:
       m_Items: []
   - m_Id: 8174992588800

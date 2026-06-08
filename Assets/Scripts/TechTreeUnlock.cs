@@ -28,16 +28,16 @@ public class TechTreeUnlock : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         {"S04", () => haveAvoidSkill = true},
         {"S05", () => haveIgnoreKnockBack = true},
         {"S06", () => additionalInvincibilityTime += 0.1f},
-        {"S07", () => avoidSkillCoolTime -= 0.5f},
-        {"S08", () => stiffenTime -= 0.3f},
-        {"S09", () => duringAttackingReceiveDamage -= 0.5f},
-        {"S10", () => lowHpReceiveDamage -= 0.15f},
-        {"S11", () => continuousReceiveDamage -= 0.3f},
-        {"S12", () => avoidSpeed += 0.1f},
-        {"S13", () => duringMovingAccuracyFixed = true},
-        {"S14", () => duringAttackingMoveSpeedFixed = true},
-        {"S15", () => playerReceiveDamageOnBack -= 0.2f},
-        {"S16", () => playerMoveSpeed += 0.2f},
+        {"S07", () => isMedikitOpen = true},
+        {"S08", () => avoidSkillCoolTime -= 0.5f},
+        {"S09", () => stiffenTime -= 0.3f},
+        {"S10", () => duringAttackingReceiveDamage -= 0.5f},
+        {"S11", () => lowHpReceiveDamage -= 0.15f},
+        {"S12", () => continuousReceiveDamage -= 0.3f},
+        {"S13", () => avoidSpeed += 0.1f},
+        {"S14", () => duringMovingAccuracyFixed = true},
+        {"S15", () => duringAttackingMoveSpeedFixed = true},
+        {"S16", () => playerReceiveDamageOnBack -= 0.2f},
         {"S17", () => finalResistance = true},
         {"S18", () => lowHpAttackSpeed += 0.1f},
         {"S19", () => additionalInvincibilityTime += 0.15f},
@@ -334,7 +334,7 @@ public class TechTreeUnlock : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public static float throwScale = 1;
     public static float weaponAbility = 1;
     public static bool isRelodingSkip = false;
-
+    public static bool isMedikitOpen = false;
     [HideInInspector] public string originalText;
 
     private void Awake()
