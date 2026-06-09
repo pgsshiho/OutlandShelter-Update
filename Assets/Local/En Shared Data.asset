@@ -617,6 +617,14 @@ MonoBehaviour:
     m_Key: SPs
     m_Metadata:
       m_Items: []
+  - m_Id: 27870671896281088
+    m_Key: MdicalKit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27871195047624704
+    m_Key: firstaidkit
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

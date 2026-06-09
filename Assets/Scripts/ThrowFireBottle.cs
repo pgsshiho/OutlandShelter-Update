@@ -5,8 +5,6 @@ using UnityEngine;
 public class ThrowFireBottle : SummonThrow
 {
     [SerializeField] private GameObject fire;
-    [SerializeField] private float slowPercent = 0.5f;
-    [SerializeField] private float slowDuration = 2f;
 
     protected override void Skill()
     {

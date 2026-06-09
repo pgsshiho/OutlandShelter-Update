@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Ko
   m_GUID: 892cc745f3f412648aa64f531bc8e626
   m_SerializeEntries:
+  - m_GUID: 20f500f6030fd194eb2f854485293e61
+    m_Address: skills_ko
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c86f5eac1c4e839419303bd41e2c33d4
     m_Address: En_ko
     m_ReadOnly: 1

@@ -1219,12 +1219,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24dbe9978fc54d47a31749660fd58a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCapacity: 030000000300000003000000
-  maxPoolSize: 0f0000000f0000000f000000
+  defaultCapacity: 03000000030000000300000003000000
+  maxPoolSize: 0f0000000f0000000f0000000f000000
   summonPrefab:
   - {fileID: 8893923425944030378, guid: bf4e72bb7d4ca7f44a2e31df8ad9e8ba, type: 3}
   - {fileID: 8893923425944030378, guid: 00f352e1de7f4d4418710b6ef4755c69, type: 3}
   - {fileID: 8893923425944030378, guid: a6f9f449f7501d142ba1f11165366424, type: 3}
+  - {fileID: 812532268454905076, guid: 6792058317afa6e4183be828df6dcd9a, type: 3}
   weaponIndex: 0
   key: 4
   usePooling: 1
@@ -1764,7 +1765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 672098658965801250, guid: 00d026f2ebfcd804fbb7c3629f59016c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4590271758096722081, guid: 00d026f2ebfcd804fbb7c3629f59016c, type: 3}
       propertyPath: m_Pivot.x
@@ -72417,6 +72418,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 431870079}
+    - target: {fileID: 2796352889908182235, guid: 4341df9ccfd06544db58b18105685306, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4040107920085851268, guid: 4341df9ccfd06544db58b18105685306, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -72611,6 +72616,38 @@ PrefabInstance:
       propertyPath: throwText
       value: 
       objectReference: {fileID: 812721120}
+    - target: {fileID: 1680731684808015731, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: isFlip.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680731684808015731, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: offset.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680731684808015731, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: weapons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680731684808015731, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: coolTime.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680731684808015731, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: 'weapons.Array.data[3]'
+      value: 
+      objectReference: {fileID: -6034297502979707276, guid: c379e64b7b4992546bf7bd27319eb59f, type: 3}
+    - target: {fileID: 1680731684808015731, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: 'coolTime.Array.data[3]'
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680731684808015731, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: distanceBetweenPlayer.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680731684808015731, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
+      propertyPath: 'distanceBetweenPlayer.Array.data[3]'
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1728317651007913954, guid: 7b5a294ef212d804aa6de30887c62a96, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -72877,6 +72914,14 @@ PrefabInstance:
     - target: {fileID: 1222619342538090619, guid: 6e864ad1af64fce4491ee26cf6701782, type: 3}
       propertyPath: m_Name
       value: WeaponChangeUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418318644524422671, guid: 6e864ad1af64fce4491ee26cf6701782, type: 3}
+      propertyPath: myIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444987238252728677, guid: 6e864ad1af64fce4491ee26cf6701782, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5646605524706103150, guid: 6e864ad1af64fce4491ee26cf6701782, type: 3}
       propertyPath: m_Pivot.x

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class BasicZombie : MonoBehaviour, IEnemyDamage
 {
+    public int bonusVib;
+    public float bonusStrength;
     public float speed = 3.0f;
     public Transform target;
     public float HP = 10;
@@ -269,8 +271,8 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
                 {
                     Camera.main.transform.DOComplete();
                     float shakeDuration = 0.05f + (damage * 0.015f);
-                    float shakeStrength = 0.05f + (damage * 0.025f);
-                    int shakeVibrato = Mathf.Clamp(5 + damage, 5, 25);
+                    float shakeStrength = 0.05f + (damage * 0.025f) + bonusStrength;
+                    int shakeVibrato = Mathf.Clamp(5 + damage, 5, 25) + bonusVib;
                     Camera.main.transform.DOShakePosition(
                         shakeDuration,
                         shakeStrength,

@@ -1,3 +1,4 @@
+using Mono.Cecil;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +11,6 @@ public class WorkingManager : MonoBehaviour
     public static Dictionary<WorkbenchInputTask, float> remainingTime =
         new Dictionary<WorkbenchInputTask, float>();
     private static Dictionary<string, int> partsOwn = new();
-
     public class Parts
     {
         public int this[string name]
@@ -37,7 +37,7 @@ public class WorkingManager : MonoBehaviour
 
     public static int[] turretCounts = new int[2];
     public static int mineCount = 0;
-    public static int[] throwCounts = new int[3];
+    public static int[] throwCounts = new int[4];
 
     private void Awake()
     {
@@ -283,4 +283,9 @@ public class WorkingManager : MonoBehaviour
         }
         Notion.Log("Special RPG Crafted: One shot only.");
     }
+    private void firstaidkit()
+    {
+        throwCounts[3] += 1;
+    }
+
 }

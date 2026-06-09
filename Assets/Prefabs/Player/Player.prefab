@@ -329,13 +329,16 @@ MonoBehaviour:
   - 5
   - 5
   - 5
+  - 5
   kind: 4
   distanceBetweenPlayer:
   - 1
   - 1
   - 1
-  isFlip: 000000
+  - 1
+  isFlip: 00000000
   offset:
+  - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -343,6 +346,7 @@ MonoBehaviour:
   - {fileID: 1968474166, guid: 72111707686727840bd2d87d454a12f5, type: 3}
   - {fileID: -1569337875, guid: 863ff146d3b77034c8651c3e5eaaa531, type: 3}
   - {fileID: -220858939, guid: 612202cfbbd86cd46a3bfc19feefb789, type: 3}
+  - {fileID: -6034297502979707276, guid: c379e64b7b4992546bf7bd27319eb59f, type: 3}
   poolManager: {fileID: 0}
   throwForce: 5
   throwText: {fileID: 0}

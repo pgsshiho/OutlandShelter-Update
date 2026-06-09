@@ -6,8 +6,6 @@ public class ThrowGrenade : SummonThrow
 {
     [SerializeField] private GameObject fire;
     [SerializeField] private GameObject rangeExpect;
-    [SerializeField] private float slowPercent = 0.5f;
-    [SerializeField] private float slowDuration = 2f;
     Vector2 expectPoint;
     GameObject range;
 
