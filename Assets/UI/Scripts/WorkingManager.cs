@@ -1,10 +1,8 @@
-using Mono.Cecil;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
 public class WorkingManager : MonoBehaviour
 {
     public static event Action<int> OnShoesCrafted;
