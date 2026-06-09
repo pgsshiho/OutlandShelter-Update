@@ -1,45 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
-public class FirstaidKit : SummonThrow
+public class FirstaidKit : MonoBehaviour
 {
-    private bool isHeld = true;
+    private Rigidbody2D rb;
+    private Collider2D col;
+    private Animator anim;
+
+    [Header("치료 설정")]
+    public float movingTime = 0.7f; // 5번: 대기 시간
+    public int healAmount = 20;     // 6번: 치료량
+
+    public IObjectPool<GameObject> pool;
+
+    private bool isHeld = false;
     private bool isHealing = false;
+    private bool canStartHeal = false; // 마우스 연타로 인한 타이밍 버그 방지용
 
-    protected override void OnEnable()
+    private void Awake()
     {
-        // [중요] 부모의 OnEnable을 타면 타이머가 꼬이므로 base.OnEnable()을 절대 호출하지 않습니다.
-        col = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
-
-        col.enabled = false;
-        isStop = false;
-        isHeld = true;
-        isHealing = false;
-
-        rb.linearVelocity = Vector2.zero;
-
-        // 플레이어 손 위치에 장착
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            Transform holdPoint = player.transform.Find("HoldPosition");
-            if (holdPoint != null)
-            {
-                transform.SetParent(holdPoint);
-                transform.localPosition = Vector3.zero;
-                transform.localRotation = Quaternion.identity;
-            }
-        }
     }
 
-    // 부모인 SummonThrow의 Update(회전 로직 등)를 덮어씌워 완전히 무시합니다.
-    protected new void Update()
+    private void OnEnable()
     {
-        // 들고 있고, 치료 중이 아닐 때 클릭하면 치료 시작
-        if (isHeld && !isHealing && Input.GetMouseButtonDown(0))
+        // 부모의 기능을 완전히 무력화 (슬로우 및 물리 날아감 방지)
+        if (col != null) col.enabled = false;
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            rb.gravityScale = 0f;
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        }
+
+        isHeld = true;
+        isHealing = false;
+        canStartHeal = false;
+
+        // 장착하는 순간 무기 발사기 클릭과 겹쳐서 바로 치료가 시작되는 것을 막기 위해 1프레임 대기
+        StartCoroutine(EnableClickRoutine());
+    }
+
+    private IEnumerator EnableClickRoutine()
+    {
+        yield return null; // 딱 1프레임 쉬고
+        canStartHeal = true; // 이제부터 진짜 사용(4번) 입력을 받음
+    }
+
+    private void Update()
+    {
+        if (isHeld && rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+
+        // 4번: 손에 잘 들려있고, 치료 중이 아닐 때 "다시 한번 마우스를 클릭하면" 치료 시작!
+        if (isHeld && !isHealing && canStartHeal && Input.GetMouseButtonDown(0))
         {
             StartHealing();
         }
@@ -50,42 +71,34 @@ public class FirstaidKit : SummonThrow
         isHeld = false;
         isHealing = true;
 
-        Debug.Log("★ 치료 시작 (로그 찍히는지 확인하세요!)");
+        // 🌟 [추가] 치료 시작 시 플레이어 이동 불가 처리
+        PlayerMove.canMove = false;
 
-        // 애니메이션이 있다면 실행
+        Debug.Log("★ 4번 성공: 구급상자 사용 시작! 플레이어가 제자리에 멈춥니다.");
+
         if (anim != null) anim.SetTrigger("HealProgress");
 
-        // movingTime 초 만큼 가만히 대기한 후 정확히 Skill()을 호출합니다.
-        StartCoroutine(WaitAction.wait(movingTime, Skill));
-    }
-
-    protected override void Skill()
-    {
-        // 대기 시간이 끝났으므로 치료 로직을 실행합니다.
-        ApplyHeal();
+        // 5번: 사용 시간(movingTime)만큼 얌전히 가만히 기다린 후 정확히 치료(ApplyHeal) 호출
+        StartCoroutine(WaitAction.wait(movingTime, ApplyHeal));
     }
 
     private void ApplyHeal()
     {
+        // 6번: 치료 실행
         Personal_resource player = Personal_resource.instance;
         if (player != null)
         {
-            player.heal(20);
-            Debug.Log("★ 치료 완료! 체력 20 회복됨");
-        }
-        else
-        {
-            Debug.LogError("Personal_resource 싱글톤 인스턴스를 찾을 수 없습니다!");
+            player.heal(healAmount);
+            Debug.Log($"★ 6번 성공: 치료 완료! 체력 {healAmount} 회복됨.");
         }
 
-        // 사용이 끝났으므로 부모 풀로 안전하게 반환
+        // 🌟 [추가] 치료 완료 후 플레이어 이동 기능 다시 복구
+        PlayerMove.canMove = true;
+
+        transform.SetParent(null); // 손에서 해제
+
+        // 사용 완료 후 풀로 정상 반환
         if (pool != null) pool.Release(gameObject);
         else Destroy(gameObject);
     }
-
-    // =================================================================
-    // [핵심] 부모 클래스들(SummonObject)의 슬로우 및 공격 간섭을 원천 차단
-    // =================================================================
-    protected override void OnTriggerEnter2D(Collider2D other) { }
-    protected override void Attack(IEnemyDamage enemy, Vector2 direction) { }
 }
