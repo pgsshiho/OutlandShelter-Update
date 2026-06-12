@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -83,7 +84,19 @@ public class MainmenuManager : MonoBehaviour
 
         Notion.Log("Update yet".Localize());
     }
-
+    public void SceneChange(string Scenename)
+    {
+        if (!isLong)
+        {
+            OnAnyButtonClicked?.Invoke();
+            SceneChanger.BG(Scenename);
+        }
+        else
+        {
+            OnAnyButtonClicked?.Invoke();
+            SceneChanger.BG(Scenename+"Long");
+        }
+    }
     public void Solo()
     {
         OnAnyButtonClicked?.Invoke();
@@ -125,49 +138,6 @@ public class MainmenuManager : MonoBehaviour
         isMan = false;
         mapChoosePanel.SetActive(true);
     }
-
-    public void GoMapA()
-    {
-        if (!isLong)
-        {
-            OnAnyButtonClicked?.Invoke();
-            SceneChanger.BG("MapA");
-        }
-        else
-        {
-            OnAnyButtonClicked?.Invoke();
-            SceneChanger.BG("MapALong");
-        }
-    }
-
-    public void GoMapB()
-    {
-        if (!isLong)
-        {
-            OnAnyButtonClicked?.Invoke();
-            SceneChanger.BG("MapB");
-        }
-        else
-        {
-            OnAnyButtonClicked?.Invoke();
-            SceneChanger.BG("MapBLong");
-        }
-    }
-
-    public void GoMapC()
-    {
-        if (!isLong)
-        {
-            OnAnyButtonClicked?.Invoke();
-            SceneChanger.BG("MapC");
-        }
-        else
-        {
-            OnAnyButtonClicked?.Invoke();
-            SceneChanger.BG("MapCLong");
-        }
-    }
-
     public void Page1()
     {
         page1.SetActive(true);

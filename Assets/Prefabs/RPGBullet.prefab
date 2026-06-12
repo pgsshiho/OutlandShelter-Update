@@ -289,7 +289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f564ee99f0b6b504c8040cfab25d1248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SummonRPG
-  damage: 9999
+  damage: 999999
   knockBackForce: 0
+  slowPercent: 0
+  slowDuration: 0
   explosionEffect: {fileID: 2394393271047494819, guid: a3b9d666b6c355e4297ebb425a8f2c50, type: 3}
   explosionRadius: 3

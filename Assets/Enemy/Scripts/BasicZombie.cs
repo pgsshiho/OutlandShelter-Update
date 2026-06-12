@@ -20,7 +20,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
     public float defense;
     [SerializeField]
     protected Image hpBar;
-
+    public bool isShake;
     [SerializeField]
     protected float knockBackForce;
     public static int deathCount = 0;
@@ -78,6 +78,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         wall = LayerMask.GetMask("Wall");
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        isShake = false;
     }
 
     protected virtual void OnEnable()
@@ -430,6 +431,26 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
         if (hp == 0)
         {
             Death();
+        }
+        if (Camera.main != null && !isShake)
+        {
+            isShake = true;
+            Camera.main.transform.DOComplete();
+            float shakeDuration = Mathf.Min(0.08f + (damage * 0.01f), 0.3f);
+
+            // [추천 공식] 기본 0.1 + 데미지당 0.02 추가 (최대치 0.5 제한)
+            float shakeStrength = Mathf.Min(0.1f + (damage * 0.01f), 0.5f);
+
+            // 진동 횟수도 데미지에 따라 촘촘하게 설정
+            int shakeVibrato = Mathf.Clamp(5 + Mathf.RoundToInt(damage), 8, 50);
+            Camera.main.transform.DOShakePosition(
+                shakeDuration,
+                shakeStrength,
+                shakeVibrato,
+                90,
+                false,
+                true
+            ).OnComplete(() => isShake = false);
         }
     }
     public void OnHitPolished()
