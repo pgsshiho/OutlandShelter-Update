@@ -625,6 +625,10 @@ MonoBehaviour:
     m_Key: firstaidkit
     m_Metadata:
       m_Items: []
+  - m_Id: 31463778365702144
+    m_Key: "\uD0C4\uC57D\uBD80\uC871"
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

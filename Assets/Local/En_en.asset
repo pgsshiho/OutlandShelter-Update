@@ -48,7 +48,10 @@ MonoBehaviour:
       `:
       Hide Guide UI
 
-      Hitting the base with a hammer restores the base''s health.'
+      Hitting the base with a hammer restores the base''s health.
+
+      You
+      can acquire resources by hitting this resource.'
     m_Metadata:
       m_Items: []
   - m_Id: 4079548334080
@@ -903,6 +906,10 @@ MonoBehaviour:
     m_Localized: 'When used, it restores 20% of health after the healing time.
 
 '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31463778365702144
+    m_Localized: Low on ammo, need to reload
     m_Metadata:
       m_Items: []
   references:

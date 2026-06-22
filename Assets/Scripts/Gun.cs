@@ -35,9 +35,15 @@ namespace Weapons
             if (loadedBullet[CurrentGun] == 0)
             {
                 if (!TechTreeUnlock.isRelodingSkip)
+                {
+                    Notion.Log("탄약부족");
                     return;
+                }
                 else if (CurrentGun.UsingBullet == 0)
+                {
+                    Notion.Log("탄약부족");
                     return;
+                }
             }
 
             canAttack = false;
