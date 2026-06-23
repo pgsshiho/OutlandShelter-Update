@@ -647,6 +647,7 @@ GameObject:
   - component: {fileID: 769977633258264918}
   - component: {fileID: 5142594752473273552}
   - component: {fileID: 3654879762541531823}
+  - component: {fileID: 4119131565566754801}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -811,6 +812,18 @@ MonoBehaviour:
   player: {fileID: 1728317651007913954}
   leftBottom: {x: -39, y: -38}
   rightTop: {x: 44, y: 42}
+--- !u!114 &4119131565566754801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6521975024732929371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd872241f0ff024a8ddb73ea4f4e2d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WebGLCanvasResizer
 --- !u!1 &7114750909150541402
 GameObject:
   m_ObjectHideFlags: 0
