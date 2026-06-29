@@ -2,8 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum BuildingType
+{
+    Default,
+    Generator,
+    Workbench,
+    WeaponWorkbench,
+}
+
 public class BuildExampleImage : MonoBehaviour
 {
+    [SerializeField] private BuildingType currentBuildingType = BuildingType.Default;
     private ResourceSpawner area;
 
     private Vector3 center;
@@ -14,7 +23,8 @@ public class BuildExampleImage : MonoBehaviour
 
     [SerializeField] private GameObject rectangle;
 
-    [SerializeField] private GameObject building;
+    [SerializeField] private GameObject building;          // 일반 모드에서 설치될 건물 프리패브
+    [SerializeField] private GameObject tutoBuilding;      // 💡 튜토리얼 모드에서 설치될 건물 프리패브
 
     [SerializeField] private Vector2 buildingSize;
 
@@ -29,7 +39,12 @@ public class BuildExampleImage : MonoBehaviour
 
         turretPoint = Instantiate(turretPointPrefab);
 
-        BoxCollider2D field = building.GetComponent<BoxCollider2D>();
+        GameObject targetPrefab = (Tutorial.instance != null && Tutorial.instance.isTutorial) ? tutoBuilding : building;
+
+        // 혹시 튜토리얼용 프리패브를 깜빡하고 안 넣었을 때를 대비한 안전장치
+        if (targetPrefab == null) targetPrefab = building;
+
+        BoxCollider2D field = targetPrefab.GetComponent<BoxCollider2D>();
 
         GameObject child = Instantiate(rectangle, (Vector2)transform.position + field.offset, Quaternion.identity);
         child.transform.localScale = transform.localScale * field.size;
@@ -73,11 +88,40 @@ public class BuildExampleImage : MonoBehaviour
             if (IsOverlap(transform.position, transform.localScale, new List<Range>() { area.constraints[0] })
                 && !IsOverlap(transform.position, transform.localScale, area.constraints.GetRange(1, area.constraints.Count - 1)))
             {
-                GameObject temp = Instantiate(building, transform.position, Quaternion.identity);
+                // 💡 [핵심 변환] 튜토리얼 중이라면 tutoBuilding을 소환하고, 아니면 일반 building을 소환합니다.
+                GameObject prefabToSpawn = (Tutorial.instance != null && Tutorial.instance.isTutorial) ? tutoBuilding : building;
+                if (prefabToSpawn == null) prefabToSpawn = building; // 방어 코드
+
+                GameObject temp = Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+
                 if (SFXReference.Instance.construct != null)
                 {
                     SoundManager.SFX.PlayOneShot(SFXReference.Instance.construct, 0.7f);
                 }
+
+                // 건물 유형 카운팅 및 로그 정상화
+                switch (currentBuildingType)
+                {
+                    case BuildingType.Generator:
+                        if (Tutorial.instance != null) Tutorial.instance.buildings[0]++;
+                        Debug.Log("발전기 설치 완료!");
+                        break;
+
+                    case BuildingType.Workbench:
+                        if (Tutorial.instance != null) Tutorial.instance.buildings[1]++;
+                        Debug.Log("작업대 설치 완료!");
+                        break;
+
+                    case BuildingType.WeaponWorkbench:
+                        if (Tutorial.instance != null) Tutorial.instance.buildings[2]++;
+                        Debug.Log("무기 작업대 설치 완료!");
+                        break;
+
+                    default:
+                        Debug.Log("일반 건물 설치 완료!");
+                        break;
+                }
+
                 if (temp.TryGetComponent(out ResourceReturn _return))
                 {
                     _return.returnResources.wooden = price.wooden / 3;
@@ -93,7 +137,7 @@ public class BuildExampleImage : MonoBehaviour
                     Destroy(notConstructableArea[i]);
                 }
                 Destroy(constructableArea);
-                Destroy(turretPoint);
+                if (turretPoint != null) Destroy(turretPoint);
                 Destroy(gameObject);
             }
         }
@@ -111,7 +155,7 @@ public class BuildExampleImage : MonoBehaviour
                 Destroy(notConstructableArea[i]);
             }
             Destroy(constructableArea);
-            Destroy(turretPoint);
+            if (turretPoint != null) Destroy(turretPoint);
             Destroy(gameObject);
         }
     }

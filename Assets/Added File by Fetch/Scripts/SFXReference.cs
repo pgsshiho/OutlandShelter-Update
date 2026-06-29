@@ -4,7 +4,7 @@ public class SFXReference : MonoBehaviour
 {
     private static SFXReference _instance;
     public static SFXReference Instance => _instance;
-
+    public AudioClip buttonclick;
     public AudioClip hammer;
     public AudioClip melee;
     public AudioClip gun;

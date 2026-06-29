@@ -4,5 +4,12 @@ using UnityEngine;
 
 public class BackpackOpen : UIOpen
 {
-    // 추후 추가될 수 있음
+    public override void Update()
+    {
+        base.Update();
+        if (Tutorial.instance != null && Tutorial.instance.isTutorial && ui.activeSelf && Input.GetKeyUp(keyCode) && Tutorial.instance.nowpage == 4)
+        {
+            Tutorial.instance.nextpage();
+        }
+    }
 }

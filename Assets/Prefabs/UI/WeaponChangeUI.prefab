@@ -6025,7 +6025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kind: 2
-  myIndex: 9
+  myIndex: 6
 --- !u!114 &6849976427861169130
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,6 +29,10 @@ public class WeaponChoice : MonoBehaviour
 
     public void Change()
     {
+        if (Tutorial.instance != null && Tutorial.instance.isTutorial && Tutorial.instance.nowpage == 9 && myIndex == 2)
+        {
+            Tutorial.instance.nextpage();
+        }
         if (ItemOwnManager.ownWeapon[kind][myIndex])
         {
             ObjectPoolManager.instance[kind].weaponIndex = myIndex;
