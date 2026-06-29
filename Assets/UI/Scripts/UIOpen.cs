@@ -15,7 +15,7 @@ public class UIOpen : MonoBehaviour
         isBlocking = false;
     }
 
-    protected virtual void Update()
+    public virtual void Update()
     {
         if (!Guide.isEnable && !MapManager.isActivePanel)
         {

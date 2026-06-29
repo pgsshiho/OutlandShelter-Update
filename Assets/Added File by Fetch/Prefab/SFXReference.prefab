@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf7f598520e5eb4488e9ef738e8bf979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SFXReference
+  buttonclick: {fileID: 8300000, guid: 9589e7b2ae5b4cf4dad1dda84e7b06f3, type: 3}
   hammer: {fileID: 8300000, guid: 7a17b6fb166e4c247b7964bc0ae50ee7, type: 3}
   melee: {fileID: 8300000, guid: 7201356fc55523c43902c68d9641a505, type: 3}
   gun: {fileID: 8300000, guid: 53f49c824d7ee0f4f9e9338489031d73, type: 3}
@@ -59,3 +60,4 @@ MonoBehaviour:
   rpgShot: {fileID: 8300000, guid: 21d44dd4c7a201f498602480ce37bcb8, type: 3}
   TankSpawn: {fileID: 8300000, guid: 9630b48fdbef32e4493536ffa8ec7abf, type: 3}
   Hit: {fileID: 8300000, guid: 379c0a7338b65294fb5f60ff258865b6, type: 3}
+  Supplyget: {fileID: 8300000, guid: 3253cdf7d537aa844bb9eaccacf892c2, type: 3}

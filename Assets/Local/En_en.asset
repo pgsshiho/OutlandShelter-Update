@@ -912,6 +912,148 @@ MonoBehaviour:
     m_Localized: Low on ammo, need to reload
     m_Metadata:
       m_Items: []
+  - m_Id: 33771591314145280
+    m_Localized: to move and approach the NPC in front of you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771621005623296
+    m_Localized: At the top-left,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771625850044416
+    m_Localized: At the top of the base,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771689515384832
+    m_Localized: to attack and break resources to gather them. Resources can only
+      be destroyed using the Hammer (Press 1).
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771698487001088
+    m_Localized: to open your Inventory. You can check your current resources and
+      equipped weapons.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771707789967360
+    m_Localized: Press 2 to equip your melee weapon, then defeat the zombie in front
+      of you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771715859808256
+    m_Localized: to open the Build Menu, then construct a Generator, a Weapon Workbench,
+      and a Workbench.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771727360589824
+    m_Localized: to interact near the Weapon Workbench and craft a Rifle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771739087863808
+    m_Localized: to interact near the Workbench and craft Rifle Ammo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771748051091456
+    m_Localized: Open your Inventory again and equip the Rifle into the third weapon
+      slot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771757937065984
+    m_Localized: to draw your firearm.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771767927898112
+    m_Localized: to reload.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771775012077568
+    m_Localized: to shoot and eliminate the zombies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771780309483520
+    m_Localized: Equip your Hammer and hit the base to repair it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771791759933440
+    m_Localized: to open the Skill Tree and learn a skill.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771813486428160
+    m_Localized: to check Weapon Parts. Once crafted, they can be equipped here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33771827604455424
+    m_Localized: to complete the tutorial. For anything else, please refer to the
+      Tooltips as you play.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772583678083072
+    m_Localized: the yellow text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772585443885056
+    m_Localized: indicates your current power.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772603097710592
+    m_Localized: At the top-right,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772604892872704
+    m_Localized: the red text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772606629314560
+    m_Localized: indicates the remaining zombies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772608411893760
+    m_Localized: At the top,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772610081226752
+    m_Localized: the green text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772708831920128
+    m_Localized: indicates the remaining time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33808676318314496
+    m_Localized: the blue bar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772745293004800
+    m_Localized: represents the base's HP.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772773910740992
+    m_Localized: At the bottom-right,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772783175958528
+    m_Localized: the red bar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772790859923456
+    m_Localized: represents your HP.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772798053154816
+    m_Localized: At the bottom-right,
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33772804428496896
+    m_Localized: the green bar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33809790174461952
+    m_Localized: represents your EXP.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33815040033783808
+    m_Localized: GO Tutorial
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

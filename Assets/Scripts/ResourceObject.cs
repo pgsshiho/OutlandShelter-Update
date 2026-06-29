@@ -31,7 +31,6 @@ public class ResourceObject : MonoBehaviour
         }
 
         temp.gameObject.SetActive(true);
-
         hpBar.transform.parent.gameObject.SetActive(false);
     }
 
@@ -48,30 +47,42 @@ public class ResourceObject : MonoBehaviour
             hp -= Mathf.Clamp(amount - defense, 0, bag.capacity - bag.resources[(int)kind]);
 
             hpBar.fillAmount = hp / HP;
-
             hpBar.transform.parent.gameObject.SetActive(true);
 
             if (coroutine != null) StopCoroutine(coroutine);
-            
+
             coroutine = StartCoroutine(WaitAction.wait(2f, () =>
             {
                 hpBar.transform.parent.gameObject.SetActive(false);
-
                 coroutine = null;
             }));
+            int normalAmount = (int)Mathf.Clamp(amount - defense, 0, bag.capacity - bag.resources[(int)kind]);
 
             if (hp > 0)
             {
-                return (int)Mathf.Clamp(amount - defense, 0, bag.capacity - bag.resources[(int)kind]);
+                return normalAmount;
             }
             else
             {
+                if (Tutorial.instance != null && Tutorial.instance.isTutorial)
+                {
+                    Tutorial.instance.getReosurceCount++;
+                    Debug.Log(Tutorial.instance.getReosurceCount);
+
+                    StartCoroutine(WaitAction.waitOneFrame(() =>
+                    {
+                        CanvasDelete();
+                        Destroy(gameObject);
+                    }));
+
+                    return 9999;
+                }
                 StartCoroutine(WaitAction.waitOneFrame(() =>
                 {
                     CanvasDelete();
-                    pool.Release(gameObject);
+                    Destroy(gameObject);
                 }));
-                return (int)Mathf.Clamp(amount - defense, 0, bag.capacity - bag.resources[(int)kind]);
+                return normalAmount;
             }
         }
         else

@@ -44,7 +44,6 @@ public class MapManager : MonoBehaviour
 
     private ObjectPoolManager poolManager;
     public static bool isActivePanel = false;
-
     private void Awake()
     {
         waveCount = 0;
@@ -73,7 +72,10 @@ public class MapManager : MonoBehaviour
             {
                 if (waveTimer > 0)
                 {
-                    waveTimer = Mathf.Clamp(waveTimer - Time.deltaTime, 0, waveTimerLimit);
+                    if (Tutorial.instance != null && !Tutorial.instance.isTutorial)
+                    {
+                        waveTimer = Mathf.Clamp(waveTimer - Time.deltaTime, 0, waveTimerLimit);
+                    }
                     UpdateTimerUI(waveTimer);
 
                     // 🚨 보스전 타이머 가동 중일 때 1분 미만이면 텍스트 빨간색 연출

@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MapB/Scene/MapBLong.unity
     guid: 48e0add75c904854790b3a95101c64a0
+  - enabled: 1
+    path: Assets/Tutorial/Scene/Tutorial.unity
+    guid: 1d59935913d2bbc4888000414336928f
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: c3a455c2aea8c2b488f4d6b0b18bb7a3, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 3ae87901b3e96be4a99f44482065869c, type: 2}
