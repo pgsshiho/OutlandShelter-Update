@@ -65,15 +65,17 @@ MonoBehaviour:
   - m_Id: 4431198781440
     m_Localized: 'The default weapon becomes an Axe.
 
+
       Attack: 30,
+
 
       Attack
       Speed: 5'
     m_Metadata:
       m_Items: []
   - m_Id: 4536882659328
-    m_Localized: "The default weapon becomes a Katana.\nAttack: 20, \nAttack Speed:
-      15"
+    m_Localized: "The default weapon becomes a Katana.\n\nAttack: 20, \n\nAttack
+      Speed: 15"
     m_Metadata:
       m_Items: []
   - m_Id: 5385419718656
@@ -1052,6 +1054,12 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 33815040033783808
     m_Localized: GO Tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38840266547232768
+    m_Localized: 'The number of waves increases to 20, and new zombies appear.
+
+'
     m_Metadata:
       m_Items: []
   references:
