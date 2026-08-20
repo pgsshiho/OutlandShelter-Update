@@ -442,7 +442,7 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
             float shakeStrength = Mathf.Min(0.1f + (damage * 0.01f), 0.5f);
 
             // 진동 횟수도 데미지에 따라 촘촘하게 설정
-            int shakeVibrato = Mathf.Clamp(5 + Mathf.RoundToInt(damage), 8, 50);
+            int shakeVibrato = Mathf.Clamp(3 + Mathf.RoundToInt(damage * 0.5f), 3, 12);
             Camera.main.transform.DOShakePosition(
                 shakeDuration,
                 shakeStrength,
@@ -453,26 +453,19 @@ public class BasicZombie : MonoBehaviour, IEnemyDamage
             ).OnComplete(() => isShake = false);
         }
     }
+    // 💡 추천 수정 코드 (DOPunchScale 사용)
     public void OnHitPolished()
     {
-        // 기존에 작동 중인 트윈이 있다면 꼬이지 않게 종료
-        transform.DOKill();
         spriteRenderer.DOKill();
+        transform.DOKill();
 
-        // 원래 상태로 초기화 (연타로 맞을 때를 대비)
-        spriteRenderer.color = Color.white;
-        transform.localScale = Vector3.one;
+        // 1. 빨간색 깜빡임 (0.08초 동안 살짝 빨개졌다 원복)
+        spriteRenderer.DOColor(Color.red, 0.04f).OnComplete(() => {
+            spriteRenderer.DOColor(Color.white, 0.08f);
+        });
 
-        // DOTween 시퀀스 생성
-        Sequence hitSeq = DOTween.Sequence();
-
-        // [연출 1] 맞자마자 0.03초 만에 흰색(or빨간색)으로 변하고, 크기는 1.2배로 커짐
-        hitSeq.Join(spriteRenderer.DOColor(Color.red, 0.03f));
-        hitSeq.Join(transform.DOScale(1.2f, 0.03f));
-
-        // [연출 2] 그 다음 0.05초 만에 원래 색과 원래 크기로 복귀
-        hitSeq.Append(spriteRenderer.DOColor(Color.white, 0.1f));
-        hitSeq.Append(transform.DOScale(1.0f, 0.1f));
+        // 2. 펀치 스케일 (원래 scale 유지하면서 0.15배 툭 튀어나왔다 돌아옴)
+        transform.DOPunchScale(Vector3.one * 0.15f, 0.12f, 1, 0.5f);
     }
     protected virtual void OnCollisionStay2D(Collision2D collision)
     {
