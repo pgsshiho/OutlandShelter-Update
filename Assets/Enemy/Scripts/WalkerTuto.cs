@@ -243,7 +243,8 @@ public class WalkerTuto : MonoBehaviour, IEnemyDamage
             Camera.main.transform.DOComplete();
             float shakeDuration = Mathf.Min(0.08f + (damage * 0.01f), 0.3f);
             float shakeStrength = Mathf.Min(0.1f + (damage * 0.01f), 0.5f);
-            int shakeVibrato = Mathf.Clamp(5 + Mathf.RoundToInt(damage), 8, 50);
+
+            int shakeVibrato = Mathf.Clamp(3 + Mathf.RoundToInt(damage * 0.5f), 3, 12);
             Camera.main.transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato, 90, false, true).OnComplete(() => isShake = false);
         }
     }
