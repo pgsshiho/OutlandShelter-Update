@@ -26,6 +26,7 @@ public class WebGLCanvasResizer : MonoBehaviour
         LastHeight = Screen.height;
 
         // 현재 브라우저 창 크기에 맞게 Screen 해상도 재설정
-        Screen.SetResolution(LastWidth, LastHeight, false);
+        // false 고정 시 전체화면이 즉시 해제되므로, 현재 전체화면 상태를 그대로 유지
+        Screen.SetResolution(LastWidth, LastHeight, Screen.fullScreen);
     }
 }
