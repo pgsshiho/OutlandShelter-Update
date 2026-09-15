@@ -485,51 +485,79 @@ MonoBehaviour:
   - m_Id: 341250830467072
     m_Localized: '<size=50>Pistol</size>
 
+      Fire Rate : 0.3
 
+      Damage : 30
 
-      - Ordinary pistol'
+      Magazine
+      : 10
+
+      Reload Time : 1.5'
     m_Metadata:
       m_Items: []
   - m_Id: 341335584768000
     m_Localized: '<size=50>Revolver</size>
 
+      Fire Rate : 0.3
 
+      Damage :
+      50
 
-      - Slow but powerful pistol'
+      Magazine : 6
+
+      Reload Time : 1.2'
     m_Metadata:
       m_Items: []
   - m_Id: 341383240450048
     m_Localized: '<size=50>Rifle</size>
 
+      Fire Rate : 0.07
 
+      Damage : 40
 
-      - Fast attack speed but low accuracy'
+      Magazine
+      : 30
+
+      Reload Time : 2'
     m_Metadata:
       m_Items: []
   - m_Id: 341435560198144
     m_Localized: '<size=50>Semi-automatic rifle</size>
 
+      Fire Rate : 1
 
+      Damage
+      : 250
 
-      - Slow but high accuracy'
+      Magazine : 10
+
+      Reload Time : 2'
     m_Metadata:
       m_Items: []
   - m_Id: 341487485681664
     m_Localized: '<size=50>PumpShotgun</size>
 
+      Fire Rate : 1.2
 
+      Damage
+      : 120
 
-      - Attacks enemies within a
-      certain range.'
+      Magazine : 8
+
+      Reload Time : 3'
     m_Metadata:
       m_Items: []
   - m_Id: 341634143715328
     m_Localized: '<size=50>Auto Shotgun</size>
 
+      Fire Rate : 0.3
 
+      Damage
+      : 88
 
-      - It has weaker attack power
-      than a shotgun, but is superior in every other aspect.'
+      Magazine : 10
+
+      Reload Time : 3'
     m_Metadata:
       m_Items: []
   - m_Id: 341778557796352
@@ -882,22 +910,44 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 24027474652790784
-    m_Localized: 'A lightweight automatic weapon that uses pistol ammunition for
-      a stable and high rate of fire
+    m_Localized: '<size=50>SMG</size>
+
+      Fire Rate : 0.03
+
+      Damage : 15
+
+      Magazine
+      : 20
+
+      Reload Time : 0.8
 
 '
     m_Metadata:
       m_Items: []
   - m_Id: 24028105945874432
-    m_Localized: 'A shotgun capable of rapid two-shot bursts
+    m_Localized: '<size=50>DBS</size>
 
-'
+      Fire Rate : 0.2
+
+      Damage : 100
+
+      Magazine
+      : 2
+
+      Reload Time : 1'
     m_Metadata:
       m_Items: []
   - m_Id: 24028181695004672
-    m_Localized: 'A slow but powerful sniper rifle that pierces every enemy
+    m_Localized: '<size=50>Sniper rifle</size>
 
-'
+      Fire Rate : 2.5
+
+      Damage
+      : 500
+
+      Magazine : 5
+
+      Reload Time : 4'
     m_Metadata:
       m_Items: []
   - m_Id: 27870671896281088
